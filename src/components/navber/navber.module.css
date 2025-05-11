@@ -1,0 +1,135 @@
+.navber {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    backdrop-filter: blur(1rem);
+    background-color: #ffffff0d;
+}
+
+.navPList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+.navPList li {
+    /* background-color: aliceblue; */
+    padding: 0;
+    margin: .3rem 0;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        border-top: 1px solid rgb(110, 110, 133);
+    }
+}
+
+.navPList li button {
+    background: none;
+    border: none;
+    opacity: 1;
+}
+
+.aboutListItem {
+    position: relative;
+
+}
+
+.aboutList {
+    position: absolute;
+    background-color: #012220f6;
+    backdrop-filter: blur(1rem);
+    list-style-type: none;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
+}
+
+.aboutList.show {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+.aboutList li {
+    width: 8rem;
+    z-index: 2000;
+}
+
+.navPList .activeNav {
+    border-bottom: 2px solid white;
+}
+
+.navMobail {
+    position: relative;
+}
+
+.mobileMenu {
+    position: absolute;
+    right: 2rem;
+    background-color: #011b27e7;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    z-index: 3000;
+    opacity: 0;
+    transform: translateY(-3rem) translateX(3rem);
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.mobileMenu.mobileListShow {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+    pointer-events: auto;
+}
+
+.mobileMenu li {
+    width: 95%;
+    text-align: center;
+    margin: .2rem auto;
+}
+
+.mobileMenu li button {
+    width: 100%;
+    text-align: center;
+    margin: .2rem auto;
+    background: none;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: .4rem 0;
+    transition: all .1s ease-in-out;
+    font-size: 1rem;
+    opacity: 1;
+    &:hover {
+        background-color: #084663ef;
+    }
+}
+
+.navMobail .activeNav{
+    background: #09d4b9a9;
+}
+
+
+@media (width <=780px) {
+    .navber {
+        justify-content: space-between;
+    }
+}
