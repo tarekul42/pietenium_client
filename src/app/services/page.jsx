@@ -1,6 +1,5 @@
 import Services from "@/components/services/Services";
 import React from "react";
-
 export const metadata = {
   title: "Services — Values That Drive Us",
   description:
