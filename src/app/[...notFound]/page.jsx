@@ -1,10 +1,32 @@
+import Image from "next/image";
 import Link from "next/link";
-
+import notFoundImg from "@/gallary/siteImgs/404NotFound.svg";
 // app/[...notFound]/page.js
 export default function CustomNotFound() {
-    return <section style={{width:'100%',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',backgroundColor:'#39eed6a6',padding:'2rem 0' }}>
-        <img src="https://i.postimg.cc/Jn2wdMQj/404.png" style={{width:'60%'}} alt="404Notfound" />
-        <Link href={'/'}><button style={{cursor:'pointer',borderRadius:'2rem'}}>Go back Shopping</button></Link>
-    </section>;
-  }
-  
+  return (
+    <section
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        backgroundColor: "#032b4d93",
+        padding: "2rem 0",
+      }}
+    >
+      <Image
+        src={notFoundImg}
+        width={400}
+        height={300}
+        alt="notfoundImage"
+        style={{ width: "50%", height: "auto", objectFit: "cover" }}
+      />
+      <Link href={"/"}>
+        <button style={{ cursor: "pointer", borderRadius: "2rem" }}>
+          back to home
+        </button>
+      </Link>
+    </section>
+  );
+}

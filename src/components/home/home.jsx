@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <section className={styles.home}>
+    <aside className={styles.home}>
       <Hero />
       <TrustedComp />
       <HomeAbout />
@@ -25,7 +25,7 @@ const Home = () => {
           </Link>
         </div>
       </section>
-    </section>
+    </aside>
   );
 };
 export default Home;
