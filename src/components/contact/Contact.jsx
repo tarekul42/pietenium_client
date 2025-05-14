@@ -143,7 +143,7 @@ const Contact = () => {
 
             {/* reCAPTCHA */}
             <ReCAPTCHA
-              sitekey="YOUR_SITE_KEY_HERE" // Replace this!
+              sitekey="6Ldz_TgrAAAAAGn5B06uIzFEhmk2VVpgPLydH6Yw"
               onChange={(token) => setCaptchaValue(token)}
             />
 
