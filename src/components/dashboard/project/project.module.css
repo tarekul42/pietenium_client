@@ -203,3 +203,23 @@
 #pDesc textarea::-webkit-input-placeholder {
     color: #00ffff98;
 }
+
+/* Read project data styles --> */
+.read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.read table {
+    border: 1px solid #02ff02;
+    border-collapse: collapse;
+}
+
+.read table th,
+.read table td {
+    border: 1px solid #02ff02;
+    padding: 1rem;
+}

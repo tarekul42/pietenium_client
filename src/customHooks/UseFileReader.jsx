@@ -33,5 +33,5 @@ export const useFilePreview = () => {
     };
   }, [files]);
 
-  return { files, addFiles, removeFile };
+  return { files,setFiles, addFiles, removeFile };
 };

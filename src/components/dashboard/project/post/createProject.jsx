@@ -6,14 +6,21 @@ import { useFilePreview } from "@/customHooks/UseFileReader";
 import { api } from "@/data/api";
 import { useDashAuth } from "../../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
+import ToastP from "@/components/popupToast/ToastP";
 
-const CreateProject = ({ open, setOpen }) => {
+const CreateProject = ({ setOpen, setData }) => {
   const [projData, setProjData] = useState({
     title: "",
     details: "",
   });
   const [loading, setLoading] = useState(false);
   const { accessToken } = useDashAuth();
+
+  const [popInfo, setPopInfo] = useState({
+    trigger: null,
+    type: null,
+    message: null,
+  });
 
   const colletProjData = (e) => {
     setProjData((prev) => {
@@ -47,6 +54,7 @@ const CreateProject = ({ open, setOpen }) => {
   /*Collect gallray image */
   const {
     files: gallery,
+    setFiles: setGallray,
     addFiles: addGalleryImages,
     removeFile: removeGalleryImage,
   } = useFilePreview();
@@ -72,9 +80,22 @@ const CreateProject = ({ open, setOpen }) => {
         },
         body: formData,
       });
-
       const data = await res.json();
-      console.log(data);
+      setPopInfo({
+        trigger: Date.now(),
+        type: data?.success,
+        message: data?.message,
+      });
+      setData(data?.project);
+      if (data?.success) {
+        setTimeout(() => {
+          setOpen(false);
+          setGallray([]);
+          setThumb([]);
+          setThumbImg("");
+          setProjData({ title: "", details: "" });
+        }, 2000);
+      }
     } catch (err) {
       console.error("Upload failed", err);
     } finally {
@@ -159,6 +180,7 @@ const CreateProject = ({ open, setOpen }) => {
           </form>
         </div>
       </div>
+      <ToastP popInfo={popInfo} />
     </div>
   );
 };
