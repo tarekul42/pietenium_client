@@ -8,7 +8,7 @@ import { useDashAuth } from "../../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
 
-const UpdateP = ({ setOpen, id, onUpdate }) => {
+const UpdateP = ({ setOpen,data, onUpdate }) => {
   const [projData, setProjData] = useState({
     title: "",
     details: "",
@@ -60,28 +60,7 @@ const UpdateP = ({ setOpen, id, onUpdate }) => {
     }));
   };
 
-  const fetchPrevP = async (pId) => {
-    setPrevPLoading(true);
-    try {
-      const response = await fetch(`${api}/project/singleProject/${pId}`);
-      const response2 = await response.json();
-      const data = response2?.data;
-      setProjData({
-        title: data?.title,
-        details: data?.details,
-      });
-      setThumbImg(data?.thumbnail?.photo);
-      setPrevGallery(data?.gallary);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setPrevPLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (id) fetchPrevP(id);
-  }, [id]);
+  
 
   const handleUpdateP = async (e) => {
     e.preventDefault();

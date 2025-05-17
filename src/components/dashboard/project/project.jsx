@@ -45,11 +45,20 @@ const Project = () => {
   }, [newProject]);
 
   const [updateOpen, setUpdateOpen] = useState(false);
-  const [projId, setProjId] = useState("");
+  const [projData, setProjData] = useState({});
 
-  const handleUpdateOpen = (id) => {
-    setProjId(id);
+  
+
+  const handleUpdateOpen = async (pId) => {
     setUpdateOpen(true);
+    try {
+          const response = await fetch(`${api}/project/singleProject/${pId}`);
+          const response2 = await response.json();
+          const data = response2?.data;
+          setProjData(data);
+        } catch (error) {
+          console.error(error);
+        }
   };
 
   const handleProjectUpdate = (updatedProj) => {
@@ -130,7 +139,7 @@ const Project = () => {
         <div className={styles.update}>
           {updateOpen && (
             <UpdateP
-              id={projId}
+              data={projData}
               setOpen={setUpdateOpen}
               onUpdate={handleProjectUpdate}
             />
