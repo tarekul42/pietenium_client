@@ -12,11 +12,11 @@ import Image from "next/image";
 import TextEditor from "@/components/textEditor/TextEditor";
 // import RichTextEditor from "@/components/textEditor/RichTextEditor";
 
-const UpdateArticle = ({ setOpen, setData ,onUpdate,artData}) => {
+const UpdateArticle = ({ setOpen, onUpdate, artData }) => {
   const { accessToken } = useDashAuth();
   const [loading, setLoading] = useState(false);
 
-//   console.log(artData?._id);
+  //   console.log(artData?._id);
 
   const [popInfo, setPopInfo] = useState({
     trigger: null,
@@ -46,26 +46,24 @@ const UpdateArticle = ({ setOpen, setData ,onUpdate,artData}) => {
   };
 
   useEffect(() => {
+    if (artData) {
+      setArticleData({
+        title: artData?.title,
+        content: artData?.content,
+        articleType: artData?.articleType,
+        hashtags: artData?.hashtags?.join(" "),
+      });
+      setThumbImg(artData?.thumbnail?.photo);
+    }
+  }, [artData]);
+
+  useEffect(() => {
     return () => {
       if (thumbImg) URL.revokeObjectURL(thumbImg);
     };
   }, [thumbImg]);
 
-    useEffect(() => {
-    if (artData) {
-        setArticleData({
-            title:artData?.title,
-            content:artData?.content,
-            articleType:artData?.articleType,
-            hashtags:artData?.hashtags?.join(' ')
-        });
-        setThumbImg(artData?.thumbnail?.photo);
-        console.log(artData?.content);
-    }
-  }, [artData]);
-
-  const handleUploadProj = async (e) => {
-    e.preventDefault();
+  const handleUpdateArt = async (artId) => {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
@@ -76,8 +74,8 @@ const UpdateArticle = ({ setOpen, setData ,onUpdate,artData}) => {
 
     setLoading(true);
     try {
-      const res = await fetch(`${api}/article/post`, {
-        method: "POST",
+      const res = await fetch(`${api}/article/update/${artId}`, {
+        method: "PATCH",
         headers: { authorization: `Bearer ${accessToken}` },
         body: formData,
       });
@@ -88,12 +86,11 @@ const UpdateArticle = ({ setOpen, setData ,onUpdate,artData}) => {
         message: data?.message,
       });
 
-      setData(data?.article);
+      onUpdate(data?.article);
       if (data?.success) {
         setTimeout(() => {
           setOpen(false);
           setThumb([]);
-          setThumbImg("");
           setArticleData({
             title: "",
             hashtags: "",
@@ -117,7 +114,12 @@ const UpdateArticle = ({ setOpen, setData ,onUpdate,artData}) => {
 
       <div className={styles.createForm} onClick={(e) => e.stopPropagation()}>
         <div className={styles.scrollWrap}>
-          <form onSubmit={handleUploadProj}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleUpdateArt(artData?._id);
+            }}
+          >
             <label id={styles.pTitle}>
               <textarea
                 placeholder="Article Title"
@@ -216,7 +218,6 @@ const UpdateArticle = ({ setOpen, setData ,onUpdate,artData}) => {
             }}
             dangerouslySetInnerHTML={{ __html: content }}
           /> */}
-
         </div>
       </div>
       <ToastP popInfo={popInfo} />

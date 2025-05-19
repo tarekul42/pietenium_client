@@ -33,7 +33,7 @@ import {
   faParagraph,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 const MenuBar = ({ editor }) => {
   const [imgUrl, setImgUrl] = useState("");
@@ -268,6 +268,12 @@ const TextEditor = ({ value, onChange }) => {
       onChange(editor.getHTML());
     },
   });
+
+ useEffect(() => {
+  if (editor && value && editor.getHTML() !== value) {
+    editor.commands.setContent(value);
+  }
+}, [editor, value]);
 
   return (
     <div className={styles.editorWrapper}>

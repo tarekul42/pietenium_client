@@ -16,6 +16,12 @@ const ArticleDShow = ({ data, onUpdate, onDelete }) => {
     }
   };
 
+   const handleDeleteArticle = (id) => {
+    if (id === _id) {
+      setupdateOpen(true);
+    }
+  };
+
   return (
     <>
       <article className={styles.showArt}>
