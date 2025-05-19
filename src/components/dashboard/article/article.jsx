@@ -44,7 +44,6 @@ const ArticleP = () => {
     }
   }, [newArticle]);
 
-  console.log(newArticle);
 
   const handleArticleUpdate = (updatedArt) => {
     setArticles((prev) =>
