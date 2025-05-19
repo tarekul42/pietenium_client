@@ -1,4 +1,3 @@
-// ✅ CreateArticle.jsx (modified to use Tiptap instead of ReactQuill)
 "use client";
 
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
