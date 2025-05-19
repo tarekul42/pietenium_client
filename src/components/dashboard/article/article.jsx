@@ -35,16 +35,16 @@ const ArticleP = () => {
     fetchArtclData();
   }, []);
 
-  // useEffect(() => {
-  //   if (newArticle && newArticle?._id) {
-  //     setArticles((prev) => {
-  //       const exists = prev.some((p) => p._id === newArticle._id);
-  //       return exists ? prev : [newArticle, ...prev];
-  //     });
-  //   }
-  // }, [newArticle]);
+  useEffect(() => {
+    if (newArticle && newArticle?._id) {
+      setArticles((prev) => {
+        const exists = prev.some((p) => p._id === newArticle._id);
+        return exists ? prev : [newArticle, ...prev];
+      });
+    }
+  }, [newArticle]);
 
-  // console.log(articles);
+  console.log(newArticle);
 
   const handleArticleUpdate = (updatedArt) => {
     setArticles((prev) =>

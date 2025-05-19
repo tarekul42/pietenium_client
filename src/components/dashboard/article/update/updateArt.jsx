@@ -100,7 +100,7 @@ const UpdateArticle = ({ setOpen, onUpdate, artData }) => {
         }, 2000);
       }
     } catch (err) {
-      console.error("Upload failed", err);
+      console.error("Update failed", err);
     } finally {
       setLoading(false);
     }

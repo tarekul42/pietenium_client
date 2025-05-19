@@ -217,3 +217,9 @@
     align-items: center;
     gap: 1rem;
 }
+
+.deleteBtn{
+    &:disabled{
+        background: none;
+    }
+}
