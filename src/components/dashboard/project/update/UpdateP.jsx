@@ -145,116 +145,118 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
 
   // console.log(data);
   return (
-    <div className={styles.createProj} onClick={() => setOpen(false)}>
-      <div className={styles.closeBtn}>
-        <button onClick={() => setOpen(false)}>❌Close</button>
-      </div>
+    <>
+      <div className={styles.createProj} onClick={() => setOpen(false)}>
+        <div className={styles.closeBtn}>
+          <button onClick={() => setOpen(false)}>❌Close</button>
+        </div>
 
-      <div className={styles.createForm} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.scrollWrap}>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleUpdateP(data?._id);
-            }}
-          >
-            <label id={styles.pTitle}>
-              <textarea
-                placeholder="Project Title"
-                name="title"
-                value={title}
-                onChange={colletProjData}
-              ></textarea>
-            </label>
-            <label id={styles.pLink}>
-              <input
-                type="text"
-                placeholder="Project Link"
-                name="pLink"
-                value={pLink}
-                onChange={colletProjData}
-              />
-            </label>
-            <label
-              className={styles.thumbnailLabel}
-              style={{ backgroundImage: thumbImg && `url(${thumbImg})` }}
+        <div className={styles.createForm} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.scrollWrap}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleUpdateP(data?._id);
+              }}
             >
-              <span>
-                <FontAwesomeIcon icon={faPlus} /> Thumbnail
-              </span>
-              <input
-                type="file"
-                name="thumbnail"
-                accept="image/*"
-                className={styles.thumbnailInput}
-                onChange={handleThumbInp}
-              />
-            </label>
-
-            <div className={styles.pGallary}>
-              <label>
-                <span>Project Gallery:</span>
+              <label id={styles.pTitle}>
+                <textarea
+                  placeholder="Project Title"
+                  name="title"
+                  value={title}
+                  onChange={colletProjData}
+                ></textarea>
+              </label>
+              <label id={styles.pLink}>
                 <input
-                  type="file"
-                  name="gallary"
-                  accept="image/*"
-                  onChange={(e) => addGalleryImages(e.target.files)}
-                  multiple
+                  type="text"
+                  placeholder="Project Link"
+                  name="pLink"
+                  value={pLink}
+                  onChange={colletProjData}
                 />
               </label>
-              {gallery?.length > 0 && (
-                <div className={styles.imagePreview}>
-                  {gallery.map((img, idx) => (
-                    <div key={img.id}>
-                      <button
-                        type="button"
-                        className={styles.cutImg}
-                        onClick={() => removeGalleryImage(img.id)}
-                      >
-                        ❌
-                      </button>
-                      <img src={img.url} alt={`uploaded-${idx}`} />
-                    </div>
-                  ))}
-                </div>
-              )}
-              {prevGallery?.length > 0 && (
-                <div className={styles.imagePreview}>
-                  {prevGallery?.map((img, idx) => (
-                    <div key={img?.photoId}>
-                      <button
-                        type="button"
-                        className={styles.cutImg}
-                        onClick={() =>
-                          prevGallaryImgCut(data?._id, img?.photoId)
-                        }
-                      >
-                        {imgCutLoad === img?.photoId ? <SmallLoad /> : "❌"}
-                      </button>
-                      <img src={img?.img} alt={`prevImg-${idx}`} />
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+              <label
+                className={styles.thumbnailLabel}
+                style={{ backgroundImage: thumbImg && `url(${thumbImg})` }}
+              >
+                <span>
+                  <FontAwesomeIcon icon={faPlus} /> Thumbnail
+                </span>
+                <input
+                  type="file"
+                  name="thumbnail"
+                  accept="image/*"
+                  className={styles.thumbnailInput}
+                  onChange={handleThumbInp}
+                />
+              </label>
 
-            <label id={styles.pDesc}>
-              <textarea
-                name="details"
-                placeholder="Project Details"
-                value={details}
-                onChange={colletProjData}
-              ></textarea>
-            </label>
+              <div className={styles.pGallary}>
+                <label>
+                  <span>Project Gallery:</span>
+                  <input
+                    type="file"
+                    name="gallary"
+                    accept="image/*"
+                    onChange={(e) => addGalleryImages(e.target.files)}
+                    multiple
+                  />
+                </label>
+                {gallery?.length > 0 && (
+                  <div className={styles.imagePreview}>
+                    {gallery.map((img, idx) => (
+                      <div key={img.id}>
+                        <button
+                          type="button"
+                          className={styles.cutImg}
+                          onClick={() => removeGalleryImage(img.id)}
+                        >
+                          ❌
+                        </button>
+                        <img src={img.url} alt={`uploaded-${idx}`} />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {prevGallery?.length > 0 && (
+                  <div className={styles.imagePreview}>
+                    {prevGallery?.map((img, idx) => (
+                      <div key={img?.photoId}>
+                        <button
+                          type="button"
+                          className={styles.cutImg}
+                          onClick={() =>
+                            prevGallaryImgCut(data?._id, img?.photoId)
+                          }
+                        >
+                          {imgCutLoad === img?.photoId ? <SmallLoad /> : "❌"}
+                        </button>
+                        <img src={img?.img} alt={`prevImg-${idx}`} />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-            <button type="submit" disabled={loading}>
-              {loading ? <SmallLoad /> : "Update Project"}
-            </button>
-          </form>
+              <label id={styles.pDesc}>
+                <textarea
+                  name="details"
+                  placeholder="Project Details"
+                  value={details}
+                  onChange={colletProjData}
+                ></textarea>
+              </label>
+
+              <button type="submit" disabled={loading}>
+                {loading ? <SmallLoad /> : "Update Project"}
+              </button>
+            </form>
+          </div>
         </div>
+        <ToastP popInfo={popInfo} />
       </div>
-      <ToastP popInfo={popInfo} />
-    </div>
+    </>
   );
 };
 
