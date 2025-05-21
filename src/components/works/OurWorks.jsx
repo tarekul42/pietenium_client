@@ -4,6 +4,8 @@ import styles from "./ourWorks.module.css";
 import WorksTemp from "./worksTemp";
 import { api } from "@/data/api";
 import Image from "next/image";
+import Link from "next/link";
+import { slugify } from "@/utility/slugify";
 
 const OurWorks = () => {
   const [projects, setProjects] = useState([]);
@@ -27,7 +29,9 @@ const OurWorks = () => {
   useEffect(() => {
     fetchProjData();
   }, []);
-  
+
+  const [btnOpen, setBtnOpen] = useState("");
+
   return (
     <aside className={styles.ourWorks}>
       <section className={styles.owHead}>
@@ -51,19 +55,40 @@ const OurWorks = () => {
 
         {/* Foreground Content */}
         <div className={styles.heroContent}>
-          <h1>Our Great works</h1>
+          <h1>
+            Our Great <span>works</span>
+          </h1>
+          <p>
+            Each project reflects our commitment to quality, <br /> innovation,
+            and client satisfaction.
+          </p>
         </div>
       </section>
 
       <section className={styles.workShow}>
         {projects?.map((data) => {
-          const { _id,title, thumbnail } = data;
-          console.log(data);
+          const { _id, title, thumbnail } = data;
+          // console.log(data);
+          const handleBtnOpen = (id) => {
+            if (id === _id) {
+              setBtnOpen(id);
+            }
+          };
+          const titleLink = slugify(title);
           return (
-            <div className={styles.projTemp} key={_id}>
-              <Image src={thumbnail?.photo} width={300} height={200} alt={`${title} image`} />
-              <h4>{title?.slice(0,40)}...</h4>
-              
+            <div
+              className={styles.projTemp}
+              key={_id}
+              onMouseOver={() => handleBtnOpen(_id)}
+              onMouseLeave={() => handleBtnOpen("")}
+            >
+              <img src={thumbnail?.photo} alt={`${title} image`} />
+              <h4>{title}...</h4>
+              {btnOpen === _id && (
+                <Link href={`/work/${titleLink}/${_id}`}>
+                  <button>See Full Project</button>
+                </Link>
+              )}
             </div>
           );
         })}
