@@ -79,32 +79,38 @@ const Project = () => {
           {loading ? (
             <SmallLoad />
           ) : (
-            <table>
-              <thead>
-                <tr>
-                  <th>id</th>
-                  <th>Thumbnail</th>
-                  <th>Title</th>
-                  <th>
-                    <FontAwesomeIcon icon={faPencilAlt} /> Edit
-                  </th>
-                  <th>
-                    <FontAwesomeIcon icon={faTrashAlt} /> Delete
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {projects?.map((pd, idx) => (
-                  <ShowP
-                    data={pd}
-                    handleProjectUpdate={handleProjectUpdate}
-                    handleProjectCut={handleProjectCut}
-                    idx={idx}
-                    key={pd?._id}
-                  />
-                ))}
-              </tbody>
-            </table>
+            <>
+              {projects?.length > 0 ? (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>Thumbnail</th>
+                      <th>Title</th>
+                      <th>
+                        <FontAwesomeIcon icon={faPencilAlt} /> Edit
+                      </th>
+                      <th>
+                        <FontAwesomeIcon icon={faTrashAlt} /> Delete
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {projects?.map((pd, idx) => (
+                      <ShowP
+                        data={pd}
+                        handleProjectUpdate={handleProjectUpdate}
+                        handleProjectCut={handleProjectCut}
+                        idx={idx}
+                        key={pd?._id}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p style={{color:'#ff0263',fontWeight:'bold'}}>No longer project Data</p>
+              )}
+            </>
           )}
         </div>
       </section>
