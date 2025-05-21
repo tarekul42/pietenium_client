@@ -1,11 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./ourWorks.module.css";
-import WorksTemp from "./worksTemp";
 import { api } from "@/data/api";
-import Image from "next/image";
 import Link from "next/link";
 import { slugify } from "@/utility/slugify";
+import SmallLoad from "../smallLaoding/smallLoad";
 
 const OurWorks = () => {
   const [projects, setProjects] = useState([]);
@@ -65,34 +64,38 @@ const OurWorks = () => {
         </div>
       </section>
 
-      <section className={styles.workShow}>
-        {projects?.map((data) => {
-          const { _id, title, thumbnail } = data;
-          // console.log(data);
-          const handleBtnOpen = (id) => {
-            if (id === _id) {
-              setBtnOpen(id);
-            }
-          };
-          const titleLink = slugify(title);
-          return (
-            <div
-              className={styles.projTemp}
-              key={_id}
-              onMouseOver={() => handleBtnOpen(_id)}
-              onMouseLeave={() => handleBtnOpen("")}
-            >
-              <img src={thumbnail?.photo} alt={`${title} image`} />
-              <h4>{title}...</h4>
-              {btnOpen === _id && (
-                <Link href={`/work/${titleLink}/${_id}`}>
-                  <button>See Full Project</button>
-                </Link>
-              )}
-            </div>
-          );
-        })}
-      </section>
+      {loading ? (
+        <SmallLoad />
+      ) : (
+        <section className={styles.workShow}>
+          {projects?.map((data) => {
+            const { _id, title, thumbnail } = data;
+            // console.log(data);
+            const handleBtnOpen = (id) => {
+              if (id === _id) {
+                setBtnOpen(id);
+              }
+            };
+            const titleLink = slugify(title);
+            return (
+              <div
+                className={styles.projTemp}
+                key={_id}
+                onMouseOver={() => handleBtnOpen(_id)}
+                onMouseLeave={() => handleBtnOpen("")}
+              >
+                <img src={thumbnail?.photo} alt={`${title} image`} />
+                <h4>{title}...</h4>
+                {btnOpen === _id && (
+                  <Link href={`/work/${titleLink}/${_id}`}>
+                    <button>See Full Project</button>
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </section>
+      )}
     </aside>
   );
 };
