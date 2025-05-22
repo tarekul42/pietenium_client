@@ -1,0 +1,92 @@
+.commentArt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+.commentArt hr{
+    width: 50%;
+}
+
+.commentArt form {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nameEamil {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.commentArt form .nameEamil label,
+#cLabel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: #05ec10; */
+}
+
+.commentArt form label span {
+    padding: 0 .5rem;
+}
+
+.commentArt form label span sup {
+    font-size: 1.1rem;
+    color: #ffe600;
+}
+
+.commentArt form input {
+    width: 100%;
+    height: 3.5rem;
+    border: 1px solid #05ec10;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: .4rem;
+}
+
+.commentArt form textarea {
+    width: 100%;
+    height: 7rem;
+    border: 1px solid #05ec10;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: .4rem;
+    resize: vertical;
+}
+
+.commentArt form button {
+    &:disabled {
+        background: none;
+    }
+}
+
+
+@media (width<=780px) {
+    .commentArt form {
+        width: 80vw;
+    }
+
+    .nameEamil {
+        flex-direction: column;
+    }
+
+    /* .commentArt form input {
+        width: 20rem;
+    }
+
+    .commentArt form textarea {
+        width: 20rem;
+    } */
+}
