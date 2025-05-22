@@ -6,7 +6,7 @@ import { api } from "@/data/api";
 import { useDashAuth } from "../DashCotext/DashContext";
 import ToastP from "@/components/popupToast/ToastP";
 
-const DashboardAuth = ({ cookieStore }) => {
+const DashboardAuth = () => {
   const { setAccessToken } = useDashAuth();
 
   const [authData, setAuthData] = useState({

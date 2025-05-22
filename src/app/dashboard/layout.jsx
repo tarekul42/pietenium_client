@@ -33,7 +33,7 @@ export default async function DashBoardLayout({ children }) {
             <main style={{ marginTop: "7rem" }}>{children}</main>
           </>
         ) : (
-          <DashboardAuth cookieStore={cookieStore} />
+          <DashboardAuth  />
         )}
       </DashProvider>
     );
