@@ -17,14 +17,11 @@ export default async function DashBoardLayout({ children }) {
     
     const response = await fetch(`${api}/admin/authPermission`, {
       method: "GET",
-      headers: {
-        cookie: `token=${token}`, // manually forward token
-      },
       credentials:'include',
       cache: "no-store", // avoid caching for SSR
     });
     const getData = await response.json();
-    console.log(getData);
+    console.log(token);
     return (
       <DashProvider authPermission={getData?.auth}>
         {getData?.auth === true ? (
