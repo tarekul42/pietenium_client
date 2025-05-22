@@ -41,7 +41,8 @@ const DashboardAuth = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        credentials:'include',
+        cache:'no-store',
         body: JSON.stringify({ email, password }),
       });
 
