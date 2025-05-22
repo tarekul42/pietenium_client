@@ -179,7 +179,7 @@ const Contact = () => {
 
             {/* reCAPTCHA */}
             <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_GOOGLE_APP_KEY}
+              sitekey={'6Ldz_TgrAAAAAOBN_x1bKqsJOUJ-TUOJNwhyRA66'}
               onChange={(token) => setCaptchaValue(token)}
             />
 
