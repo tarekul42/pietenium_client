@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "../article.module.css";
 import Link from "next/link";
+import CommentArt from "../ArticleComment/CommentArt";
 
 const ArticleDetails = ({ data }) => {
   const { _id, title, thumbnail, content, hashtags, articleType } = data
@@ -31,7 +32,7 @@ const ArticleDetails = ({ data }) => {
       <hr id={styles.hr}/>
 
       <div className={styles.artDetailDown}>
-        <h1>Comments</h1>
+        <CommentArt articleId={_id}/>
       </div>
     </section>
   );
