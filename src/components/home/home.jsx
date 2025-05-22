@@ -7,6 +7,7 @@ import HomeAbout from "./homeAbout/homeBAbout";
 import TestimonialSlider from "../testimonial/testimonial";
 import Link from "next/link";
 import { useEffect } from "react";
+import { api } from "@/data/api";
 
 const Home = () => {
   const fetchToken = async () => {
