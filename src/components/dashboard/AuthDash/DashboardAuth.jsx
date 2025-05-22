@@ -47,12 +47,6 @@ const DashboardAuth = ({ cookieStore }) => {
       });
 
       const data = await response.json();
-      cookieStore.set("token", data?.token, {
-        httpOnly: true,
-        sameSite: "none",
-        secure: true,
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      });
       setPopInfo({
         trigger: Date.now(),
         type: data?.success,
