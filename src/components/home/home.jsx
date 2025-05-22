@@ -6,8 +6,26 @@ import TrustedComp from "./company/TrustedComp";
 import HomeAbout from "./homeAbout/homeBAbout";
 import TestimonialSlider from "../testimonial/testimonial";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Home = () => {
+  const fetchToken = async () => {
+    try {
+      const response = await fetch(`${api}`, {
+        method: "GET",
+        credentials: "include",
+      });
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchToken();
+  }, []);
   return (
     <aside className={styles.home}>
       <Hero />
