@@ -1,3 +1,5 @@
+import DashboardAuthWrapper from "./DashBoardAuthWrapper";
+
 export const metadata = {
   title: "PieTech — Dashboard",
   description:

@@ -56,7 +56,7 @@ const DashboardAuth = () => {
       if (data?.success) {
         setTimeout(() => {
           setAccessToken(data?.token);
-          // window.location.reload();
+          window.location.reload();
         }, 2000);
       }
       // console.log(data);
