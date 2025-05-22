@@ -23,7 +23,7 @@ export default async function DashBoardLayout({ children }) {
       cache: "no-store", // avoid caching for SSR
     });
     const getData = await response.json();
-    // console.log(getData);
+    console.log(getData);
     return (
       <DashProvider authPermission={getData?.auth}>
         {getData?.auth === true ? (

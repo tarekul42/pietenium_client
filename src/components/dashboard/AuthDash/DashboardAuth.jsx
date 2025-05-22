@@ -7,7 +7,7 @@ import { useDashAuth } from "../DashCotext/DashContext";
 import ToastP from "@/components/popupToast/ToastP";
 
 const DashboardAuth = () => {
-  const { setAccessToken } = useDashAuth();
+  const { accessToken,setAccessToken } = useDashAuth();
 
   const [authData, setAuthData] = useState({
     email: "",
@@ -66,6 +66,8 @@ const DashboardAuth = () => {
       setLoading(false);
     }
   };
+
+  console.log(accessToken);
   return (
     <aside className={styles.dashAuth}>
       <form onSubmit={handleAuth}>
