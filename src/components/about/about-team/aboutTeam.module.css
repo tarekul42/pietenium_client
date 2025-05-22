@@ -1,0 +1,134 @@
+.aboutTeam {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.teamHero {
+    width: 100%;
+    background-image: url('../../../gallary/siteImgs/team.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-origin: border-box;
+}
+
+.teamheroCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0;
+    background-color: #121212a6;
+}
+
+.teamheroCont h1 {
+    font-size: 2.5rem;
+    color: rgb(184, 255, 216);
+}
+
+.teamheroCont h3 {
+    font-size: 1.3rem;
+    color: #00ffb3;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+.members {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.memberData {
+    width: 350px;
+    text-align: center;
+    box-shadow: 1px 1px 2px 1px #d8d8d8af;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-1rem);
+    }
+}
+
+.memberData img {
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #b2ffff48;
+}
+
+.memberData h4 {
+    font-size: .8rem;
+}
+
+
+.ctaBox {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: #3b6686;
+    color: #04cef1;
+    border-radius: 12px;
+}
+
+.ctaBox h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.ctaBox p {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.ctaBtn {
+    padding: 0.8rem 2rem;
+    background: #02cc24;
+    color: #030c13;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.ctaBtn:hover {
+    opacity: 0.85;
+}
+
+
+@media (width<=780px) {
+    .teamheroCont h1 {
+        font-size: 1.4rem;
+    }
+
+    .teamheroCont h3 {
+        font-size: .8rem;
+
+    }
+
+    .ctaBox h2 {
+        font-size: 1.5rem;
+    }
+
+    .ctaBox p {
+        font-size: .8rem;
+    }
+}
+
+@media (width>=1500px) {
+    .memberData {
+        width: 400px;
+    }
+}
