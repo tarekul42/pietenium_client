@@ -68,10 +68,10 @@ export default function CookiePopup() {
           By clicking "Accept", you consent to our cookie policy. To learn more, see our full policy.
         </p>
         <div className={styles.buttonGroup}>
-          <button className={styles.acceptBtn} onClick={handleAccept} disabled={loading}>
+          <button className={styles.acceptBtn} onClick={handleAccept} disabled={accLoading}>
             {accLoading ? <SmallLoad/> : 'Accept'}
           </button>
-          <button className={styles.declineBtn} onClick={handleDecline} disabled={loading}>
+          <button className={styles.declineBtn} onClick={handleDecline} disabled={disLoading}>
             {disLoading ? <SmallLoad/> : 'Decline'}
           </button>
         </div>
