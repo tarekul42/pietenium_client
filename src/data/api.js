@@ -1,1 +1,1 @@
-export const api = "http://localhost:1618/api/v1";
+export const api = "https://api-pietech.onrender.com/api/v1";
