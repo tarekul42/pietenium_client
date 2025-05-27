@@ -20,9 +20,12 @@ export default function CookiePopup() {
   const handleAccept = async () => {
     setLoading(true);
     try {
-      await fetch(`${api}/userRecord`, {
+     const response= await fetch(`${api}/userRecord`, {
+
         method: "POST",
       });
+      const data = await response.json();
+      console.log(data);
       Cookies.set("cookie_accepted", "true", { expires: 30 });
       setShowPopup(false);
     } catch (error) {
@@ -35,9 +38,12 @@ export default function CookiePopup() {
   const handleDecline = async () => {
     setLoading(true);
     try {
-      await fetch(`${api}/userRecord`, {
+     const response= await fetch(`${api}/userRecord`, {
+
         method: "POST",
       });
+      const data = await response.json();
+      console.log(data);
       Cookies.set("cookie_accepted", "true", { expires: 30 });
       setShowPopup(false);
     } catch (error) {
