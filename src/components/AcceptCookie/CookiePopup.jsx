@@ -1,60 +1,50 @@
 // components/CookiePopup.jsx
-'use client';
-import { useEffect, useState } from 'react';
-import Cookies from 'js-cookie';
-import styles from './cookiePopup.module.css';
-import { api } from '@/data/api';
-import SmallLoad from '../smallLaoding/smallLoad';
+"use client";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import styles from "./cookiePopup.module.css";
+import { api } from "@/data/api";
+import SmallLoad from "../smallLaoding/smallLoad";
 
 export default function CookiePopup() {
   const [showPopup, setShowPopup] = useState(false);
-  const [accLoading, setAccLoading] = useState(false);
-  const [disLoading, setDisLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const consent = Cookies.get('cookie_accepted');
+    const consent = Cookies.get("cookie_accepted");
     if (!consent) {
       setShowPopup(true);
     }
   }, []);
 
-  const sendConsentData = async (data) => {
+  const handleAccept = async () => {
+    setLoading(true);
     try {
       await fetch(`${api}/userRecord`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        method: "POST",
       });
-    } catch (err) {
-      console.error('Consent data sending failed:', err);
+      Cookies.set("cookie_accepted", "true", { expires: 30 });
+      setShowPopup(false);
+    } catch (error) {
+      return;
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleAccept = async () => {
-    setAccLoading(true);
-    navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const { latitude, longitude } = position.coords;
-        await sendConsentData({ lat: latitude, lng: longitude });
-        Cookies.set('cookie_accepted', 'true', { expires: 30 });
-        setShowPopup(false);
-        setAccLoading(false);
-      },
-      async () => {
-        await sendConsentData({});
-        Cookies.set('cookie_accepted', 'true', { expires: 30 });
-        setShowPopup(false);
-        setAccLoading(false);
-      }
-    );
-  };
-
   const handleDecline = async () => {
-    setDisLoading(true);
-    await sendConsentData({});
-    Cookies.set('cookie_accepted', 'true', { expires: 30 });
-    setShowPopup(false);
-    setDisLoading(false);
+    setLoading(true);
+    try {
+      await fetch(`${api}/userRecord`, {
+        method: "POST",
+      });
+      Cookies.set("cookie_accepted", "true", { expires: 30 });
+      setShowPopup(false);
+    } catch (error) {
+      return;
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!showPopup) return null;
@@ -64,18 +54,33 @@ export default function CookiePopup() {
       <div className={styles.popupBox}>
         <h4>🍪 PieTech Cookie Consent</h4>
         <p>
-          We use cookies to improve your experience and analyze traffic on PieTech.
-          By clicking "Accept", you consent to our cookie policy. To learn more, see our full policy.
+          We use cookies to improve your experience and analyze traffic on
+          PieTech. By clicking "Accept", you consent to our cookie policy. To
+          learn more, see our full policy.
         </p>
         <div className={styles.buttonGroup}>
-          <button className={styles.acceptBtn} onClick={handleAccept} disabled={accLoading}>
-            {accLoading ? <SmallLoad/> : 'Accept'}
-          </button>
-          <button className={styles.declineBtn} onClick={handleDecline} disabled={disLoading}>
-            {disLoading ? <SmallLoad/> : 'Decline'}
-          </button>
+          {loading ? (
+            <SmallLoad />
+          ) : (
+            <>
+              <button
+                className={styles.acceptBtn}
+                onClick={handleAccept}
+                disabled={loading}
+              >
+                Accept
+              </button>
+              <button
+                className={styles.declineBtn}
+                onClick={handleDecline}
+                disabled={loading}
+              >
+                Decline
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
   );
-}  
+}
