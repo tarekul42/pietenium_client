@@ -59,14 +59,14 @@ const Footer = () => {
         </p>
         <p>
           <strong>Email : </strong>
-          <Link href={"mailto:pietech1618@protonmail.com"}>
-            pietech1618@protonmail.com
+          <Link href={"mailto:pietech00@gmail.com"}>
+            pietech00@gmail.com
           </Link>
         </p>
       </div>
       <hr />
       <div className={styles.footerDown}>
-        <Link href={""}>
+        <Link href={"https://www.facebook.com/PieTech.0/"} target='_blank'>
           <button>
             <FontAwesomeIcon icon={faFacebook} />
           </button>
@@ -76,7 +76,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faLinkedinIn} />
           </button>
         </Link>
-        <Link href={""}>
+        <Link href={"https://www.instagram.com/pietech0/"} target='_blank'>
           <button>
             <FontAwesomeIcon icon={faInstagramSquare} />
           </button>
