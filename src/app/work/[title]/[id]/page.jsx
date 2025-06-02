@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
       title: work.title,
       description: work.details.slice(0, 150),
       images: [work.thumbnail?.photo],
-      type: "work",
+      type: "article",
     },
     twitter: {
       card: "summary_large_image",
