@@ -86,7 +86,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faXTwitter} />
           </button>
         </Link>
-        <Link href={"#"}>
+        <Link href={"/"}>
           <button>
             <FontAwesomeIcon icon={faEarthAmericas} />
           </button>
