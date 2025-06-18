@@ -50,14 +50,25 @@
     font-size: 1.1rem;
 }
 
-.testiCont span{
+.testiCont span {
     cursor: pointer;
     font-size: .7rem;
 }
 
 
 @media (width<=800px) {
- .card{
-    height: auto;
- }
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        color: #2a92e7;
+        font-weight: bold;
+    }
+
+    .card {
+        height: auto;
+    }
+    .review {
+    width: 98%;
+    font-size: .9rem;
+}
 }
