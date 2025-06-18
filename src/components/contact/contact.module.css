@@ -179,12 +179,12 @@
 
     .contactForm form input {
         margin: 0;
-        width: 25rem;
+        width: 23rem;
     }
 
     .contactForm form #message {
         margin: 0;
-        width: 25rem;
+        width: 23rem;
     }
 }
 
