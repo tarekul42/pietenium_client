@@ -185,7 +185,7 @@ const Services = () => {
           <hr />
           <div className={styles.srvItems}>
             {servicesData?.map((item, idx) => (
-              <article
+              <div
                 key={`${idx}-${item?.title}`}
                 className={styles.cardItem}
               >
@@ -195,9 +195,9 @@ const Services = () => {
                     style={{ color: item.color }}
                   />
                 </span>
-                <h4>{item?.title}</h4>
-                <p>{item?.description}</p>
-              </article>
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
+              </div>
             ))}
           </div>
         </div>

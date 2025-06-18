@@ -57,6 +57,8 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding: 4rem 2rem;
+
 }
 
 .srvCont h2 {
@@ -73,7 +75,7 @@
 }
 
 .cardItem {
-    /* width: calc(100%/3); */
+    border-top: 2px solid #05ee8d;
     padding: .2rem;
     border-radius: 1rem;
     box-shadow: 0 10px 15px rgba(0, 128, 128, 0.2),
@@ -105,12 +107,18 @@
 }
 
 .cardItem h4 {
-    color: #f0f8ff;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    /* color: #222; */
 }
 
 .cardItem p {
+    font-size: 0.95rem;
+    color: #8a8989;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
+
 
 /* Workflow design start---> */
 .workflowSec {
@@ -250,12 +258,24 @@
 }
 
 
-@media (width<=780px) {
+@media (max-width:780px) {
     .srvHeadCont h1 {
-    font-size: 1.7rem;
-}
+        font-size: 1.7rem;
+    }
 
-.srvHeadCont p {
-    font-size: 1rem;
-}
+    .srvCont {
+        padding: 4rem;
+
+    }
+
+    .srvItems {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    }
+
+
+
+    .srvHeadCont p {
+        font-size: 1rem;
+    }
 }
