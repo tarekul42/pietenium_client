@@ -24,10 +24,10 @@ export default function Hero() {
             Empower Your <span id={styles.brand}>Brand</span> with Digital <br /> Solutions That <span id={styles.growth}>Drive Growth</span>, <br />Authority, and <span id={styles.success}>Success</span>
           </h1>
           <h2>
-           <span id={styles.wb}> We Build -</span>
+           <span id={styles.wb}> We Build — </span>
             <ReactTyped
               strings={[
-                "Modern Websites.",
+                "Modern Web App.",
                 "SEO Optimized Websites",
                 "High-Speed APIs.",
                 "Secure Admin Panels.",
