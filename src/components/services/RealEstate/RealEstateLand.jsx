@@ -11,7 +11,7 @@ import FaqSection from "./FAQ/FAQ_RL";
 
 const RealEstateLandingPage = () => {
   return (
-    <div className={styles.landingPage}>
+    <aside className={styles.landingPage}>
       <RlHero />
 
       <ProblemRl />
@@ -20,13 +20,26 @@ const RealEstateLandingPage = () => {
 
       <FeatureRl />
 
-      <Portfolio/>
-      <AuditForm/>
-      <FaqSection/>
+      <Portfolio />
+      <AuditForm />
+      <FaqSection />
 
       {/* CONTACT PLACEHOLDER */}
-      <div id="contact" className={styles.contactPlaceholder} />
-    </div>
+      <section className={styles.cta}>
+        <div className={styles.overlay}>
+          <h2 className={styles.headline}>
+            Let's Turn Your Website into a Sales Machine
+          </h2>
+          <p className={styles.subText}>
+            Our real estate websites are built to convert — fast loading,
+            mobile-first, SEO-powered.
+          </p>
+          <a href="#contact" className={styles.ctaBtn}>
+            Book Your Free Website Audit
+          </a>
+        </div>
+      </section>
+    </aside>
   );
 };
 
