@@ -5,6 +5,7 @@ import RlHero from "./hero/RlHero";
 import ProblemRl from "./Problem/rlprblm";
 import SolutionRl from "./Solution/SolutionRl";
 import FeatureRl from "./Feature/FeatureRl";
+import Portfolio from "./Portfolio/PortfolioRl";
 
 const RealEstateLandingPage = () => {
   return (
@@ -16,6 +17,8 @@ const RealEstateLandingPage = () => {
       <SolutionRl />
 
       <FeatureRl />
+
+      <Portfolio/>
 
       {/* CONTACT PLACEHOLDER */}
       <div id="contact" className={styles.contactPlaceholder} />

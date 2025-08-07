@@ -1,0 +1,34 @@
+.portfolio {
+  padding: 4rem 2rem;
+  background-color: var(--background);
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--foreground);
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  background: var(--foreground);
+  color: var(--background);
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  /* max-width: 800px; */
+  width: 80%;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fullWidth {
+  max-width: none;
+  width: 80%;
+}
