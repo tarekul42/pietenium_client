@@ -33,13 +33,15 @@
     width: 100%;
     margin: 0.6rem 0;
     padding: 0.8rem;
-    border: 2px solid var(--background);
+    border: 2px solid #02f016;
     background: transparent;
-    color: var(--background);
+    color: #bafdff;
     border-radius: 5px;
     font-size: 1rem;
 }
-
+.form textarea {
+    resize: vertical;
+}
 .form button {
     margin-top: 1rem;
     padding: 0.8rem 1.5rem;

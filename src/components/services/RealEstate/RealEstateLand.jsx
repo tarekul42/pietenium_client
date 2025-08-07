@@ -13,16 +13,21 @@ const RealEstateLandingPage = () => {
   return (
     <aside className={styles.landingPage}>
       <RlHero />
-
       <ProblemRl />
+      <hr className={styles.hr} />
 
       <SolutionRl />
+      <hr className={styles.hr} />
 
       <FeatureRl />
+      <hr className={styles.hr} />
 
       <Portfolio />
-      <AuditForm/>
+      <hr className={styles.hr} />
+      <AuditForm />
+      <hr className={styles.hr} />
       <FaqSection />
+      <hr className={styles.hr} />
 
       {/* CONTACT PLACEHOLDER */}
       <section className={styles.cta}>
