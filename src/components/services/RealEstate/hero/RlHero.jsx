@@ -20,7 +20,7 @@ const RlHero = () => {
   }, [heroImages.length]);
   
   const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("audit")?.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <section className={styles.hero}>

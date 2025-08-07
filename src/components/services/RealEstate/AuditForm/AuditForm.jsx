@@ -25,7 +25,7 @@ export default function AuditForm() {
   }, []);
 
   return (
-    <section className={styles.audit}>
+    <section className={styles.audit} id="audit">
       <h2>Get a Free Real Estate Website Audit – No Strings Attached!</h2>
       <p>
         Send us your site → We’ll check load speed, SEO, mobile, CTA design →

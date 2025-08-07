@@ -14,7 +14,7 @@ export default function Portfolio() {
 
   return (
     <section className={styles.portfolio}>
-      <h2 className={styles.heading}>Real Estate Portfolio Success Stories</h2>
+      <h2 className={styles.heading}>Stories From Clients We've Helped</h2>
 
       <div className={`${styles.card} ${styles.fullWidth}`}>
         <h3>📍 New York, USA – Empire Realty Boost</h3>

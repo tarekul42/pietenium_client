@@ -49,7 +49,7 @@
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--foreground), var(--background));
+    background: linear-gradient(135deg, rgb(2, 207, 19), rgb(2, 202, 209));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

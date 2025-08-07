@@ -57,7 +57,7 @@ export default function FaqSection() {
 
   return (
     <section className={styles.faqSection}>
-      <h2 className={styles.title}>Frequently Asked Questions</h2>
+      <h2 className={styles.title}>Answers to Your Most Asked Questions</h2>
       <div className={styles.faqList}>
         {faqs.map((item, index) => (
           <div
