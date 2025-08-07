@@ -1,4 +1,3 @@
-// app/services/real-estate/page.tsx
 import RealEstateLandingPage from "@/components/services/RealEstate/RealEstateLand";
 
 export const metadata = {
