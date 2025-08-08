@@ -80,7 +80,7 @@ const ProblemHotel = () => {
   return (
     <section className={styles.problemSection}>
       <h2 className={styles.sectionTitle}>
-        Is Your Website Costing You Deals?
+        Which Factors Are Intercepting On Booking
       </h2>
       <div className={styles.problemsGrid}>
         {hotelProblems.map((problem, index) => (
