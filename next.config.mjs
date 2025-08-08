@@ -6,7 +6,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "ik.imagekit.io",
       },
-       {
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+      },
+      {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
