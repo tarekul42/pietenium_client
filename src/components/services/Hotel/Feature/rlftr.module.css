@@ -73,15 +73,9 @@
 
 @media (max-width: 768px) {
 
-    .problemsGrid,
-    .solutionsGrid,
     .featuresGrid {
         grid-template-columns: 1fr;
         gap: 20px;
-    }
-
-    .heroContent {
-        padding: 0 15px;
     }
 
     .sectionTitle {
@@ -91,6 +85,9 @@
 
     .featuresSection {
         padding: 60px 15px;
+    }
+    .sectionTitle {
+        font-size: 1.3rem;
     }
 }
 

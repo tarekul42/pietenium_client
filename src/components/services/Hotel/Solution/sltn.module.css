@@ -78,10 +78,6 @@
     gap: 20px;
   }
 
-  .heroContent {
-    padding: 0 15px;
-  }
-
   .sectionTitle {
     font-size: 2rem;
     margin-bottom: 40px;
@@ -90,6 +86,12 @@
   .solutionSection {
     padding: 60px 15px;
   }
+
+  @media (width<=780px) {
+    .sectionTitle {
+        font-size: 1.3rem;
+    }
+}
 }
 
 /* SCROLL ANIMATIONS */

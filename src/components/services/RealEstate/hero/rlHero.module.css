@@ -150,18 +150,3 @@
         padding: 60px 15px;
     }
 }
-
-/* SCROLL ANIMATIONS */
-@media (prefers-reduced-motion: no-preference) {
-    .problemCard {
-        animation-play-state: running;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .problemCard {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
-}
