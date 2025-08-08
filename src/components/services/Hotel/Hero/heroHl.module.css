@@ -1,66 +1,111 @@
-
 .hero {
+    position: relative;
     height: 100vh;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    overflow: hidden;
 }
 
-.overlay {
-    background: rgba(3, 12, 19, 0.5);
+.heroSlider {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: transform 0.8s ease-in-out;
 }
 
-.content {
-    color: white;
-    text-align: center;
-    max-width: 700px;
-    animation: fadeInUp 1s ease forwards;
+.heroSlide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
 }
 
-.heading {
-    font-size: 2.5rem;
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a2404cc, #83cf084d);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+    animation: heroFadeIn 1.5s ease-out;
+}
+
+.heroTitle {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
     margin-bottom: 1rem;
+    background: linear-gradient(135deg, rgb(2, 207, 19), rgb(2, 202, 209));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleSlideUp 1s ease-out 0.3s both;
 }
 
-.subheading {
-    font-size: 1.2rem;
+.heroSubtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: subtitleSlideUp 1s ease-out 0.6s both;
 }
 
-.contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contactForm input,
-.contactForm button {
-    padding: 10px;
-    border: none;
-    font-size: 1rem;
-}
-
-.contactForm button {
-    background: var(--background);
+.ctaButton {
+    background: linear-gradient(135deg, var(--background), #037a27);
     color: var(--foreground);
-    font-weight: bold;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    animation: buttonSlideUp 1s ease-out 0.9s both;
+    box-shadow: 0 10px 30px rgba(4, 206, 241, 0.3);
 }
 
-.contactForm button:hover {
-    transform: scale(1.05);
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(4, 206, 241, 0.5);
 }
 
-@keyframes fadeInUp {
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes titleSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleSlideUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -69,5 +114,53 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes buttonSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .problemsGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .heroContent {
+        padding: 0 15px;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .problemSection {
+        padding: 60px 15px;
+    }
+}
+
+/* SCROLL ANIMATIONS */
+@media (prefers-reduced-motion: no-preference) {
+    .problemCard {
+        animation-play-state: running;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .problemCard {
+        animation: none;
+        opacity: 1;
+        transform: none;
     }
 }

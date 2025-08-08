@@ -1,45 +1,56 @@
-import { useEffect, useState } from "react";
 import styles from "./heroHl.module.css";
+import { useState, useEffect } from "react";
 
 const HotelHero = () => {
-    const images = [
-    "/images/hotel1.jpg",
-    "/images/hotel2.jpg",
-    "/images/hotel3.jpg"
-  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const heroImages = [
+    "https://i.ibb.co.com/VLK4bsJ/gallery-19.jpg",
+    "https://i.ibb.co.com/Lvbs467/gallery-11.jpg",
+    "https://i.ibb.co.com/17W6k14/gallery-5.jpg",
+    "https://i.ibb.co.com/Kspx982/gallery-2.jpg",
+    "https://i.ibb.co.com/2YSVxHs/gallery-3.jpg",
+    "https://i.ibb.co.com/Kspx982/gallery-2.jpg",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
-
+  }, [heroImages.length]);
+  
+  const scrollToContact = () => {
+    document.getElementById("audit")?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
-    <section
-      className={styles.hero}
-      style={{ backgroundImage: `url(${images[currentIndex]})` }}
-    >
-      <div className={styles.overlay}>
-        <div className={styles.content}>
-          <h1 className={styles.heading}>
-            Boost Your Hotel Bookings with a Stunning Website
-          </h1>
-          <p className={styles.subheading}>
-            We create fast, mobile-friendly, booking-ready hotel & restaurant
-            websites.
-          </p>
-          <form className={styles.contactForm}>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <button type="submit">Get Free Audit</button>
-          </form>
-        </div>
+    <section className={styles.hero}>
+      <div
+        className={styles.heroSlider}
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={styles.heroSlide}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+      </div>
+      <div className={styles.heroOverlay} />
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroTitle}>
+          Boost Your Hotel Bookings and with a Stunning Website
+        </h1>
+        <p className={styles.heroSubtitle}>
+          We build lightning-fast, customer friendly websites that turn your sales. Stop losing deals to competitors with outdated sites.
+        </p>
+        <button className={styles.ctaButton} onClick={scrollToContact}>
+          Get Free Website Audit
+        </button>
       </div>
     </section>
   );
 };
 
-export default heroHL;
+export default HotelHero;

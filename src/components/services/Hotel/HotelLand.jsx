@@ -1,11 +1,14 @@
-import styles from './hotelLnd.module.css';
+"use client";
+
+import HotelHero from "./Hero/heroHL";
+import styles from "./hotelLnd.module.css";
 
 const HotelLand = () => {
-    return (
-        <aside className={styles.hotelLand}>
-            
-        </aside>
-    );
+  return (
+    <aside className={styles.hotelLand}>
+      <HotelHero />
+    </aside>
+  );
 };
 
 export default HotelLand;

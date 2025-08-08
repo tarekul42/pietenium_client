@@ -1,10 +1,7 @@
+import HotelLand from "@/components/services/Hotel/HotelLand";
 
 const hotlepage = () => {
-    return (
-        <div>
-            <h1>Hotel Landing</h1>
-        </div>
-    );
+  return <HotelLand />;
 };
 
 export default hotlepage;
