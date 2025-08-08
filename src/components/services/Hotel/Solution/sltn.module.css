@@ -1,6 +1,6 @@
 .solutionSection {
   padding: 100px 20px;
-  background: radial-gradient(circle at center, var(--background), #20ff025e);
+  background: radial-gradient(circle at center, var(--background), #20ff0223);
   color: var(--foreground);
 }
 
@@ -23,7 +23,7 @@
 }
 
 .solutionCard {
-  background: #010e02e6;
+  background: #03ad1148;
   border-radius: 15px;
   padding: 30px;
   text-align: center;
@@ -31,13 +31,14 @@
   opacity: 0;
   transform: scale(0.9);
   animation: solutionZoomIn 0.6s ease-out forwards;
-  border: 2px solid transparent;
+  border: 2px solid #07b412;
 }
 
 .solutionCard:hover {
   transform: scale(1.1);
   border-color: var(--background);
-  box-shadow: 0 15px 30px #030c134d;
+  box-shadow: 0 15px 30px 10px #03ad11bd;
+  background: #03ad11bd;
 }
 
 .solutionIcon {

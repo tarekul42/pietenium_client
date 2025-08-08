@@ -1,5 +1,6 @@
 "use client";
 
+import HotelFeature from "./Feature/FeatureHtl";
 import HotelHero from "./Hero/heroHL";
 import styles from "./hotelLnd.module.css";
 import ProblemHotel from "./Problem/rlprblm";
@@ -11,6 +12,7 @@ const HotelLand = () => {
       <HotelHero />
       <ProblemHotel />
       <SolutionHotel />
+      <HotelFeature/>
     </aside>
   );
 };
