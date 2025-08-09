@@ -12,9 +12,9 @@
 
 .problemsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 30px;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -79,5 +79,16 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+@media (max-width:780px) {
+    .problemCard {
+        padding: 15px;
+    }
+
+    .sectionTitle {
+        font-size: 1.5rem;
     }
 }

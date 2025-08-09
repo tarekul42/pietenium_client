@@ -73,25 +73,24 @@
 
 @media (max-width: 768px) {
 
-    .problemsGrid,
-    .solutionsGrid,
     .featuresGrid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .heroContent {
-        padding: 0 15px;
-    }
-
     .sectionTitle {
-        font-size: 2rem;
-        margin-bottom: 40px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
     }
 
     .featuresSection {
         padding: 60px 15px;
     }
+
+    .featureTitle {
+        font-size: 1rem;
+    }
+
 }
 
 /* SCROLL ANIMATIONS */

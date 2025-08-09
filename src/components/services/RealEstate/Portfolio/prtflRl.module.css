@@ -32,3 +32,21 @@
   max-width: none;
   width: 80%;
 }
+
+
+@media (max-width:780px) {
+  .portfolio {
+  padding: 2rem 1rem;
+}
+
+.heading {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+
+  padding: .8rem;
+  width: 95%;
+}
+}

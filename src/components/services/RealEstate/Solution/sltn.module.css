@@ -81,12 +81,17 @@
   }
 
   .sectionTitle {
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
   }
 
   .solutionSection {
-    padding: 60px 15px;
+    padding: 20px 5px;
+  }
+
+  .solutionTitle {
+    font-size: 1.1rem;
+
   }
 }
 

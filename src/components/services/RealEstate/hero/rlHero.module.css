@@ -132,21 +132,18 @@
 
 
 @media (max-width: 768px) {
-    .problemsGrid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+
 
     .heroContent {
         padding: 0 15px;
     }
 
-    .sectionTitle {
-        font-size: 2rem;
-        margin-bottom: 40px;
+    .heroTitle {
+        font-size: 1.7rem;
     }
 
-    .problemSection {
-        padding: 60px 15px;
+    .heroSubtitle {
+        font-size:.9rem;
     }
+
 }

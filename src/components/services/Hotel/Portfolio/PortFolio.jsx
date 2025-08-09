@@ -99,7 +99,7 @@ const HotelPortfolio = () => {
                       }
                       return prev;
                     });
-                  }, 100);
+                  }, 10);
                 }
               }
             }

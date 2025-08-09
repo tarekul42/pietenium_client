@@ -65,7 +65,7 @@ export default function TestimonialsOfRl() {
             <div key={i} className={styles.card}>
               <p>"{t.review}"</p>
               <h4>
-                {t.name} – {t.job}
+                {t.name} — {t.job}
               </h4>
               <span>{t.city}</span>
             </div>

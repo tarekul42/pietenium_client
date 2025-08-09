@@ -9,6 +9,7 @@ import Portfolio from "./Portfolio/PortfolioRl";
 import AuditFormRl from "./AuditForm/AuditForm";
 import FaqSection from "./FAQ/FAQ_RL";
 import TestimonialsOfRl from "./Testimonial/TestRl";
+import Link from "next/link";
 
 const RealEstateLandingPage = () => {
   return (
@@ -42,9 +43,9 @@ const RealEstateLandingPage = () => {
             Our real estate websites are built to convert — fast loading,
             mobile-first, SEO-powered.
           </p>
-          <a href="/contact-us" className={styles.ctaBtn}>
-            Book Your Free Website Audit
-          </a>
+          <Link href="/contact-us" >
+            <button className={styles.ctaBtn}>Book Your Free Website Audit</button>
+          </Link>
         </div>
       </section>
     </aside>

@@ -10,7 +10,6 @@
 
 .cta {
   position: relative;
-  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +68,28 @@
   position: relative;
   z-index: 2;
 }
+
+
+
+@media (width<=780px) {
+  .cta {
+    padding: 2rem;
+  }
+
+  .headline {
+    font-size: 1.3rem;
+  }
+
+  .subText {
+    font-size: .9rem;
+  }
+
+  .ctaBtn {
+    padding: 5px 8px;
+    font-size: .7rem;
+  }
+}
+
 
 @keyframes rotateBG {
   from {
