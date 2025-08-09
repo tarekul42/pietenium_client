@@ -81,8 +81,8 @@ export default function AuditFormRl() {
 
       setPopInfo({
         trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
+        type: getData?.success,
+        message: getData?.message,
       });
       if (getData?.success === true) {
         setTimeout(() => {
