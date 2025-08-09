@@ -6,7 +6,7 @@ import ProblemRl from "./Problem/rlprblm";
 import SolutionRl from "./Solution/SolutionRl";
 import FeatureRl from "./Feature/FeatureRl";
 import Portfolio from "./Portfolio/PortfolioRl";
-import AuditForm from "./AuditForm/AuditForm";
+import AuditFormRl from "./AuditForm/AuditForm";
 import FaqSection from "./FAQ/FAQ_RL";
 import TestimonialsOfRl from "./Testimonial/TestRl";
 
@@ -25,7 +25,7 @@ const RealEstateLandingPage = () => {
 
       <Portfolio />
       <hr className={styles.hr} />
-      <AuditForm />
+      <AuditFormRl />
       <hr className={styles.hr} />
       <TestimonialsOfRl/>
       <hr className={styles.hr} />
