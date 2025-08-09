@@ -1,35 +1,43 @@
 import { useState, useEffect, useRef } from "react";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import styles from "./auditFrmHtl.module.css";
+import { api } from "@/data/api";
+import ToastP from "@/components/popupToast/ToastP";
 
 const AuditFormHotel = () => {
+  const [popInfo, setPopInfo] = useState({
+    type: null,
+    trigger: null,
+    message: null,
+  });
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     website: "",
     phone: "",
   });
-  const [countryCode, setCountryCode] = useState(""); // +880 etc.
+  const [error, setError] = useState("");
+
+  const [countryCode, setCountryCode] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [sectionVisible, setSectionVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // Detect country via IP geolocation
-    fetch("https://ipapi.co/json/")
+    fetch("https://ipwho.is/")
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.country_calling_code) {
-          setCountryCode(data.country_calling_code);
+        if (data && data.success && data.calling_code) {
+          setCountryCode(data.calling_code);
           setFormData((prev) => ({
             ...prev,
-            phone: data.country_calling_code,
+            phone: data.calling_code,
           }));
         }
       })
       .catch(() => {
-        // fallback if API fails
         setCountryCode("+1");
         setFormData((prev) => ({ ...prev, phone: "+1" }));
       });
@@ -67,7 +75,7 @@ const AuditFormHotel = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
@@ -76,17 +84,37 @@ const AuditFormHotel = () => {
     if (phoneNumber) {
       formData.phone = phoneNumber.formatInternational();
     }
+    try {
+      const res = await fetch(`${api}/hotel/postdata`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          phone: formattedPhone,
+        }),
+      });
 
-    // Simulate form submission
-    setTimeout(() => {
+      if (!res.ok) {
+        setError("Something went is worng ! Try Again .");
+      }
+      const getData = await res.json();
+
+      setPopInfo({
+        trigger: Date.now(),
+        type: getData?.success,
+        message: getData?.message,
+      });
+
+      if (getData?.success === true) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Something went is worng ! Try Again .");
+    } finally {
       setLoading(false);
-      setSubmitted(true);
       setFormData({ name: "", email: "", website: "", phone: countryCode });
-
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
-    }, 2000);
+    }
   };
 
   return (
@@ -177,9 +205,13 @@ const AuditFormHotel = () => {
                 "Get Your Free Report"
               )}
             </button>
+            {error && (
+              <p style={{ color: "red", marginTop: "8px" }}>❌ {error}</p>
+            )}
           </form>
         )}
       </div>
+      <ToastP popInfo={popInfo}/>
     </section>
   );
 };
