@@ -96,7 +96,7 @@ const Footer = () => {
               target="_blank"
               aria-label="Facebook"
             >
-              <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faFacebook}/>
             </Link>
             <Link
               href={"https://www.linkedin.com/in/heyabdullahbro"}
