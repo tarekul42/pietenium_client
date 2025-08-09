@@ -26,21 +26,24 @@ const AuditFormHotel = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://ipwho.is/")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.success && data.calling_code) {
-          setCountryCode(data.calling_code);
-          setFormData((prev) => ({
-            ...prev,
-            phone: data.calling_code,
-          }));
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSectionVisible(true);
         }
-      })
-      .catch(() => {
-        setCountryCode("+1");
-        setFormData((prev) => ({ ...prev, phone: "+1" }));
-      });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   const handleChange = (e) => {
@@ -98,7 +101,7 @@ const AuditFormHotel = () => {
       });
 
       if (!res.ok) {
-        setError("Something went wrong! Try again.");
+        throw new Error("Request failed");
       }
 
       const getData = await res.json();
