@@ -9,15 +9,13 @@ import HomeArticle from "./homeArtAndWork/HomeArticle";
 import HomeWork from "./homeArtAndWork/HomeWork";
 
 const Home = () => {
- 
- 
   return (
     <aside className={styles.home}>
       <Hero />
       <TrustedComp />
       <HomeAbout />
-      <HomeWork/>
-      <HomeArticle/>
+      <HomeWork />
+      <HomeArticle />
       <TestimonialSlider />
       <hr />
       <section className={styles.ctaSection}>

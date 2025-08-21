@@ -21,10 +21,13 @@ export default function Hero() {
       <div className={styles.heroContent}>
         <div className={styles.heroHeader}>
           <h1>
-            Empower Your <span id={styles.brand}>Brand</span> with Digital <br /> Solutions That <span id={styles.growth}>Drive Growth</span>, <br />Authority, and <span id={styles.success}>Success</span>
+            Empower Your <span id={styles.brand}>Brand</span> with Digital{" "}
+            <br /> Solutions That <span id={styles.growth}>Drive Growth</span>,{" "}
+            <br />
+            Authority, and <span id={styles.success}>Success</span>
           </h1>
           <h2>
-           <span id={styles.wb}> We Build — </span>
+            <span id={styles.wb}> We Build — </span>
             <ReactTyped
               strings={[
                 "Modern Web App.",
@@ -38,10 +41,14 @@ export default function Hero() {
               loop
             />
           </h2>
-          <p style={{color:'gold',fontStyle:'italic'}}>( Pietenium gives always Premium Services )</p>
+          <p style={{ color: "gold", fontStyle: "italic" }}>
+            ( Pietenium gives always Premium Services )
+          </p>
         </div>
         <div className={styles.heroCTA}>
-          <Link href={'/contact-us'}><button>Let's Start</button></Link>
+          <Link href={"/contact-us"}>
+            <button>Let's Start</button>
+          </Link>
         </div>
       </div>
     </div>
