@@ -64,7 +64,9 @@ const HomeArticle = () => {
         </div>
       )}
       <div className={styles.seeAllArt}>
-        <Link href={'/articles'}><button>See All Article</button></Link>
+        <Link href={"/articles"}>
+          <button className="seeAllArtBtn">See All Article</button>
+        </Link>
       </div>
     </section>
   );

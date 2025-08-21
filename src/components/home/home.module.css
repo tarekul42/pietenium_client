@@ -134,7 +134,7 @@
   background-color: #50fff0;
   border: none;
   color: rgb(3, 37, 46);
-  border-radius: 3rem;
+  border-radius: 1rem;
   transition: background .3s ease-in-out;
 
   &:hover {
@@ -304,9 +304,11 @@
 .ctaSection {
   background-color: #111827;
   padding: 4rem 1rem;
+  margin: 4rem;
   color: white;
   text-align: center;
   width: 100%;
+  border-radius: 8px;
 }
 
 .container {

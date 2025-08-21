@@ -1,161 +1,164 @@
 /* Home Article Design --> */
 .homeArticle {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hArtHead {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hArtHead h1 {
-    width: 13rem;
-    border-bottom: 1px solid #eee;
-    margin: 0 auto;
-    text-align: center;
+  width: 13rem;
+  border-bottom: 1px solid #eee;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .articleData {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    gap: .5rem;
-    padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  gap: 0.5rem;
+  padding: 1rem 0;
 }
 
 .artCont {
-    width: 20rem;
-    border-radius: 12px;
-    box-shadow: 1px 1px 2px 4px #76f1ff12;
-    overflow: hidden;
-    transition: transform 0.2s ease;
+  width: 20rem;
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px 4px #76f1ff12;
+  overflow: hidden;
+  transition: transform 0.2s ease;
 }
 
 .artCont:hover {
-    box-shadow: 1px 1px 2px 1px #76f1ff91;
-    transform: translateY(-5px);
+  box-shadow: 1px 1px 2px 1px #76f1ff91;
+  transform: translateY(-5px);
 }
 
 .artCont img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .artCont h4 {
-    width: 100%;
-    font-style: 1.1rem;
-    padding: .3rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  font-style: 1.1rem;
+  padding: 0.3rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .artCont p {
-    width: 5rem;
-    padding: 0 .3rem;
-    color: #f0f8ff;
-    background-color: #85796a;
-    text-align: center;
-    border-radius: 1rem;
+  width: 5rem;
+  padding: 0 0.3rem;
+  color: #f0f8ff;
+  background-color: #85796a;
+  text-align: center;
+  border-radius: 1rem;
 }
 
 .seeAllArt {
-    width: 12rem;
-    margin: 0 auto;
+  width: 12rem;
+  margin: 0 auto;
 }
 
+.seeAllArtBtn{
+    background-color: #012b42be;
+}
 
 /* Home Works Design Start ----> */
 
 .homeWork {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hWrkHead {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hWrkHead h1 {
-    width: 20rem;
-    border-bottom: 1px solid #eee;
-    margin: 0 auto;
-    text-align: center;
+  width: 20rem;
+  border-bottom: 1px solid #eee;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .workShow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    gap: 1rem;
-    padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 .projTemp {
-    width: 23rem;
-    position: relative;
-    text-align: center;
-    padding: 2rem 0;
-    box-shadow: 1px 1px 2px 2px #f0f5f369;
-    border-radius: 1rem;
-    transition: all .3s ease-in-out;
+  width: 23rem;
+  position: relative;
+  text-align: center;
+  padding: 2rem 0;
+  box-shadow: 1px 1px 2px 2px #f0f5f369;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
 
-    &:hover {
-        transform: translateY(-.8rem);
-        box-shadow: 1.5px 1.5px 3px 4px #ffffffe3;
-    }
+  &:hover {
+    transform: translateY(-0.8rem);
+    box-shadow: 1.5px 1.5px 3px 4px #ffffffe3;
+  }
 }
 
 .projTemp img {
-    width: 95%;
-    height: 10rem;
-    object-fit: cover;
+  width: 95%;
+  height: 10rem;
+  object-fit: cover;
 }
 
 .projTemp h4 {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  text-align: left;
 }
 
 .projTemp button {
-    position: absolute;
-    right: 1px;
-    bottom: 1px;
-    /* padding: .1rem .2rem; */
-    font-size: .8rem;
-    background: #05d343cb;
-    border-radius: 1rem;
-    border: 1px solid #787a79fa;
-    color: #ffffff;
-    animation: btnAnim 1s ease-in-out forwards;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  /* padding: .1rem .2rem; */
+  font-size: 0.8rem;
+  background: #05d343cb;
+  border-radius: 1rem;
+  border: 1px solid #787a79fa;
+  color: #ffffff;
+  animation: btnAnim 1s ease-in-out forwards;
 
-    &:hover {
-        background: none;
-    }
+  &:hover {
+    background: none;
+  }
 }
 
 @keyframes btnAnim {
-    0% {
-        transform: translateX(-2rem);
-        opacity: .3;
-    }
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0.3;
+  }
 
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .seeAllWork {
-    width: 20rem;
-    margin: 0 auto;
+  width: 20rem;
+  margin: 0 auto;
 }
 
-
 @media (width<=380px) {
-    .projTemp {
-        width: 20rem;
-    }
+  .projTemp {
+    width: 20rem;
+  }
 }
