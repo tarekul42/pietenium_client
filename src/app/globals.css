@@ -43,9 +43,13 @@ body {
   scroll-behavior: smooth;
 }
 
+html {
+  background: var(--color-bg);
+}
+
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--color-bg);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +73,7 @@ nav {
 }
 
 main {
-  margin-top: 5rem;
+  margin-top: 3.5rem;
 }
 
 footer {
@@ -236,11 +240,28 @@ button {
   }
 }
 
+/* Tablet card scaling */
+@media (max-width: 768px) {
+  :root {
+    --card-width: 18rem;
+    --card-image-height: 10rem;
+    --card-min-height: 16rem;
+  }
+}
+
+/* Mobile card scaling */
+@media (max-width: 576px) {
+  :root {
+    --card-width: 100%;
+    --card-image-height: 12rem;
+    --card-min-height: 14rem;
+  }
+}
+
 @media (min-width: 1700px) {
   body {
     max-width: 1700px;
     margin: 0 auto;
-    padding: 1rem 2rem;
   }
 }
 

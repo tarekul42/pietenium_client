@@ -225,7 +225,24 @@
   background-color: #0284c7;
 }
 
-@media (width<=380px) {
+/* Tablet */
+@media (max-width: 768px) {
+
+  .articleData,
+  .workShow {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hArtHead h1,
+  .hWrkHead h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
 
   .articleData,
   .workShow {
@@ -239,5 +256,21 @@
     width: 100%;
     max-width: 22rem;
     margin: 0 auto;
+  }
+
+  .homeArticle,
+  .homeWork {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .seeAllWork,
+  .seeAllArt {
+    width: 10rem;
+  }
+
+  .seeAllWork button,
+  .seeAllArt button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
   }
 }

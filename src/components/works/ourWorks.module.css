@@ -128,20 +128,48 @@
 }
 
 
-@media (max-width:780px) {
-
+/* Tablet */
+@media (max-width: 768px) {
     .heroContent h1 {
         font-size: 1.5rem;
     }
 
     .heroContent p {
-        font-size: .9rem;
+        font-size: 0.9rem;
     }
 
     .workShow {
-        padding: .5rem;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        padding: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
     }
+}
 
+/* Mobile */
+@media (max-width: 576px) {
+    .owHead {
+        height: 40vh;
+    }
+
+    .heroContent h1 {
+        font-size: 1.2rem;
+    }
+
+    .heroContent p {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+    }
+
+    .workShow {
+        padding: 0.5rem;
+        grid-template-columns: 1fr;
+    }
+
+    .projTemp {
+        padding: 1rem 0;
+    }
+
+    .projTemp img {
+        height: 12rem;
+    }
 }

@@ -79,7 +79,7 @@
   border-color: var(--color-accent);
 }
 
-@media (width <=800px) {
+@media (max-width: 800px) {
   .title {
     font-size: 1.3rem;
     margin-bottom: 2rem;
@@ -93,6 +93,35 @@
   .review {
     width: 98%;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonialSection {
+    padding: 2.5rem 0.5rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+    min-height: 10rem;
+  }
+
+  .review {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .client h4 {
+    font-size: 0.9rem;
+  }
+
+  .rating {
+    font-size: 0.85rem;
   }
 }
 

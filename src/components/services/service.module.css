@@ -78,7 +78,8 @@
   padding: 0.2rem;
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba(0, 128, 128, 0.2),
-    /* soft teal shadow */ 0 6px 6px rgba(0, 0, 0, 0.05);
+    /* soft teal shadow */
+    0 6px 6px rgba(0, 0, 0, 0.05);
   /* depth */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -254,21 +255,64 @@
   background-color: #02a373;
 }
 
-@media (max-width: 780px) {
+/* Tablet */
+@media (max-width: 768px) {
   .srvHeadCont h1 {
     font-size: 1.7rem;
   }
 
+  .srvHeadCont p {
+    font-size: 1rem;
+  }
+
   .srvCont {
-    padding: 4rem;
+    padding: 2rem 1rem;
   }
 
   .srvItems {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .workflowGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .srvHeadCont {
+    padding: 2rem 1rem;
+  }
+
+  .srvHeadCont h1 {
+    font-size: 1.3rem;
   }
 
   .srvHeadCont p {
-    font-size: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .srvCont {
+    padding: 2rem 0.5rem;
+  }
+
+  .srvItems {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowSec {
+    padding: 2rem 1rem;
+  }
+
+  .whyUs {
+    padding: 0.5rem;
+  }
+
+  .service hr {
+    width: 10rem;
   }
 }
