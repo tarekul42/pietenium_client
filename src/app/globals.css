@@ -4,6 +4,7 @@
 
   /* Professional design system (home page) */
   --color-bg: #0f172a;
+  --color-bg-rgb: 15, 23, 42;
   --color-surface: #1e293b;
   --color-surface-elevated: #334155;
   --color-accent: #0ea5e9;
