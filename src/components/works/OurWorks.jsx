@@ -4,7 +4,7 @@ import styles from "./ourWorks.module.css";
 import { api } from "@/data/api";
 import Link from "next/link";
 import { slugify } from "@/utility/slugify";
-import SmallLoad from "../smallLaoding/smallLoad";
+import HomeCardSkeleton from "../skeleton/HomeCardSkeleton";
 
 const OurWorks = () => {
   const [projects, setProjects] = useState([]);
@@ -28,8 +28,6 @@ const OurWorks = () => {
   useEffect(() => {
     fetchProjData();
   }, []);
-
-  const [btnOpen, setBtnOpen] = useState("");
 
   return (
     <aside className={styles.ourWorks}>
@@ -65,32 +63,26 @@ const OurWorks = () => {
       </section>
 
       {loading ? (
-        <SmallLoad />
+        <section className={styles.workShow}>
+          {[1, 2, 3, 4, 5, 6].map((n) => (
+            <HomeCardSkeleton key={n} />
+          ))}
+        </section>
       ) : (
         <section className={styles.workShow}>
           {projects?.map((data) => {
             const { _id, title, thumbnail } = data;
-            // console.log(data);
-            const handleBtnOpen = (id) => {
-              if (id === _id) {
-                setBtnOpen(id);
-              }
-            };
             const titleLink = slugify(title);
             return (
-              <div
-                className={styles.projTemp}
-                key={_id}
-                onMouseOver={() => handleBtnOpen(_id)}
-                onMouseLeave={() => handleBtnOpen("")}
-              >
+              <div className={styles.projTemp} key={_id}>
                 <img src={thumbnail?.photo} alt={`${title} image`} />
-                <h4>{title}...</h4>
-                {btnOpen === _id && (
-                  <Link href={`/work/${titleLink}/${_id}`}>
-                    <button>See Full Project</button>
-                  </Link>
-                )}
+                <h4>{title}</h4>
+                <Link
+                  href={`/work/${titleLink}/${_id}`}
+                  className={styles.projectLink}
+                >
+                  <button>View project</button>
+                </Link>
               </div>
             );
           })}

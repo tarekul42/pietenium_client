@@ -106,124 +106,148 @@ const AboutUs = () => {
       </section>
 
       <section className={styles.aboutBody}>
-        <div className={styles.achievement}>
-          <h2>Ours</h2>
-          <hr />
+        <div className={styles.achievementContainer}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.preTitle}>Our Impact</span>
+            <h2>Proven Results & Milestones</h2>
+          </div>
           <div className={styles.achievementGrid}>
             {achievements.map((item, index) => (
               <div key={index} className={styles.achievementCard}>
                 <span className={styles.icon}>{item.icon}</span>
-                <h3>
-                  <CountUp start={1} end={item.count} duration={2} /> +
-                </h3>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
+                <div className={styles.cardInfo}>
+                  <h3>
+                    <CountUp start={1} end={item.count} duration={2} /> +
+                  </h3>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className={styles.aboutContent}>
-          <h2 className={styles.abtHeading}>Who We Are</h2>
-          <p className={styles.abtSubheading}>
-            Building Digital Experiences That Matter 💡
-          </p>
-          <div className={styles.abtDesc}>
-            <p>
-              At <strong>Pietenium</strong>, we don’t just build websites — we
-              engineer exceptional digital experiences. <br />
-              We’re a creative tech agency fueled by innovation, design, and
-              real-world problem-solving.
-            </p>
-            <p>
-              From agile startups to growing scale-ups, we empower businesses
-              with smart, scalable web solutions tailored to their goals. Our
-              team blends clean code with creative thinking to craft
-              high-performance websites and applications that stand out.
-            </p>
-            <p>
-              With deep expertise in both frontend finesse and backend
-              reliability, we create systems that are fast, secure, and
-              future-ready. Every product we build is designed with the user in
-              mind — intuitive, responsive, and accessible.
-            </p>
-            <p>
-              Clients trust us not just for our skills, but for our{" "}
-              <strong>transparency</strong>, <strong>commitment</strong>, and{" "}
-              <strong>on-time delivery</strong>. Whether it’s a sleek landing
-              page or a complex SaaS platform, we treat every project like it’s
-              our own.
-            </p>
-            <p>
-              We stay ahead of emerging technologies to help your business stay
-              ahead of the competition. At Pietenium, communication is clear,
-              collaboration is consistent, and quality is non-negotiable.
-            </p>
-            <p>
-              We don’t just deliver — we impress, inspire, and drive digital
-              growth.
-            </p>
-            <p>
-              <strong>Let’s build something extraordinary — together.</strong>
-            </p>
-          </div>
-        </div>
-        <hr />
-        <div className={styles.mission}>
-          <h2>Our Mission</h2>
-          <div className={styles.missionCont}>
-            <div className={styles.mvImg}>
-              <Image
-                src={missionImg}
-                width={400}
-                height={300}
-                alt="OurMission"
-              />
+        <div className={styles.whoWeAreContainer}>
+          <div className={styles.whoWeAreFlex}>
+            <div className={styles.whoWeAreContent}>
+              <span className={styles.preTitle}>Our Story</span>
+              <h2>Building Digital Experiences That Matter</h2>
+              <div className={styles.abtDesc}>
+                <p>
+                  At <strong>Pietenium</strong>, we don’t just build websites — we
+                  engineer exceptional digital experiences.
+                  We’re a creative tech agency fueled by innovation, design, and
+                  real-world problem-solving.
+                </p>
+                <p>
+                  From agile startups to growing scale-ups, we empower businesses
+                  with smart, scalable web solutions tailored to their goals. Our
+                  team blends clean code with creative thinking to craft
+                  high-performance websites and applications that stand out.
+                </p>
+                <p>
+                  With deep expertise in both frontend finesse and backend
+                  reliability, we create systems that are fast, secure, and
+                  future-ready. Every product we build is designed with the user in
+                  mind — intuitive, responsive, and accessible.
+                </p>
+                <p>
+                  Clients trust us not just for our skills, but for our{" "}
+                  <strong>transparency</strong>, <strong>commitment</strong>, and{" "}
+                  <strong>on-time delivery</strong>. Whether it’s a sleek landing
+                  page or a complex SaaS platform, we treat every project like it’s
+                  our own.
+                </p>
+                <p>
+                  We stay ahead of emerging technologies to help your business stay
+                  ahead of the competition. At Pietenium, communication is clear,
+                  collaboration is consistent, and quality is non-negotiable.
+                </p>
+                <p>
+                  We don’t just deliver — we impress, inspire, and drive digital
+                  growth.
+                </p>
+                <p className={styles.finalCall}>
+                  <strong>Let’s build something extraordinary — together.</strong>
+                </p>
+              </div>
             </div>
-            <div className={styles.mvDesc}>
-              <p>
-                At <strong>Pietenium</strong>, our mission is to empower
-                businesses by delivering modern, scalable, and user-focused web
-                solutions. <br />
-                We aim to solve real-world problems through innovation, clean
-                code, and human-centered design. Our team is committed to
-                turning bold ideas into seamless digital products that drive
-                growth and impact.
-              </p>
+            <div className={styles.whoWeAreStats}>
+              {/* Optional: Add a stylized graphic or additional stats here */}
+              <div className={styles.statBox}>
+                <span>100%</span>
+                <p>Commitment</p>
+              </div>
+              <div className={styles.statBox}>
+                <span>24/7</span>
+                <p>Innovation</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <hr />
-
-        <div className={styles.vision}>
-          <h2>Our Vission</h2>
-          <div className={styles.visionCont}>
-            <div className={styles.mvDesc}>
-              <p>
-                At <strong>Pietenium</strong>, our mission is to empower
-                businesses by delivering modern, scalable, and user-focused web
-                solutions. <br />
-                We aim to solve real-world problems through innovation, clean
-                code, and human-centered design. Our team is committed to
-                turning bold ideas into seamless digital products that drive
-                growth and impact.
-              </p>
+        <div className={styles.missionVisionContainer}>
+          <div className={styles.mission}>
+            <div className={styles.mvFlex}>
+              <div className={styles.mvImg}>
+                <Image
+                  src={missionImg}
+                  width={500}
+                  height={400}
+                  alt="Our Mission"
+                />
+              </div>
+              <div className={styles.mvDesc}>
+                <span className={styles.preTitle}>Our Purpose</span>
+                <h2>Our Mission</h2>
+                <p>
+                  At <strong>Pietenium</strong>, our mission is to empower
+                  businesses by delivering modern, scalable, and user-focused web
+                  solutions.
+                </p>
+                <p>
+                  We aim to solve real-world problems through innovation, clean
+                  code, and human-centered design. Our team is committed to
+                  turning bold ideas into seamless digital products that drive
+                  growth and impact.
+                </p>
+              </div>
             </div>
-            <div className={styles.mvImg}>
-              <Image src={visionImg} width={400} height={300} alt="OurVision" />
+          </div>
+
+          <div className={styles.vision}>
+            <div className={styles.mvFlex}>
+              <div className={styles.mvDesc}>
+                <span className={styles.preTitle}>Our Future</span>
+                <h2>Our Vision</h2>
+                <p>
+                  We envision a digital landscape where technology and creativity
+                  flow seamlessly to create value. Our goal is to be the leading
+                  partner for businesses seeking to redefine their digital presence
+                  through cutting-edge engineering and artistic design.
+                </p>
+                <p>
+                  By continuously evolving and embracing new technologies, we
+                  strive to build a future where every digital interaction is
+                  meaningful, accessible, and high-performing.
+                </p>
+              </div>
+              <div className={styles.mvImg}>
+                <Image src={visionImg} width={500} height={400} alt="Our Vision" />
+              </div>
             </div>
           </div>
         </div>
-
-        <hr />
 
         <div className={styles.whyHelp}>
           <div className={styles.whContainer}>
-            <h2 className={styles.whHeading}>🌍 Who We Help</h2>
-            <p className={styles.whSubheading}>
-              Tailored digital solutions for every industry we serve.
-            </p>
+            <div className={styles.sectionHeader}>
+              <span className={styles.preTitle}>Industries & Expertise</span>
+              <h2 className={styles.whHeading}>🌍 Who We Help</h2>
+              <p className={styles.whSubheading}>
+                Tailored digital solutions for every industry we serve.
+              </p>
+            </div>
             <div className={styles.whGrid}>
               {industries.map((item, index) => (
                 <div key={index} className={styles.card}>
@@ -238,13 +262,15 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
       <section className={styles.ctaSection}>
         <div className={styles.ctaContainer}>
           <h2 className={styles.ctaHeading}>
-            🚀Let’s build something awesome
+            🚀 Let’s build something awesome
           </h2>
+          <p>Ready to transform your ideas into reality? Our team is just a click away.</p>
           <Link href="/contact-us" className={styles.ctaBtn}>
-            Let's Start
+            Start Your Journey
           </Link>
         </div>
       </section>

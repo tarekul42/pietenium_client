@@ -28,8 +28,10 @@ export default function RootLayout({ children }) {
           <Navber />
         </nav>
         <main>{children}</main>
-        <CookiePopup/>
-        <footer><Footer/></footer>
+        <CookiePopup />
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-// components/TestimonialSlider.js
 import { useEffect, useState } from "react";
 import styles from "./testimonial.module.css";
 
@@ -77,23 +76,31 @@ export default function TestimonialSlider() {
   return (
     <section className={styles.testimonialSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>💬 What Our Clients Say</h2>
+        <h2 className={styles.title}>What Our Clients Say</h2>
         <div className={styles.card}>
-          <p className={styles.review}>“{testimonials[current].review}”</p>
-          <div className={styles.client}>
-            <h4>{testimonials[current].name}</h4>
-            <p className={styles.rating}>
-              {Array.from({ length: testimonials[current].rating }).map(
-                (_, i) => (
-                  <span key={i}>⭐</span>
-                )
-              )}
-            </p>
+          <div key={current} className={styles.animateSlide}>
+            <p className={styles.review}>“{testimonials[current].review}”</p>
+            <div className={styles.client}>
+              <h4>{testimonials[current].name}</h4>
+              <p className={styles.rating}>
+                {Array.from({ length: testimonials[current].rating }).map(
+                  (_, i) => (
+                    <span key={i}>⭐</span>
+                  )
+                )}
+              </p>
+            </div>
           </div>
         </div>
         <div className={styles.testiCont}>
-          {Array.from({ length: testimonials?.length }).map((i,idx) => (
-            <span key={`${idx}csdfiuds`} onClick={()=>setCurrent(idx)}>{idx === current ? "🟢" : "⚪️"}</span>
+          {Array.from({ length: testimonials?.length }).map((_, idx) => (
+            <button
+              key={idx}
+              type="button"
+              className={`${styles.dot} ${idx === current ? styles.dotActive : ""}`}
+              onClick={() => setCurrent(idx)}
+              aria-label={`Go to testimonial ${idx + 1}`}
+            />
           ))}
         </div>
       </div>

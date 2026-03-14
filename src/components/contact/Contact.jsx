@@ -82,12 +82,23 @@ const Contact = () => {
     }
   };
 
-  // console.log();
+  const VIDEO_SRC = "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";
+
   return (
     <aside className={styles.contact}>
       <section className={styles.contactHead}>
+        <video
+          className={styles.backgroundVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={VIDEO_SRC} type="video/mp4" />
+        </video>
         <div className={styles.cntcHeadSect}>
-          <h1>💼 Start Your Digital Journey</h1>
+          <h1>Start Your Digital Journey</h1>
           <p>
             Tell us about your goals. We'll craft a solution that brings your
             ideas to life, the smart way.
@@ -97,23 +108,20 @@ const Contact = () => {
 
       <section className={styles.contactBody}>
         <div className={styles.cntcBdyImg}>
-          <Image src={mailBox} width={300} height={300} alt="mailbox" /> <hr />
+          <Image src={mailBox} width={300} height={300} alt="mailbox" className={styles.mailboxImg} />
           <div className={styles.address}>
             <p>
-              <strong>
-                <FontAwesomeIcon icon={faLocationPin} /> #432, West Agargoan,
-                Agargoan, Dhaka, Bangladesh
-              </strong>
+              <FontAwesomeIcon icon={faLocationPin} className={styles.icon} />
+              <span>#432, West Agargoan, Agargoan, Dhaka, Bangladesh</span>
             </p>
             <p>
-              <strong>
-                <FontAwesomeIcon icon={faPhone} /> +8801603070892
-              </strong>
+              <FontAwesomeIcon icon={faPhone} className={styles.icon} />
+              <span>+8801603070892</span>
             </p>
             <p>
-              <FontAwesomeIcon icon={faMessage} />
+              <FontAwesomeIcon icon={faMessage} className={styles.icon} />
               <Link href={"mailto:pietenium0@gmail.com"}>
-                <strong>pietenium0@gmail.com</strong>
+                <span>pietenium0@gmail.com</span>
               </Link>
             </p>
           </div>
@@ -121,72 +129,67 @@ const Contact = () => {
 
         <div className={styles.contactForm}>
           <h2>Get In Touch</h2>
-          <hr />
-          <form onSubmit={handleSendMessage}>
-            <label>
-              <span>
-                Name<sup>*</sup>:
-              </span>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name..."
-                onChange={handleCollectChangesData}
-                value={name}
-                required
-              />
-            </label>
+          <form onSubmit={handleSendMessage} className={styles.formSect}>
+            <div className={styles.formRow}>
+              <div className={styles.formGroup}>
+                <label>Name<sup>*</sup></label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  onChange={handleCollectChangesData}
+                  value={name}
+                  required
+                />
+              </div>
 
-            <label>
-              <span>
-                Email<sup>*</sup>:
-              </span>
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email..."
-                onChange={handleCollectChangesData}
-                value={email}
-                required
-              />
-            </label>
+              <div className={styles.formGroup}>
+                <label>Email<sup>*</sup></label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  onChange={handleCollectChangesData}
+                  value={email}
+                  required
+                />
+              </div>
+            </div>
 
-            <label>
-              <span>
-                Subject<sup>*</sup>:
-              </span>
+            <div className={styles.formGroup}>
+              <label>Subject<sup>*</sup></label>
               <input
                 type="text"
                 name="subject"
-                placeholder="Which space type are you interested in...?"
+                placeholder="How can we help?"
                 onChange={handleCollectChangesData}
                 value={subject}
                 required
               />
-            </label>
+            </div>
 
-            <label>
-              <span>
-                Message<sup>*</sup>:
-              </span>
+            <div className={styles.formGroup}>
+              <label>Message<sup>*</sup></label>
               <textarea
                 name="message"
                 id={styles.message}
-                placeholder="Tell us what you'd like to discuss..."
+                placeholder="Tell us about your project..."
                 onChange={handleCollectChangesData}
                 value={message}
                 required
               ></textarea>
-            </label>
+            </div>
 
-            {/* reCAPTCHA */}
-            <ReCAPTCHA
-              sitekey={"6LfHa1QrAAAAAKFl-0u7ogSQ9DgbI0OPITwXJivc"}
-              onChange={(token) => setCaptchaValue(token)}
-            />
+            <div className={styles.captchaRow}>
+              <ReCAPTCHA
+                sitekey={"6LfHa1QrAAAAAKFl-0u7ogSQ9DgbI0OPITwXJivc"}
+                onChange={(token) => setCaptchaValue(token)}
+                theme="dark"
+              />
+            </div>
 
-            <button type="submit" disabled={loading}>
-              {loading ? <SmallLoad /> : "Send Message"}{" "}
+            <button type="submit" disabled={loading} className={styles.submitBtn}>
+              {loading ? <SmallLoad /> : "Send Message"}
             </button>
           </form>
           <ToastP popInfo={popInfo} />

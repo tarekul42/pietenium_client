@@ -10,7 +10,7 @@ async function getArticle(id) {
 
 // ✅ SEO Metadata for App Router
 export async function generateMetadata({ params }) {
-  const {id} = await params;
+  const { id } = await params;
   const data = await getArticle(id);
   const article = data?.article;
   if (!article) return {};

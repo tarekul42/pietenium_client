@@ -22,88 +22,80 @@ const Services = () => {
   const servicesData = [
     {
       icon: faCode,
-      color: "#007BFF",
       title: "Custom Web Application Development",
       description:
-        "We build tailored web applications that align perfectly with your business goals. Our solutions are fast, scalable, and built using the latest technologies like React, Node.js, and MongoDB. From idea to deployment, we ensure your app is responsive, secure, and performance-optimized.",
+        "We build tailored web applications that align perfectly with your business goals. Our solutions are fast, scalable, and built using the latest technologies like React, Node.js, and MongoDB.",
     },
     {
       icon: faMobileAlt,
-      color: "#20C997",
       title: "Responsive UI/UX Design",
       description:
-        "We craft intuitive user interfaces that work flawlessly across all devices. Our UI/UX design process focuses on user behavior, accessibility, and mobile-first performance. With modern tools like Figma and Tailwind CSS, we deliver interfaces that convert visitors into customers.",
+        "We craft intuitive user interfaces that work flawlessly across all devices. Our design process focuses on user behavior, accessibility, and mobile-first performance.",
     },
     {
       icon: faChartLine,
-      color: "#FF8800",
       title: "SEO & Performance Optimization",
       description:
-        "Our SEO-first approach ensures your website ranks higher on Google and loads blazingly fast. We use best practices like lazy loading, schema markup, and semantic HTML to improve visibility. Speed, structure, and search engine friendliness are at the core of our strategy.",
+        "Our SEO-first approach ensures your website ranks higher on search engines and loads blazingly fast. Speed, structure, and search engine friendliness are at our core.",
     },
     {
       icon: faShieldAlt,
-      color: "#6F42C1",
       title: "Secure Authentication & Authorization",
       description:
-        "We implement robust user authentication with OAuth, JWT, and modern session handling techniques. Our security practices follow OWASP standards to protect user data and prevent unauthorized access. From login flows to admin dashboards, everything is built with safety in mind.",
+        "We implement robust user authentication with OAuth, JWT, and modern session handling. Our security practices follow industry standards to protect user data.",
     },
     {
       icon: faShoppingCart,
-      color: "#E83E8C",
       title: "E-commerce Website Development",
       description:
-        "We create high-converting e-commerce websites with seamless payment integration and dynamic product management. Our online stores are built for speed, scalability, and mobile responsiveness. Whether you're starting small or scaling big, we build your eCommerce site for success.",
+        "We create high-converting e-commerce websites with seamless payment integration and dynamic management. Built for speed, scalability, and mobile responsiveness.",
     },
     {
       icon: faServer,
-      color: "#17A2B8",
       title: "API Integration & Backend Services",
       description:
-        "We connect your frontend with powerful APIs and reliable backend services. From REST to GraphQL, we build data-driven systems that are secure and efficient. Whether it’s third-party integration or custom API development, we ensure smooth communication and fast performance.",
+        "We connect your frontend with powerful APIs and reliable backend services. From REST to GraphQL, we build data-driven systems that are secure and efficient.",
     },
   ];
 
-  //   WorkflowData
   const workflowSteps = [
     {
       icon: faComments,
       step: "Consultation",
       title: "Understand Your Vision & Goals",
       description:
-        "We begin with a deep-dive consultation to understand your business objectives, target audience, and project expectations. This helps us align our approach with your brand's vision from day one. Every solution starts with strategic clarity.",
+        "We begin with a deep-dive consultation to understand your business objectives, target audience, and project expectations.",
     },
     {
       icon: faProjectDiagram,
       step: "Planning",
       title: "Crafting a Roadmap to Success",
       description:
-        "We create a detailed project plan, including architecture, technology stack, UI/UX wireframes, and timelines. This phase ensures both technical and design decisions are aligned for optimal performance. Transparency and structure are key at this stage.",
+        "We create a detailed project plan, including architecture, technology stack, UI/UX wireframes, and timelines.",
     },
     {
       icon: faCode,
       step: "Development",
       title: "Turning Ideas into High-Quality Code",
       description:
-        "Using modern frameworks like React, Node.js, and Tailwind CSS, we bring your vision to life. Our development process follows best practices including clean code, modular components, and security-first implementation.",
+        "Using modern frameworks like React and Node.js, we bring your vision to life follow best practices and clean code.",
     },
     {
       icon: faRocket,
       step: "Delivery",
       title: "Deploying Fast, Secure & Optimized Systems",
       description:
-        "Before launch, we perform rigorous testing including responsiveness, SEO audits, and speed optimization. Then we deploy to a secure production environment with CI/CD workflows. Your site goes live — stable and optimized.",
+        "Before launch, we perform rigorous testing including responsiveness, SEO audits, and speed optimization.",
     },
     {
       icon: faLifeRing,
       step: "Support",
       title: "Ongoing Support & Continuous Growth",
       description:
-        "We don’t stop at launch. From updates to bug fixes and performance monitoring, we ensure your web solution stays fast, secure, and effective. Scale confidently with our proactive maintenance and support services.",
+        "We don't stop at launch. From updates to bug fixes, we ensure your web solution stays fast, secure, and effective.",
     },
   ];
 
-  //   why us-->
   const whyUs = [
     {
       icon: "🧠",
@@ -121,79 +113,43 @@ const Services = () => {
       desc: "From frontend finesse to backend power, we cover it all.",
     },
     {
-      icon: "🧩",
-      title: "Clean, Scalable Code",
-      desc: "Future-proof architecture that grows with your business.",
-    },
-    {
-      icon: "🖌️",
-      title: "Modern UI/UX Design",
-      desc: "Sleek, user-centric designs that keep people engaged.",
-    },
-    {
       icon: "⚡",
       title: "Fast & Optimized Websites",
       desc: "Performance is our priority, always lightning fast.",
     },
-    {
-      icon: "🔍",
-      title: "SEO & Marketing Ready",
-      desc: "We build with discoverability and conversion in mind.",
-    },
-    {
-      icon: "📱",
-      title: "Mobile-First Approach",
-      desc: "Seamless experiences across all screen sizes.",
-    },
-    {
-      icon: "🧾",
-      title: "Transparent Workflow",
-      desc: "You see everything — timelines, milestones, progress.",
-    },
-    {
-      icon: "🛡️",
-      title: "Ongoing Support & Maintenance",
-      desc: "We don’t vanish after launch — we scale with you.",
-    },
-    {
-      icon: "🚀",
-      title: "Tech-Driven Innovation",
-      desc: "Always updated with the latest tools and trends.",
-    },
-    {
-      icon: "🏆",
-      title: "Proven Track Record",
-      desc: "Happy clients, real results, and repeat business.",
-    },
   ];
+
+  const VIDEO_SRC = "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";
 
   return (
     <aside className={styles.service}>
       <section className={styles.srvHead}>
+        <video
+          className={styles.backgroundVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src={VIDEO_SRC} type="video/mp4" />
+        </video>
         <div className={styles.srvHeadCont}>
           <h1>Values That Drive Us</h1>
-          <hr />
           <p>
-            We believe in transparency, quality, and consistent value for every
-            client.
+            We believe in transparency, quality, and consistent value for every client.
           </p>
         </div>
       </section>
+
       <section className={styles.srvBody}>
         <div className={styles.srvCont}>
-          <h2>We provide you the best services</h2>
-          <hr />
+          <h2>Solutions Built for Performance</h2>
           <div className={styles.srvItems}>
-            {servicesData?.map((item, idx) => (
-              <div
-                key={`${idx}-${item?.title}`}
-                className={styles.cardItem}
-              >
+            {servicesData.map((item, idx) => (
+              <div key={idx} className={styles.cardItem}>
                 <span>
-                  <FontAwesomeIcon
-                    icon={item.icon}
-                    style={{ color: item.color }}
-                  />
+                  <FontAwesomeIcon icon={item.icon} className={styles.srvIcon} />
                 </span>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
@@ -204,11 +160,10 @@ const Services = () => {
 
         <div className={styles.workflowSec}>
           <h2 className={styles.workflowHeading}>
-            How We Turn Ideas into Scalable Web Experiences
+            From Concept to Scalable Reality
           </h2>
           <p className={styles.workflowSub}>
-            Our process blends strategy, design, and development to deliver
-            high-performing digital solutions — built for growth.
+            Our outcome-driven process ensures your project is delivered on time, within scope, and optimized for success.
           </p>
 
           <div className={styles.workflowGrid}>
@@ -232,29 +187,27 @@ const Services = () => {
         <div className={styles.whyUs}>
           <div className={styles.wuDesc}>
             <h2>💎 Why Choose Pietenium?</h2>
-            <hr />
             <p>
-              We’re not just developers — we’re your digital growth partners,
-              committed to delivering high-quality, scalable, and smart
-              solutions that actually drive results.
+              We're not just developers — we're your digital growth partners, committed to delivering high-quality solutions.
             </p>
             <ul>
-              {whyUs?.map((item, idx) => (
+              {whyUs.map((item, idx) => (
                 <li key={idx}>
-                  <strong>{item.icon + item.title} — </strong> {item.desc}
+                  <strong>{item.icon} {item.title} — </strong> {item.desc}
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </section>
+
       <section className={styles.ctaSection}>
         <div className={styles.container}>
           <h2 className={styles.heading}>
-           🛠️ Need a Custom Web App Built for Your Business?
+            Ready to build something extraordinary?
           </h2>
           <Link href="/contact-us" className={styles.btn}>
-            Get in Touch
+            Start Your Project
           </Link>
         </div>
       </section>
