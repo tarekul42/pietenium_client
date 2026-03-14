@@ -1,236 +1,270 @@
 .articles {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.articles hr {
-    width: 15rem;
-    margin: 1rem;
+    background-color: var(--color-bg);
+    min-height: 100vh;
 }
 
 .artlBannerSec {
     width: 100%;
+    height: 45vh;
+    position: relative;
+    overflow: hidden;
     background-image: url('../../gallary/siteImgs/articlePageHero.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    background-origin: border-box;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .heroCont {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 34, 59, 0.75);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 7rem;
-    background-color: #03223ba1;
+    text-align: center;
+    padding: 0 var(--section-padding-x, 2rem);
 }
 
 .heroCont h1 {
-    font-size: 2.5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #f0f8ff;
+    font-size: 3.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.heroCont p {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    line-height: var(--line-height-relaxed);
 }
 
 .artlShowSec {
+    width: 100%;
+    background-color: var(--color-bg);
+    padding: 4rem 0;
+}
+
+.filterBar {
+    max-width: 1280px;
+    margin: 0 auto 3rem;
+    padding: 0 var(--section-padding-x, 2rem);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+}
+
+.artclAct {
+    display: flex;
+    gap: 1rem;
+    background: var(--color-surface);
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-surface-elevated);
 }
 
 .artclAct button {
-    &:hover {
-        background-color: #008cffa1;
-    }
+    background: transparent;
+    color: var(--color-muted);
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: var(--font-weight-semibold);
+    transition: all 0.3s var(--ease-out-smooth);
+}
+
+.artclAct button:hover {
+    color: var(--color-text);
+    background: var(--color-surface-elevated);
 }
 
 .artclAct button.active {
-    color: #ffffff;
-    background: none;
-
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
 }
 
-.articleData {
+.articleGrid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--section-padding-x, 2rem);
+}
+
+@media (min-width: 1280px) {
+
+    .filterBar,
+    .articleGrid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.gridContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
 }
 
-.artCont {
-    /* background: #fff; */
-    border-radius: 12px;
-    box-shadow: 1px 1px 2px 4px #76f1ff12;
+.artLink {
+    height: 100%;
+}
+
+.artCard {
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-elevated);
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-card);
 }
 
-.artCont:hover {
-    box-shadow: 1px 1px 2px 1px #76f1ff91;
-    transform: translateY(-5px);
+.artCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent);
 }
 
-.artCont img {
+.cardImage {
+    position: relative;
     width: 100%;
-    height: auto;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    overflow: hidden;
 }
 
-.artCont h4 {
+.cardImage img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    font-style: 1.1rem;
-    padding: .3rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out-smooth);
 }
 
-.artCont p {
-    width: 5rem;
-    padding: 0 .3rem;
-    color: #f0f8ff;
-    background-color: #85796a;
-    text-align: center;
-    border-radius: 1rem;
+.artCard:hover .cardImage img {
+    transform: scale(1.05);
+}
+
+.categoryBadge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
+    color: var(--color-accent);
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    z-index: 2;
+}
+
+.cardContent {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex-grow: 1;
+}
+
+.cardContent h4 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.artCard:hover h4 {
+    color: var(--color-accent);
 }
 
 .hashtags {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    gap: .3rem;
     flex-wrap: wrap;
-    padding: .5rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    gap: 0.5rem;
+    margin: 0;
 }
 
 .hashtags span {
-    background-color: #6e777785;
-    color: #d7ffee;
-    font-size: .8rem;
-    padding: .2rem;
-    border-radius: .3rem;
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    font-weight: var(--font-weight-medium);
 }
 
-
-/* Article Details design start ---> */
-
-.articleD {
+.readMore {
+    margin-top: auto;
+    color: var(--color-accent);
+    font-weight: var(--font-weight-semibold);
+    font-size: 0.875rem;
     display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    gap: 2rem;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
 }
 
-#hr {
-    width: 70%;
-    margin: 0 auto;
+.artCard:hover .readMore {
+    gap: 0.75rem;
 }
 
-.artDetailUp {
-    max-width: 1280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    /* gap: 1rem; */
-    margin: 0 auto;
-}
-
-#heading {
-    font-size: 2.5rem;
-    width: 80%;
-    margin: 0 auto;
-    color: #f0f8ff;
-}
-
-#thumbnail {
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-    /* text-align: center; */
-}
-
-#articleType {
-    width: 5rem;
-    margin-right: 25%;
-    margin-left: 75%;
-    padding: 0 .3rem;
-    color: #f0f8ff;
-    background-color: #85796a;
+.emptyState {
     text-align: center;
-    border-radius: 1rem;
+    padding: 6rem 2rem;
+    color: var(--color-muted);
+    background: var(--color-surface);
+    border-radius: 16px;
+    border: 1px dashed var(--color-surface-elevated);
 }
 
-.articleD .hashtags {
-    width: 80%;
-    margin: 0 auto;
-}
-
-#artContent {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.artDetailDown {
-    width: 90%;
-    margin: 0 auto;
-}
-
-@media (max-width:800px) {
-    .heroCont {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 3rem;
-        background-color: #03223ba1;
+/* Tablet Layout */
+@media (max-width: 1024px) {
+    .gridContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 
     .heroCont h1 {
-        font-size: 1.3rem;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        color: #f0f8ff;
-    }
-
-    #heading {
-        font-size: 1.8rem;
-        width: 95%;
-        margin: 0 auto;
-        color: #f0f8ff;
-    }
-
-
-    #thumbnail {
-        width: 95%;
-    }
-
-    .articleD .hashtags {
-        width: 90%;
-    }
-
-    #artContent {
-        width: 95%;
+        font-size: 2.75rem;
     }
 }
 
-
-@media (max-width:600px) {
-    .articleD {
-        overflow-x: scroll;
+/* Mobile Layout */
+@media (max-width: 640px) {
+    .gridContainer {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    #heading {
-        font-size: 1.3rem;
+    .heroCont h1 {
+        font-size: 2.25rem;
     }
 
-    #artContent {
+    .artclAct {
         width: 100%;
-        padding: 1rem;
-        font-size: 80%;
+        overflow-x: auto;
+        padding: 0.25rem;
+    }
+
+    .artclAct button {
+        flex: 1;
+        white-space: nowrap;
+        padding: 0.6rem 1rem;
+    }
+
+    .artlShowSec {
+        padding: 3rem 0;
     }
 }

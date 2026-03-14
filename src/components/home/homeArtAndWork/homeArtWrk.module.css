@@ -1,161 +1,304 @@
-/* Home Article Design --> */
 .homeArticle {
-    padding: 1rem;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 .hArtHead {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hArtHead h1 {
-    width: 13rem;
-    border-bottom: 1px solid #eee;
-    margin: 0 auto;
-    text-align: center;
+  width: fit-content;
+  max-width: 13rem;
+  border-bottom: 1px solid var(--color-surface-elevated);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
 }
 
 .articleData {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    gap: .5rem;
-    padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem var(--section-padding-x, 2rem);
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .articleData {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.artLink {
+  display: block;
+  height: 100%;
+  text-decoration: none;
 }
 
 .artCont {
-    width: 20rem;
-    border-radius: 12px;
-    box-shadow: 1px 1px 2px 4px #76f1ff12;
-    overflow: hidden;
-    transition: transform 0.2s ease;
+  width: 100%;
+  height: 100%;
+  min-height: var(--card-min-height);
+  border-radius: var(--card-border-radius);
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-elevated);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-card);
+  display: flex;
+  flex-direction: column;
 }
 
 .artCont:hover {
-    box-shadow: 1px 1px 2px 1px #76f1ff91;
-    transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .artCont img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: var(--card-image-height);
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .artCont h4 {
-    width: 100%;
-    font-style: 1.1rem;
-    padding: .3rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  flex: 1;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-geist-sans), sans-serif;
+  color: var(--color-text);
 }
 
 .artCont p {
-    width: 5rem;
-    padding: 0 .3rem;
-    color: #f0f8ff;
-    background-color: #85796a;
-    text-align: center;
-    border-radius: 1rem;
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  margin: 0.5rem 1rem;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-elevated);
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 0.75rem;
 }
 
 .seeAllArt {
-    width: 12rem;
-    margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
+.seeAllArt button {
+  background-color: var(--color-accent);
+  color: white;
+  transition: background-color 0.35s var(--ease-out-smooth);
+}
 
-/* Home Works Design Start ----> */
+.seeAllArt button:hover {
+  background-color: #0284c7;
+}
+
+.emptyState {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 2rem;
+}
 
 .homeWork {
-    padding: 1rem;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 .hWrkHead {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hWrkHead h1 {
-    width: 20rem;
-    border-bottom: 1px solid #eee;
-    margin: 0 auto;
-    text-align: center;
+  width: fit-content;
+  max-width: 20rem;
+  border-bottom: 1px solid var(--color-surface-elevated);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
 }
 
 .workShow {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    gap: 1rem;
-    padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem var(--section-padding-x, 2rem);
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .workShow {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .projTemp {
-    width: 23rem;
-    position: relative;
-    text-align: center;
-    padding: 2rem 0;
-    box-shadow: 1px 1px 2px 2px #f0f5f369;
-    border-radius: 1rem;
-    transition: all .3s ease-in-out;
+  width: 100%;
+  min-height: var(--card-min-height);
+  position: relative;
+  text-align: center;
+  padding: 0 0 4rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-elevated);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    &:hover {
-        transform: translateY(-.8rem);
-        box-shadow: 1.5px 1.5px 3px 4px #ffffffe3;
-    }
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .projTemp img {
-    width: 95%;
-    height: 10rem;
-    object-fit: cover;
+  width: 100%;
+  height: var(--card-image-height);
+  object-fit: cover;
+  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+  flex-shrink: 0;
 }
 
 .projTemp h4 {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
+  flex: 1;
+  font-family: var(--font-geist-sans), sans-serif;
+  text-align: left;
+  color: var(--color-text);
+  padding: 1rem 1rem 0.5rem;
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.projectLink {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.projTemp:hover .projectLink {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .projTemp button {
-    position: absolute;
-    right: 1px;
-    bottom: 1px;
-    /* padding: .1rem .2rem; */
-    font-size: .8rem;
-    background: #05d343cb;
-    border-radius: 1rem;
-    border: 1px solid #787a79fa;
-    color: #ffffff;
-    animation: btnAnim 1s ease-in-out forwards;
+  font-size: 0.8rem;
+  background: var(--color-accent);
+  border-radius: var(--card-border-radius);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.35s var(--ease-out-smooth);
+  cursor: pointer;
 
-    &:hover {
-        background: none;
-    }
-}
-
-@keyframes btnAnim {
-    0% {
-        transform: translateX(-2rem);
-        opacity: .3;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  &:hover {
+    background-color: #0284c7;
+  }
 }
 
 .seeAllWork {
-    width: 20rem;
-    margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
+.seeAllWork button {
+  background-color: var(--color-accent);
+  color: white;
+  transition: background-color 0.35s var(--ease-out-smooth);
+}
 
-@media (width<=380px) {
-    .projTemp {
-        width: 20rem;
-    }
+.seeAllWork button:hover {
+  background-color: #0284c7;
+}
+
+@media (max-width: 1100px) {
+
+  .articleData,
+  .workShow {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .articleData,
+  .workShow {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .hArtHead h1,
+  .hWrkHead h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+  .articleData,
+  .workShow {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .projTemp,
+  .artCont {
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+
+  .homeArticle,
+  .homeWork {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .seeAllWork,
+  .seeAllArt {
+    width: 10rem;
+  }
+
+  .seeAllWork button,
+  .seeAllArt button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }

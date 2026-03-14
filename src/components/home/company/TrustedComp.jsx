@@ -1,4 +1,8 @@
 import comp1 from "@/gallary/comapany/comp1.svg";
+import comp10 from "@/gallary/comapany/comp10.svg";
+import comp11 from "@/gallary/comapany/comp11.svg";
+import comp12 from "@/gallary/comapany/comp12.svg";
+import comp13 from "@/gallary/comapany/comp13.svg";
 import comp2 from "@/gallary/comapany/comp2.svg";
 import comp3 from "@/gallary/comapany/comp3.svg";
 import comp4 from "@/gallary/comapany/comp4.svg";
@@ -7,10 +11,6 @@ import comp6 from "@/gallary/comapany/comp6.svg";
 import comp7 from "@/gallary/comapany/comp7.svg";
 import comp8 from "@/gallary/comapany/comp8.svg";
 import comp9 from "@/gallary/comapany/comp9.svg";
-import comp10 from "@/gallary/comapany/comp10.svg";
-import comp11 from "@/gallary/comapany/comp11.svg";
-import comp12 from "@/gallary/comapany/comp12.svg";
-import comp13 from "@/gallary/comapany/comp13.svg";
 import Image from "next/image";
 import styles from "../home.module.css";
 const TrustedComp = () => {
@@ -31,7 +31,7 @@ const TrustedComp = () => {
   ];
   return (
     <div className={styles.sliderWrapper}>
-      <p>Trusted Agencies & Comapnies</p>
+      <p>Trusted by Leading Organizations</p>
       <div className={styles.slideCont}>
         <div className={styles.sliderTrack}>
           {[...Array(logos.length - 1)].flatMap((_, i) =>

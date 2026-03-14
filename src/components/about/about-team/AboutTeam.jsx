@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const AboutTeam = () => {
   const [Members, setMembers] = useState([]);
-  const [loading, setLoading] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchTeamMemberslData = async () => {
     setLoading(true);
@@ -33,40 +33,53 @@ const AboutTeam = () => {
       <section className={styles.teamHero}>
         <div className={styles.teamheroCont}>
           <h1>Meet the Minds Behind the Mission</h1>
-          <h3>We design. We develop. We deliver. We Help.</h3>
+          <p>We design. We develop. We deliver. We excel.</p>
         </div>
       </section>
-      <section>
-        {loading ? (
-          <SmallLoad />
-        ) : (
-          <div className={styles.members}>
-            {Members?.map((data) => {
-              const { memberName, role, memberProfile } = data;
-              return (
-                <article className={styles.memberData}>
-                  <Image
-                    src={memberProfile?.photo}
-                    width={150}
-                    height={150}
-                    alt={`${memberName}'s Profile`}
-                  />
-                  <h3>{memberName}</h3>
-                  <h4>{role} at Pietenium</h4>
-                </article>
-              );
-            })}
-          </div>
-        )}
+      <section className={styles.teamGridSection}>
+        <div className={styles.gridContainer}>
+          {loading ? (
+            <div className={styles.loadingContainer}>
+              <SmallLoad />
+            </div>
+          ) : (
+            <div className={styles.members}>
+              {Members?.map((data, index) => {
+                const { memberName, role, memberProfile } = data;
+                return (
+                  <article key={index} className={styles.memberCard}>
+                    <div className={styles.imageWrapper}>
+                      <Image
+                        src={memberProfile?.photo}
+                        width={200}
+                        height={200}
+                        alt={`${memberName}'s Profile`}
+                        className={styles.profileImg}
+                      />
+                    </div>
+                    <div className={styles.memberInfo}>
+                      <h3>{memberName}</h3>
+                      <p className={styles.memberRole}>{role}</p>
+                      <p className={styles.companyName}>Pietenium</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </section>
-      <section className={styles.ctaBox}>
-        <h2>Want to Work With Our Special Team?</h2>
-        <p>
-          Let's bring your vision to life. Contact us today and get started!
-        </p>
-        <Link href="/contact-us">
-          <button className={styles.ctaBtn}> Let's Start </button>
-        </Link>
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaContainer}>
+          <h2>Want to join our vision?</h2>
+          <p>
+            We're always looking for talented minds to help us build the future.
+            Let's create something extraordinary together.
+          </p>
+          <Link href="/contact-us" className={styles.ctaBtn}>
+            Let's Collaborate
+          </Link>
+        </div>
       </section>
     </aside>
   );
