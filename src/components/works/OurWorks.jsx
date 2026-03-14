@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import styles from "./ourWorks.module.css";
 import { api } from "@/data/api";
 import Link from "next/link";
@@ -7,10 +7,16 @@ import { slugify } from "@/utility/slugify";
 import HomeCardSkeleton from "../skeleton/HomeCardSkeleton";
 import Image from "next/image";
 import { useLoading } from "@/customHooks";
+import Pagination from "../pagination/Pagination";
+import usePagination from "@/customHooks/usePagination";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const OurWorks = () => {
   const [projects, setProjects] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const { loading, startLoading, stopLoading } = useLoading();
+  const { currentPage, paginate, totalPages } = usePagination({ initialLimit: 6 });
 
   const fetchProjData = useCallback(async () => {
     startLoading();
@@ -19,7 +25,7 @@ const OurWorks = () => {
         cache: "no-store",
       });
       const response2 = await response.json();
-      setProjects(response2?.data);
+      setProjects(response2?.data || []);
     } catch (error) {
       console.error(error);
     } finally {
@@ -30,6 +36,25 @@ const OurWorks = () => {
   useEffect(() => {
     fetchProjData();
   }, [fetchProjData]);
+
+  const filteredProjects = useMemo(() => {
+    if (!searchQuery.trim()) return projects;
+    const query = searchQuery.toLowerCase();
+    return projects.filter(
+      (proj) =>
+        proj.title?.toLowerCase().includes(query) ||
+        proj.description?.toLowerCase().includes(query) ||
+        proj.category?.toLowerCase().includes(query)
+    );
+  }, [projects, searchQuery]);
+
+  const paginatedProjects = useMemo(() => {
+    const start = (currentPage - 1) * 6;
+    const end = start + 6;
+    return filteredProjects.slice(start, end);
+  }, [filteredProjects, currentPage]);
+
+  const total = totalPages(filteredProjects.length);
 
   return (
     <aside className={styles.ourWorks}>
@@ -71,29 +96,63 @@ const OurWorks = () => {
           ))}
         </section>
       ) : (
-        <section className={styles.workShow}>
-          {projects?.map((data) => {
-            const { _id, title, thumbnail } = data;
-            const titleLink = slugify(title);
-            return (
-              <div className={styles.projTemp} key={_id}>
-                <Image
-                  src={thumbnail?.photo}
-                  alt={`${title} image`}
-                  width={300}
-                  height={200}
-                />
-                <h4>{title}</h4>
-                <Link
-                  href={`/work/${titleLink}/${_id}`}
-                  className={styles.projectLink}
-                >
-                  <button>View project</button>
-                </Link>
-              </div>
-            );
-          })}
-        </section>
+        <>
+          <div className={styles.searchWrapper}>
+            <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                paginate(1);
+              }}
+              className={styles.searchInput}
+            />
+          </div>
+          {paginatedProjects.length > 0 ? (
+            <section className={styles.workShow}>
+              {paginatedProjects?.map((data) => {
+                const { _id, title, thumbnail } = data;
+                const titleLink = slugify(title);
+                return (
+                  <div className={styles.projTemp} key={_id}>
+                    <Image
+                      src={thumbnail?.photo}
+                      alt={`${title} image`}
+                      width={300}
+                      height={200}
+                    />
+                    <h4>{title}</h4>
+                    <Link
+                      href={`/work/${titleLink}/${_id}`}
+                      className={styles.projectLink}
+                    >
+                      <button>View project</button>
+                    </Link>
+                  </div>
+                );
+              })}
+            </section>
+          ) : (
+            <div className={styles.emptyState}>
+              <p>
+                {searchQuery
+                  ? `No projects found for "${searchQuery}"`
+                  : "No projects found."}
+              </p>
+            </div>
+          )}
+          {paginatedProjects.length > 0 && (
+            <Pagination 
+              currentPage={currentPage}
+              totalPages={total}
+              onPageChange={paginate}
+              onPrev={() => paginate(currentPage - 1)}
+              onNext={() => paginate(currentPage + 1)}
+            />
+          )}
+        </>
       )}
     </aside>
   );

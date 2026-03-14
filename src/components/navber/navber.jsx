@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./navber.module.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import ThemeToggle from "@/components/theme/ThemeToggle";
 
 const Navber = () => {
   const pathname = usePathname();
@@ -14,7 +15,11 @@ const Navber = () => {
 
   //   Navigation activer by routename-->
   const getActive = (route) => {
-    return pathname === route || pathname.startsWith(route + "/")
+    const normalizedPath = pathname.replace(/\/$/, "") || "/";
+    const normalizedRoute = route.replace(/\/$/, "") || "/";
+
+    return normalizedPath === normalizedRoute ||
+      (normalizedRoute !== "/" && normalizedPath.startsWith(normalizedRoute + "/"))
       ? styles.activeNav
       : "";
   };
@@ -97,35 +102,18 @@ const Navber = () => {
                     <button>Articles</button>
                   </Link>
                 </li>
-                <li
-                  className={`${styles.aboutListItem} ${getActive("/about")}`}
-                  onMouseEnter={() => setAboutListOpen(true)}
-                  onMouseLeave={() => setAboutListOpen(false)}
-                >
-                  <button className={styles.navBtn}>
-                    About <span className={styles.chevron}>▾</span>
-                  </button>
-                  <ul
-                    className={`${styles.aboutList} ${
-                      aboutListOpen ? styles.show : ""
-                    }`}
-                  >
-                    <li className={getActive("/about-us")}>
-                      <Link href="/about-us">
-                        <button>About Us</button>
-                      </Link>
-                    </li>
-                    <li className={getActive("/about-team")}>
-                      <Link href="/about-team">
-                        <button>About Team</button>
-                      </Link>
-                    </li>
-                  </ul>
+                <li className={getActive("/about")}>
+                  <Link href="/about">
+                    <button>About</button>
+                  </Link>
                 </li>
                 <li className={getActive("/contact-us")}>
                   <Link href="/contact-us">
                     <button>Contact</button>
                   </Link>
+                </li>
+                <li>
+                  <ThemeToggle />
                 </li>
               </ul>
             </div>
@@ -166,15 +154,8 @@ const Navber = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about-us">
-                    <button className={getActive("/about-us")}>About Us</button>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about-team">
-                    <button className={getActive("/about-team")}>
-                      About Team
-                    </button>
+                  <Link href="/about">
+                    <button className={getActive("/about")}>About</button>
                   </Link>
                 </li>
                 <li>
@@ -183,6 +164,9 @@ const Navber = () => {
                       Contact
                     </button>
                   </Link>
+                </li>
+                <li>
+                  <ThemeToggle />
                 </li>
               </ul>
             </div>

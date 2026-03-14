@@ -29,11 +29,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(1, 43, 66, 0.85),
-        rgba(2, 6, 23, 0.9)
-    );
+    background: var(--banner-overlay);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,6 +37,11 @@
     text-align: center;
     z-index: 2;
     padding: 0 var(--section-padding-x, 2rem);
+}
+
+.cntcHeadSect h1,
+.cntcHeadSect p {
+    color: white;
 }
 
 @media (min-width: 1280px) {
@@ -53,14 +54,14 @@
 .cntcHeadSect h1 {
     font-size: 3rem;
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
+    color: var(--banner-text);
     margin-bottom: 1rem;
     line-height: var(--line-height-tight);
 }
 
 .cntcHeadSect p {
     font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    color: var(--banner-text-secondary);
     max-width: 60ch;
     line-height: var(--line-height-relaxed);
 }
@@ -264,4 +265,15 @@
     .contactForm h2 {
         font-size: 1.5rem;
     }
+}
+
+.inputError {
+    border-color: #ef4444 !important;
+}
+
+.errorText {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
 }

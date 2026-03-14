@@ -33,11 +33,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(3, 12, 19, 0.8),
-        rgba(4, 206, 241, 0.3)
-    );
+    background: var(--banner-overlay);
     z-index: 1;
 }
 
@@ -63,6 +59,7 @@
 .heroSubtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     margin-bottom: 2rem;
+    color: var(--banner-text-secondary);
     opacity: 0.9;
     animation: subtitleSlideUp 1s ease-out 0.6s both;
 }

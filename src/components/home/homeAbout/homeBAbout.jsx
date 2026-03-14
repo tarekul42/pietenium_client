@@ -90,7 +90,7 @@ const HomeAbout = () => {
         </div>
       </div>
       <div className={styles.knowMoreBtn}>
-        <Link href={"/about-us"}>
+        <Link href={"/about"}>
           <button>Learn more about us</button>
         </Link>
       </div>

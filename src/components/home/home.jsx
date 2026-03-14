@@ -7,6 +7,7 @@ import styles from "./home.module.css";
 import HomeAbout from "./homeAbout/homeBAbout";
 import HomeArticle from "./homeArtAndWork/HomeArticle";
 import HomeWork from "./homeArtAndWork/HomeWork";
+import FAQ from "./faq/FAQ";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <HomeWork />
       <HomeArticle />
       <TestimonialSlider />
+      <FAQ />
       <hr />
       <section className={styles.ctaSection}>
         <div className={styles.container}>

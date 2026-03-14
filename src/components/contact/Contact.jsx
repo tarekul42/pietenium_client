@@ -15,6 +15,16 @@ import { api } from "@/data/api";
 import ToastP from "../popupToast/ToastP";
 import SmallLoad from "../smallLaoding/smallLoad";
 import { useForm, useToast, useLoading } from "@/customHooks";
+import { useThemeStore } from "@/store";
+import { z } from "zod";
+import useFormValidation from "@/customHooks/useFormValidation";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email"),
+  subject: z.string().min(5, "Subject must be at least 5 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
 
 const Contact = () => {
   const { formData, handleChange, resetForm } = useForm({
@@ -24,16 +34,24 @@ const Contact = () => {
     message: "",
   });
   const { name, email, subject, message } = formData;
-  const { popInfo, showToast, resetToast } = useToast();
+  const { popInfo, showToast } = useToast();
   const { loading, startLoading, stopLoading } = useLoading();
+  const { errors, validate, handleBlur, getFieldProps, clearError } = useFormValidation(contactSchema);
 
+  const { theme } = useThemeStore();
   const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
 
+    const validation = validate({ name, email, subject, message });
+    if (!validation.isValid) {
+      showToast("Please fix the errors below", false);
+      return;
+    }
+
     if (!captchaValue) {
-      alert("Please complete the reCAPTCHA.");
+      showToast("Please complete the reCAPTCHA", false);
       return;
     }
 
@@ -57,6 +75,8 @@ const Contact = () => {
 
       if (data?.success) {
         setTimeout(() => {
+          resetForm();
+          setCaptchaValue(null);
           window.location.reload();
         }, 2000);
       }
@@ -131,10 +151,12 @@ const Contact = () => {
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  onChange={handleChange}
+                  onChange={(e) => { handleChange(e); clearError("name"); }}
+                  onBlur={handleBlur}
                   value={name}
-                  required
+                  className={errors.name ? styles.inputError : ""}
                 />
+                {errors.name && <span className={styles.errorText}>{errors.name}</span>}
               </div>
 
               <div className={styles.formGroup}>
@@ -145,10 +167,12 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder="Your Email"
-                  onChange={handleChange}
+                  onChange={(e) => { handleChange(e); clearError("email"); }}
+                  onBlur={handleBlur}
                   value={email}
-                  required
+                  className={errors.email ? styles.inputError : ""}
                 />
+                {errors.email && <span className={styles.errorText}>{errors.email}</span>}
               </div>
             </div>
 
@@ -160,10 +184,12 @@ const Contact = () => {
                 type="text"
                 name="subject"
                 placeholder="How can we help?"
-                onChange={handleChange}
+                onChange={(e) => { handleChange(e); clearError("subject"); }}
+                onBlur={handleBlur}
                 value={subject}
-                required
+                className={errors.subject ? styles.inputError : ""}
               />
+              {errors.subject && <span className={styles.errorText}>{errors.subject}</span>}
             </div>
 
             <div className={styles.formGroup}>
@@ -174,18 +200,21 @@ const Contact = () => {
                 name="message"
                 id={styles.message}
                 placeholder="Tell us about your project..."
-                onChange={handleChange}
+                onChange={(e) => { handleChange(e); clearError("message"); }}
+                onBlur={handleBlur}
                 value={message}
-                required
+                className={errors.message ? styles.inputError : ""}
               ></textarea>
+              {errors.message && <span className={styles.errorText}>{errors.message}</span>}
             </div>
 
             <div className={styles.captchaRow}>
               <ReCAPTCHA
                 sitekey={"6LfHa1QrAAAAAKFl-0u7ogSQ9DgbI0OPITwXJivc"}
                 onChange={(token) => setCaptchaValue(token)}
-                theme="dark"
+                theme={theme}
               />
+
             </div>
 
             <button

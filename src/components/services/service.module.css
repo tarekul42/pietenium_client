@@ -37,11 +37,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(1, 43, 66, 0.85),
-        rgba(2, 6, 23, 0.9)
-    );
+    background: var(--banner-overlay);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,14 +57,14 @@
 .srvHeadCont h1 {
     font-size: 3rem;
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
+    color: var(--banner-text);
     line-height: var(--line-height-tight);
     margin-bottom: 1rem;
 }
 
 .srvHeadCont p {
     font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    color: var(--banner-text-secondary);
     max-width: 60ch;
     line-height: var(--line-height-relaxed);
 }
