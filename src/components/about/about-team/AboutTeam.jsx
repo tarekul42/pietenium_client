@@ -1,17 +1,18 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./aboutTeam.module.css";
 import { api } from "@/data/api";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import Image from "next/image";
 import Link from "next/link";
+import { useLoading } from "@/customHooks";
 
 const AboutTeam = () => {
   const [Members, setMembers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
-  const fetchTeamMemberslData = async () => {
-    setLoading(true);
+  const fetchTeamMemberslData = useCallback(async () => {
+    startLoading();
     try {
       const response = await fetch(`${api}/team/getMembers`, {
         cache: "no-store",
@@ -21,13 +22,13 @@ const AboutTeam = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchTeamMemberslData();
-  }, []);
+  }, [fetchTeamMemberslData]);
   return (
     <aside className={styles.aboutTeam}>
       <section className={styles.teamHero}>

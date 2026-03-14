@@ -8,23 +8,23 @@ import { useDashAuth } from "../../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
 import Image from "next/image";
+import { useForm, useToast, useLoading } from "@/customHooks";
 
 const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
-  const [projData, setProjData] = useState({
+  const {
+    formData: projFormData,
+    handleChange,
+    setMultipleFields,
+    resetForm,
+  } = useForm({
     title: "",
     details: "",
     pLink: "",
   });
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
   const { accessToken } = useDashAuth();
-
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
-
-  const { title, details, pLink } = projData;
+  const { popInfo, showToast } = useToast();
+  const { title, details, pLink } = projFormData;
 
   const [thumb, setThumb] = useState([]);
   const [thumbImg, setThumbImg] = useState("");
@@ -56,7 +56,7 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
 
   useEffect(() => {
     if (data) {
-      setProjData({
+      setMultipleFields({
         title: data?.title,
         details: data?.details,
         pLink: data?.pLink,
@@ -64,13 +64,7 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
       setThumbImg(data?.thumbnail?.photo);
       setPrevGallery(data?.gallary);
     }
-  }, [data]);
-  const colletProjData = (e) => {
-    setProjData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  }, [data, setMultipleFields]);
 
   const [imgCutLoad, setImgCutLoad] = useState("");
 
@@ -98,16 +92,16 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
   };
 
   const handleUpdateP = async (pId) => {
-    setLoading(true);
+    startLoading();
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("details", details);
-    formData.append("thumbnail", thumb);
-    formData.append("pLink", pLink);
+    const projectFormData = new FormData();
+    projectFormData.append("title", title);
+    projectFormData.append("details", details);
+    projectFormData.append("thumbnail", thumb);
+    projectFormData.append("pLink", pLink);
 
     gallery.forEach((img) => {
-      formData.append("gallary", img.file);
+      projectFormData.append("gallary", img.file);
     });
 
     try {
@@ -116,16 +110,12 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
         headers: {
           authorization: `Bearer ${accessToken}`,
         },
-        body: formData,
+        body: projectFormData,
       });
 
       const data = await res.json();
 
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
 
       if (data?.success) {
         onUpdate && onUpdate(data?.project);
@@ -140,7 +130,7 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
     } catch (err) {
       console.error("Update failed", err);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
 
@@ -165,7 +155,7 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
                   placeholder="Project Title"
                   name="title"
                   value={title}
-                  onChange={colletProjData}
+                  onChange={handleChange}
                 ></textarea>
               </label>
               <label id={styles.pLink}>
@@ -174,7 +164,7 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
                   placeholder="Project Link"
                   name="pLink"
                   value={pLink}
-                  onChange={colletProjData}
+                  onChange={handleChange}
                 />
               </label>
               <label
@@ -255,7 +245,7 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
                   name="details"
                   placeholder="Project Details"
                   value={details}
-                  onChange={colletProjData}
+                  onChange={handleChange}
                 ></textarea>
               </label>
 

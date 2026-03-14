@@ -1,19 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./team.module.css";
 import { api } from "@/data/api";
 import Add_A_Member from "./create/AddMember";
 import ShowMembers from "./showMmbrs/ShowMembers";
+import { useLoading } from "@/customHooks";
 
 const Team = () => {
   const [createOpen, setCreateOpen] = useState(false);
   const [newMember, setNewMember] = useState({});
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
   const [Members, setMembers] = useState([]);
 
-  const fetchTeamMemberslData = async () => {
-    setLoading(true);
+  const fetchTeamMemberslData = useCallback(async () => {
+    startLoading();
     try {
       const response = await fetch(`${api}/team/getMembers`, {
         cache: "no-store",
@@ -23,14 +24,14 @@ const Team = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchTeamMemberslData();
-  }, []);
-  console.log(newMember);
+  }, [fetchTeamMemberslData]);
+
   useEffect(() => {
     if (newMember && newMember?._id) {
       setMembers((prev) => {

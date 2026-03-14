@@ -7,18 +7,15 @@ import { api } from "@/data/api";
 import { useDashAuth } from "../../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
+import { useToast, useLoading } from "@/customHooks";
 
 const ShowMembers = ({ data, onDelete }) => {
   const { _id, memberName, email, role, phone, memberProfile } = data;
   const { accessToken } = useDashAuth();
   const [isDeleteBtn, setIsdeleteBtn] = useState(false);
   const [deleteOpen, setDeleteOpen] = useState(false);
-
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
+  const { popInfo, showToast } = useToast();
+  const { loading: deleteLoad, startLoading, stopLoading } = useLoading(false);
 
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -29,11 +26,10 @@ const ShowMembers = ({ data, onDelete }) => {
       setUserId(id);
     }
   };
-  const [deleteLoad, setDeleteLoad] = useState(false);
 
   const handleTeamMemberDelete = async (mId) => {
     if (mId === userId) {
-      setDeleteLoad(true);
+      startLoading();
       try {
         const response = await fetch(`${api}/team/deleteMember/${mId}`, {
           method: "DELETE",
@@ -45,11 +41,7 @@ const ShowMembers = ({ data, onDelete }) => {
         });
         const data = await response.json();
 
-        setPopInfo({
-          trigger: Date.now(),
-          type: data?.success,
-          message: data?.message,
-        });
+        showToast(data?.message, data?.success);
         if (data?.success) {
           setTimeout(() => {
             setDeleteOpen(false);
@@ -59,7 +51,7 @@ const ShowMembers = ({ data, onDelete }) => {
       } catch (error) {
         console.error(error);
       } finally {
-        setDeleteLoad(false);
+        stopLoading();
       }
     }
   };

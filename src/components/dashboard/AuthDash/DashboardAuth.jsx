@@ -5,36 +5,22 @@ import SmallLoad from "@/components/smallLaoding/smallLoad";
 import { api } from "@/data/api";
 import { useDashAuth } from "../DashCotext/DashContext";
 import ToastP from "@/components/popupToast/ToastP";
+import { useForm, useToast, useLoading } from "@/customHooks";
 
 const DashboardAuth = () => {
   const { accessToken, setAccessToken } = useDashAuth();
 
-  const [authData, setAuthData] = useState({
+  const { formData, handleChange, resetForm } = useForm({
     email: "",
     password: "",
   });
-  const [loading, setLoading] = useState(false);
-
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
-
-  const handleInpChange = (e) => {
-    setAuthData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: e.target.value,
-      };
-    });
-  };
-
-  const { email, password } = authData;
+  const { loading, startLoading, stopLoading } = useLoading();
+  const { popInfo, showToast } = useToast();
+  const { email, password } = formData;
 
   const handleAuth = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    startLoading();
     try {
       const response = await fetch(`${api}/admin/logIn`, {
         method: "POST",
@@ -47,11 +33,7 @@ const DashboardAuth = () => {
       });
 
       const data = await response.json();
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
       console.log(data);
       if (data?.success) {
         setTimeout(() => {
@@ -59,11 +41,10 @@ const DashboardAuth = () => {
           window.location.reload();
         }, 2000);
       }
-      // console.log(data);
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
 
@@ -75,7 +56,7 @@ const DashboardAuth = () => {
           type="email"
           name="email"
           placeholder="Mr. Email"
-          onChange={handleInpChange}
+          onChange={handleChange}
           value={email}
           required
         />
@@ -83,7 +64,7 @@ const DashboardAuth = () => {
           type="password"
           name="password"
           placeholder="Ms. Password"
-          onChange={handleInpChange}
+          onChange={handleChange}
           value={password}
           required
         />

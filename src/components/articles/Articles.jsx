@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./article.module.css";
 import { api } from "@/data/api";
 import Image from "next/image";
@@ -8,14 +8,15 @@ import Link from "next/link";
 import { slugify } from "@/utility/slugify";
 import ArticleCardSkeleton from "../skeleton/ArticleCardSkeleton";
 import Skeleton from "../skeleton/Skeleton";
+import { useLoading } from "@/customHooks";
 
 const Articles = () => {
   const [articleType, setArticleType] = useState("");
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
-  const fetchArticles = async (artType) => {
-    setLoading(true);
+  const fetchArticles = useCallback(async (artType) => {
+    startLoading();
     try {
       const response = await fetch(
         `${api}/article/getAll?articleType=${artType}`,
@@ -28,13 +29,13 @@ const Articles = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchArticles(articleType);
-  }, [articleType]);
+  }, [articleType, fetchArticles]);
 
   return (
     <aside className={styles.articles}>

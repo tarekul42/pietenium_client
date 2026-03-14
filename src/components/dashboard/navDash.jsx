@@ -5,19 +5,14 @@ import { api } from "@/data/api";
 import { useDashAuth } from "./DashCotext/DashContext";
 import SmallLoad from "../smallLaoding/smallLoad";
 import ToastP from "../popupToast/ToastP";
-import { useState } from "react";
+import { useToast, useLoading } from "@/customHooks";
 
 const DashboardNav = () => {
   const { accessToken, setAccessToken } = useDashAuth();
-  const [loading, setLoading] = useState(false);
-
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
+  const { loading, startLoading, stopLoading } = useLoading();
+  const { popInfo, showToast } = useToast();
   const handleLogOut = async () => {
-    setLoading(true);
+    startLoading();
     try {
       const response = await fetch(`${api}/admin/logOut`, {
         method: "DELETE",
@@ -29,11 +24,7 @@ const DashboardNav = () => {
 
       const data = await response.json();
 
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
 
       if (data?.success) {
         setTimeout(() => {
@@ -41,11 +32,10 @@ const DashboardNav = () => {
           window.location.reload();
         }, 2000);
       }
-      // console.log(data);
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
   return (

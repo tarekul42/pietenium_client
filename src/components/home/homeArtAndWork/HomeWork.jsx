@@ -2,16 +2,17 @@ import HomeCardSkeleton from "@/components/skeleton/HomeCardSkeleton";
 import { api } from "@/data/api";
 import { slugify } from "@/utility/slugify";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./homeArtWrk.module.css";
 import Image from "next/image";
+import { useLoading } from "@/customHooks";
 
 const HomeWork = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
-  const fetchProjData = async () => {
-    setLoading(true);
+  const fetchProjData = useCallback(async () => {
+    startLoading();
     try {
       const response = await fetch(`${api}/project/allProjects`, {
         cache: "no-store",
@@ -21,13 +22,13 @@ const HomeWork = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchProjData();
-  }, []);
+  }, [fetchProjData]);
 
   return (
     <section className={styles.homeWork}>

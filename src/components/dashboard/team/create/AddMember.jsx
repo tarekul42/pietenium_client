@@ -9,27 +9,23 @@ import { useDashAuth } from "../../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
 import Image from "next/image";
-// import RichTextEditor from "@/components/textEditor/RichTextEditor";
+import { useForm, useToast, useLoading } from "@/customHooks";
 
 const Add_A_Member = ({ setOpen, setData }) => {
   const { accessToken } = useDashAuth();
-  const [loading, setLoading] = useState(false);
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
-  const [teamData, setTeamData] = useState({
+  const { loading, startLoading, stopLoading } = useLoading();
+  const { popInfo, showToast } = useToast();
+  const {
+    formData: teamFormData,
+    handleChange,
+    resetForm,
+  } = useForm({
     name: "",
     email: "",
     phone: "",
     role: "",
   });
-  const { name, email, phone, role } = teamData;
-
-  const colletTeamData = (e) => {
-    setTeamData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const { name, email, phone, role } = teamFormData;
 
   const [memberProfile, setMemberProfile] = useState([]);
   const [memberProfileImg, setMemberProfileImg] = useState("");
@@ -49,27 +45,22 @@ const Add_A_Member = ({ setOpen, setData }) => {
 
   const handleAddMember = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("phone", phone);
-    formData.append("role", role);
-    formData.append("teamMember", memberProfile);
-    // console.log(teamData);
+    const memberFormData = new FormData();
+    memberFormData.append("name", name);
+    memberFormData.append("email", email);
+    memberFormData.append("phone", phone);
+    memberFormData.append("role", role);
+    memberFormData.append("teamMember", memberProfile);
 
-    setLoading(true);
+    startLoading();
     try {
       const res = await fetch(`${api}/team/addMember`, {
         method: "POST",
         headers: { authorization: `Bearer ${accessToken}` },
-        body: formData,
+        body: memberFormData,
       });
       const data = await res.json();
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
 
       setData(data?.member);
       if (data?.success) {
@@ -77,18 +68,13 @@ const Add_A_Member = ({ setOpen, setData }) => {
           setOpen(false);
           setMemberProfile([]);
           setMemberProfileImg("");
-          setTeamData({
-            name: "",
-            email: "",
-            phone: "",
-            role: "",
-          });
+          resetForm();
         }, 2000);
       }
     } catch (err) {
       console.error("Upload failed", err);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
 
@@ -130,7 +116,7 @@ const Add_A_Member = ({ setOpen, setData }) => {
                 placeholder="Member Name"
                 name="name"
                 value={name}
-                onChange={colletTeamData}
+                onChange={handleChange}
               />
             </label>
             <label id={styles.mEmail}>
@@ -142,7 +128,7 @@ const Add_A_Member = ({ setOpen, setData }) => {
                 placeholder="Member Email"
                 name="email"
                 value={email}
-                onChange={colletTeamData}
+                onChange={handleChange}
               />
             </label>
             <label id={styles.mPhone}>
@@ -154,7 +140,7 @@ const Add_A_Member = ({ setOpen, setData }) => {
                 placeholder="Member Phone"
                 name="phone"
                 value={phone}
-                onChange={colletTeamData}
+                onChange={handleChange}
               />
             </label>
             <label id={styles.mMole}>
@@ -166,7 +152,7 @@ const Add_A_Member = ({ setOpen, setData }) => {
                 placeholder="Member Role"
                 name="role"
                 value={role}
-                onChange={colletTeamData}
+                onChange={handleChange}
               />
             </label>
             <button type="submit" disabled={loading}>

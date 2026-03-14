@@ -3,36 +3,22 @@ import styles from "./comment.module.css";
 import { api } from "@/data/api";
 import ToastP from "@/components/popupToast/ToastP";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useForm, useToast, useLoading } from "@/customHooks";
 
 const CommentArt = ({ articleId }) => {
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
+  const { popInfo, showToast } = useToast();
   const [newComment, setNewComment] = useState({});
   const [comments, setComments] = useState([]);
-
-  const [commentData, setCommentData] = useState({
+  const { formData, handleChange, resetForm } = useForm({
     name: "",
     email: "",
     comment: "",
   });
-
-  const [loading, setLoading] = useState(false);
-
-  const handleCollectCommentData = (e) => {
-    setCommentData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: e.target.value,
-      };
-    });
-  };
-  const { name, email, comment } = commentData;
+  const { loading, startLoading, stopLoading } = useLoading();
+  const { name, email, comment } = formData;
 
   const handlePickComment = async (artId) => {
-    setLoading(true);
+    startLoading();
     try {
       const response = await fetch(`${api}/article/comments/add/${artId}`, {
         method: "POST",
@@ -45,25 +31,17 @@ const CommentArt = ({ articleId }) => {
       });
 
       const data = await response.json();
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
       if (data?.success) {
         setTimeout(() => {
           setNewComment(data?.comment);
-          setCommentData({
-            name: "",
-            email: "",
-            comment: "",
-          });
+          resetForm();
         }, 2000);
       }
     } catch (error) {
       console.log(error.message);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
 
@@ -120,7 +98,7 @@ const CommentArt = ({ articleId }) => {
               placeholder="Your name"
               value={name}
               required
-              onChange={handleCollectCommentData}
+              onChange={handleChange}
             />
           </label>
           <label>
@@ -133,7 +111,7 @@ const CommentArt = ({ articleId }) => {
               placeholder="your@email.com"
               required
               value={email}
-              onChange={handleCollectCommentData}
+              onChange={handleChange}
             />
           </label>
         </div>
@@ -146,7 +124,7 @@ const CommentArt = ({ articleId }) => {
             placeholder="Share your thoughts about this article..."
             required
             value={comment}
-            onChange={handleCollectCommentData}
+            onChange={handleChange}
           />
         </label>
         <button type="submit" disabled={loading}>

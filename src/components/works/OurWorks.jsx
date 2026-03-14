@@ -1,18 +1,19 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./ourWorks.module.css";
 import { api } from "@/data/api";
 import Link from "next/link";
 import { slugify } from "@/utility/slugify";
 import HomeCardSkeleton from "../skeleton/HomeCardSkeleton";
 import Image from "next/image";
+import { useLoading } from "@/customHooks";
 
 const OurWorks = () => {
   const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
-  const fetchProjData = async () => {
-    setLoading(true);
+  const fetchProjData = useCallback(async () => {
+    startLoading();
     try {
       const response = await fetch(`${api}/project/allProjects`, {
         cache: "no-store",
@@ -22,13 +23,13 @@ const OurWorks = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchProjData();
-  }, []);
+  }, [fetchProjData]);
 
   return (
     <aside className={styles.ourWorks}>
