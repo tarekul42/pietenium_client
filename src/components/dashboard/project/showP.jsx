@@ -7,15 +7,13 @@ import { api } from "@/data/api";
 import { useDashAuth } from "../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
+import { useToast, useLoading } from "@/customHooks";
 
 const ShowP = ({ data, handleProjectUpdate, handleProjectCut, idx }) => {
   const { _id, title, thumbnail } = data;
   const { accessToken } = useDashAuth();
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
+  const { popInfo, showToast } = useToast();
+  const { loading: deleteLoad, startLoading, stopLoading } = useLoading(false);
 
   const [updateOpen, setUpdateOpen] = useState(false);
   const [projData, setProjData] = useState({});
@@ -37,11 +35,9 @@ const ShowP = ({ data, handleProjectUpdate, handleProjectCut, idx }) => {
     }
   };
 
-  const [deleteLoad, setDeleteLoad] = useState("");
-
   const handleDeleteProject = async (pId) => {
     if (pId === _id) {
-      setDeleteLoad(pId);
+      startLoading();
       try {
         const response = await fetch(`${api}/project/delete/${pId}`, {
           method: "DELETE",
@@ -51,22 +47,17 @@ const ShowP = ({ data, handleProjectUpdate, handleProjectCut, idx }) => {
         });
         const data = await response.json();
 
-        setPopInfo({
-          trigger: Date.now(),
-          type: data?.success,
-          message: data?.message,
-        });
+        showToast(data?.message, data?.success);
 
         if (data?.success) {
           setTimeout(() => {
             handleProjectCut(pId);
           }, 2000);
         }
-        // const data = response2?.data;
       } catch (error) {
         console.error(error);
       } finally {
-        setDeleteLoad("");
+        stopLoading();
       }
     }
   };

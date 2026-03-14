@@ -8,31 +8,22 @@ import { useDashAuth } from "../../DashCotext/DashContext";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
 import Image from "next/image";
+import { useForm, useToast, useLoading } from "@/customHooks";
 
 const CreateProject = ({ setOpen, setData }) => {
-  const [projData, setProjData] = useState({
+  const {
+    formData: formState,
+    handleChange,
+    resetForm,
+  } = useForm({
     title: "",
     details: "",
     pLink: "",
   });
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
   const { accessToken } = useDashAuth();
-
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
-
-  const colletProjData = (e) => {
-    setProjData((prev) => {
-      return {
-        ...prev,
-        [e.target.name]: e.target.value,
-      };
-    });
-  };
-  const { title, details, pLink } = projData;
+  const { popInfo, showToast } = useToast();
+  const { title, details, pLink } = formState;
   /*Collect Thumbnail image */
   const [thumb, setThumb] = useState([]);
   const [thumbImg, setThumbImg] = useState("");
@@ -63,32 +54,29 @@ const CreateProject = ({ setOpen, setData }) => {
 
   /* @Handle Upload Pojects ---> */
 
-  const formData = new FormData();
-  formData.append("title", title);
-  formData.append("details", details);
-  formData.append("pLink", pLink);
-  formData.append("thumbnail", thumb);
-  gallery.forEach((img) => {
-    formData.append("gallary", img.file);
-  });
-
   const handleUploadProj = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    startLoading();
+
+    const projectFormData = new FormData();
+    projectFormData.append("title", title);
+    projectFormData.append("details", details);
+    projectFormData.append("pLink", pLink);
+    projectFormData.append("thumbnail", thumb);
+    gallery.forEach((img) => {
+      projectFormData.append("gallary", img.file);
+    });
+
     try {
       const res = await fetch(`${api}/project/add`, {
         method: "POST",
         headers: {
           authorization: `Bearer ${accessToken}`,
         },
-        body: formData,
+        body: projectFormData,
       });
       const data = await res.json();
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
       setData(data?.project);
       if (data?.success) {
         setTimeout(() => {
@@ -96,13 +84,13 @@ const CreateProject = ({ setOpen, setData }) => {
           setGallray([]);
           setThumb([]);
           setThumbImg("");
-          setProjData({ title: "", details: "" });
+          resetForm();
         }, 2000);
       }
     } catch (err) {
       console.error("Upload failed", err);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
 
@@ -120,7 +108,7 @@ const CreateProject = ({ setOpen, setData }) => {
                 placeholder="Project Title"
                 name="title"
                 value={title}
-                onChange={colletProjData}
+                onChange={handleChange}
               ></textarea>
             </label>
             <label id={styles.pLink}>
@@ -129,7 +117,7 @@ const CreateProject = ({ setOpen, setData }) => {
                 placeholder="Project Link"
                 name="pLink"
                 value={pLink}
-                onChange={colletProjData}
+                onChange={handleChange}
               />
             </label>
             <label
@@ -188,7 +176,7 @@ const CreateProject = ({ setOpen, setData }) => {
                 name="details"
                 placeholder="Project Details"
                 value={details}
-                onChange={colletProjData}
+                onChange={handleChange}
               ></textarea>
             </label>
             <button type="submit" disabled={loading}>

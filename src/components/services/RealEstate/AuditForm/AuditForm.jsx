@@ -4,64 +4,53 @@ import styles from "./auditForm.module.css";
 import { api } from "@/data/api";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import ToastP from "@/components/popupToast/ToastP";
+import { useForm, useToast, useLoading, useCountryCode } from "@/customHooks";
 
 export default function AuditFormRl() {
-  const [formData, setFormData] = useState({
+  const {
+    formData,
+    handleChange: formHandleChange,
+    setField,
+    resetForm,
+  } = useForm({
     name: "",
     email: "",
     website: "",
     phone: "",
     message: "",
   });
-  const [countryCode, setCountryCode] = useState("+1");
+  const { popInfo, showToast } = useToast();
+  const { loading, startLoading, stopLoading } = useLoading();
+  const { countryCode: fetchedCountryCode, fetchCountryCode } =
+    useCountryCode("+1");
+
   const [status, setStatus] = useState("idle");
 
-  const [popInfo, setPopInfo] = useState({
-    type: null,
-    trigger: null,
-    message: null,
-  });
-
-  // Auto-detect country calling code
   useEffect(() => {
-    fetch("https://ipwho.is/")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.success && data.calling_code) {
-          const code = data.calling_code.startsWith("+")
-            ? data.calling_code
-            : `+${data.calling_code}`;
-          setCountryCode(code);
-          setFormData((prev) => ({
-            ...prev,
-            phone: code,
-          }));
-        }
-      })
-      .catch(() => {
-        setFormData((prev) => ({
-          ...prev,
-          phone: "+1",
-        }));
-      });
-  }, []);
+    const initCountryCode = async () => {
+      const code = await fetchCountryCode();
+      if (code) {
+        setField("phone", code);
+      }
+    };
+    initCountryCode();
+  }, [fetchCountryCode, setField]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === "phone") {
-      // Prevent removing country code
-      if (!value.startsWith(countryCode)) return;
+      if (!value.startsWith(fetchedCountryCode)) return;
     }
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    formHandleChange(e);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    startLoading();
     setStatus("loading");
 
-    // Format phone properly before sending
     const phoneNumber = parsePhoneNumberFromString(formData.phone);
     const formattedPhone = phoneNumber
       ? phoneNumber.formatInternational()
@@ -82,11 +71,7 @@ export default function AuditFormRl() {
       }
       const getData = await res.json();
 
-      setPopInfo({
-        trigger: Date.now(),
-        type: getData?.success,
-        message: getData?.message,
-      });
+      showToast(getData?.message, getData?.success);
       if (getData?.success === true) {
         setTimeout(() => {
           setStatus("success");
@@ -96,11 +81,12 @@ export default function AuditFormRl() {
       console.error(error);
       setStatus("error");
     } finally {
-      setFormData({
+      stopLoading();
+      resetForm({
         name: "",
         email: "",
         website: "",
-        phone: countryCode,
+        phone: fetchedCountryCode,
         message: "",
       });
     }
@@ -171,8 +157,8 @@ export default function AuditFormRl() {
               value={formData.message}
               onChange={handleChange}
             ></textarea>
-            <button type="submit" disabled={status === "loading"}>
-              {status === "loading" ? (
+            <button type="submit" disabled={loading}>
+              {loading ? (
                 <span className={styles.spinner}></span>
               ) : (
                 "Get My Free Audit"

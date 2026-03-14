@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import styles from "./article.module.css";
 import { api } from "@/data/api";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -8,16 +8,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CreateArticle from "./create/CreateArt";
 import ArticleDShow from "./view/ArticleDShow";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useLoading } from "@/customHooks";
 
 const ArticleP = () => {
   const [createOpen, setCreateOpen] = useState(false);
   const [newArticle, setNewArticle] = useState({});
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
   const [articles, setArticles] = useState([]);
 
-  const fetchArtclData = async () => {
-    setLoading(true);
+  const fetchArtclData = useCallback(async () => {
+    startLoading();
     try {
       const response = await fetch(`${api}/article/getAll`, {
         cache: "no-store",
@@ -27,13 +28,13 @@ const ArticleP = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchArtclData();
-  }, []);
+  }, [fetchArtclData]);
 
   useEffect(() => {
     if (newArticle && newArticle?._id) {

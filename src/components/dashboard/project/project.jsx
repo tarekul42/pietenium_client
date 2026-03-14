@@ -4,21 +4,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./project.module.css";
 import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 import CreateProject from "./post/createProject";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { api } from "@/data/api";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ShowP from "./showP";
+import { useLoading } from "@/customHooks";
 
 const Project = () => {
   const [createOpen, setCreateOpen] = useState(false);
   const [newProject, setNewProject] = useState({});
-  const [loading, setLoading] = useState(false);
+  const { loading, startLoading, stopLoading } = useLoading();
 
   const [projects, setProjects] = useState([]);
 
-  const fetchProjData = async () => {
-    setLoading(true);
+  const fetchProjData = useCallback(async () => {
+    startLoading();
     try {
       const response = await fetch(`${api}/project/allProjects`, {
         cache: "no-store",
@@ -28,13 +29,13 @@ const Project = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
-  };
+  }, [startLoading, stopLoading]);
 
   useEffect(() => {
     fetchProjData();
-  }, []);
+  }, [fetchProjData]);
 
   useEffect(() => {
     if (newProject && newProject?._id) {

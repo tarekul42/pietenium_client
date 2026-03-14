@@ -10,27 +10,19 @@ import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
 import Image from "next/image";
 import TextEditor from "@/components/textEditor/TextEditor";
-// import RichTextEditor from "@/components/textEditor/RichTextEditor";
+import { useForm, useToast, useLoading } from "@/customHooks";
 
 const CreateArticle = ({ setOpen, setData }) => {
   const { accessToken } = useDashAuth();
-  const [loading, setLoading] = useState(false);
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
-  const [articleData, setArticleData] = useState({
+  const { loading, startLoading, stopLoading } = useLoading();
+  const { popInfo, showToast } = useToast();
+  const { formData, handleChange, setField, resetForm } = useForm({
     title: "",
     hashtags: "",
     articleType: "",
     content: "",
   });
-  const { title, content, hashtags, articleType } = articleData;
-
-  const colletArticleData = (e) => {
-    setArticleData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+  const { title, content, hashtags, articleType } = formData;
 
   const [thumb, setThumb] = useState([]);
   const [thumbImg, setThumbImg] = useState("");
@@ -50,27 +42,22 @@ const CreateArticle = ({ setOpen, setData }) => {
 
   const handleUploadProj = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("content", content);
-    formData.append("thumbnail", thumb);
-    formData.append("hashtags", hashtags);
-    formData.append("articleType", articleType);
-    // console.log(articleData);
+    const formDataToSend = new FormData();
+    formDataToSend.append("title", title);
+    formDataToSend.append("content", content);
+    formDataToSend.append("thumbnail", thumb);
+    formDataToSend.append("hashtags", hashtags);
+    formDataToSend.append("articleType", articleType);
 
-    setLoading(true);
+    startLoading();
     try {
       const res = await fetch(`${api}/article/post`, {
         method: "POST",
         headers: { authorization: `Bearer ${accessToken}` },
-        body: formData,
+        body: formDataToSend,
       });
       const data = await res.json();
-      setPopInfo({
-        trigger: Date.now(),
-        type: data?.success,
-        message: data?.message,
-      });
+      showToast(data?.message, data?.success);
 
       setData(data?.article);
       if (data?.success) {
@@ -78,18 +65,13 @@ const CreateArticle = ({ setOpen, setData }) => {
           setOpen(false);
           setThumb([]);
           setThumbImg("");
-          setArticleData({
-            title: "",
-            hashtags: "",
-            articleType: "",
-            content: "",
-          });
+          resetForm();
         }, 2000);
       }
     } catch (err) {
       console.error("Upload failed", err);
     } finally {
-      setLoading(false);
+      stopLoading();
     }
   };
 
@@ -110,10 +92,7 @@ const CreateArticle = ({ setOpen, setData }) => {
                 onChange={(e) => {
                   const wordArray = e.target.value.trim().split(/\s+/);
                   if (wordArray.length <= 20) {
-                    setArticleData((prev) => ({
-                      ...prev,
-                      title: e.target.value,
-                    }));
+                    setField("title", e.target.value);
                   }
                 }}
               ></textarea>
@@ -129,10 +108,7 @@ const CreateArticle = ({ setOpen, setData }) => {
                   onChange={(e) => {
                     const wordArray = e.target.value.trim().split(/\s+/);
                     if (wordArray.length <= 10) {
-                      setArticleData((prev) => ({
-                        ...prev,
-                        hashtags: e.target.value,
-                      }));
+                      setField("hashtags", e.target.value);
                     }
                   }}
                 ></textarea>
@@ -144,7 +120,7 @@ const CreateArticle = ({ setOpen, setData }) => {
               <label id={styles.type}>
                 <select
                   name="articleType"
-                  onChange={colletArticleData}
+                  onChange={handleChange}
                   value={articleType}
                 >
                   <option value="">--Select Article Type --</option>
@@ -178,9 +154,7 @@ const CreateArticle = ({ setOpen, setData }) => {
             <label id={styles.artDesc}>
               <TextEditor
                 value={content}
-                onChange={(value) =>
-                  setArticleData((prev) => ({ ...prev, content: value }))
-                }
+                onChange={(value) => setField("content", value)}
               />
             </label>
 

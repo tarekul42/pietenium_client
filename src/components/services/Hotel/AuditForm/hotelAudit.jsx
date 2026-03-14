@@ -1,26 +1,28 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import styles from "./auditFrmHtl.module.css";
 import { api } from "@/data/api";
 import ToastP from "@/components/popupToast/ToastP";
+import { useForm, useToast, useLoading, useCountryCode } from "@/customHooks";
 
 const AuditFormHotel = () => {
-  const [popInfo, setPopInfo] = useState({
-    type: null,
-    trigger: null,
-    message: null,
-  });
-
-  const [formData, setFormData] = useState({
+  const { popInfo, showToast } = useToast();
+  const { loading, startLoading, stopLoading } = useLoading();
+  const {
+    formData,
+    handleChange: formHandleChange,
+    setField,
+    resetForm,
+  } = useForm({
     name: "",
     email: "",
     website: "",
     phone: "",
   });
-  const [error, setError] = useState("");
+  const { countryCode: fetchedCountryCode, fetchCountryCode } =
+    useCountryCode("");
 
-  const [countryCode, setCountryCode] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [sectionVisible, setSectionVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -51,40 +53,27 @@ const AuditFormHotel = () => {
     const { name, value } = e.target;
 
     if (name === "phone") {
-      // Prevent removing the country code
-      if (!value.startsWith(countryCode)) return;
+      if (!value.startsWith(fetchedCountryCode)) return;
     }
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    formHandleChange(e);
   };
 
   useEffect(() => {
-    fetch("https://ipwho.is/")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.success && data?.calling_code) {
-          const code = data.calling_code.startsWith("+")
-            ? data.calling_code
-            : `+${data.calling_code}`;
-          setCountryCode(code);
-          setFormData((prev) => ({ ...prev, phone: code }));
-        } else {
-          setCountryCode("+1");
-          setFormData((prev) => ({ ...prev, phone: "+1" }));
-        }
-      })
-      .catch(() => {
-        setCountryCode("+1");
-        setFormData((prev) => ({ ...prev, phone: "+1" }));
-      });
-  }, []);
+    const initCountryCode = async () => {
+      const code = await fetchCountryCode();
+      if (code) {
+        setField("phone", code);
+      }
+    };
+    initCountryCode();
+  }, [fetchCountryCode, setField]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    startLoading();
     setError("");
 
-    // Format phone number if possible
     let formattedPhone = formData.phone;
     const phoneNumber = parsePhoneNumberFromString(formData.phone);
     if (phoneNumber) {
@@ -106,11 +95,7 @@ const AuditFormHotel = () => {
       }
 
       const getData = await res.json();
-      setPopInfo({
-        trigger: Date.now(),
-        type: getData?.success,
-        message: getData?.message,
-      });
+      showToast(getData?.message, getData?.success);
 
       if (getData?.success === true) {
         setSubmitted(true);
@@ -119,8 +104,13 @@ const AuditFormHotel = () => {
       console.error(err);
       setError("Something went wrong! Try again.");
     } finally {
-      setLoading(false);
-      setFormData({ name: "", email: "", website: "", phone: countryCode });
+      stopLoading();
+      resetForm({
+        name: "",
+        email: "",
+        website: "",
+        phone: fetchedCountryCode,
+      });
     }
   };
 

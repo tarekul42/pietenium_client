@@ -9,40 +9,25 @@ import SmallLoad from "@/components/smallLaoding/smallLoad";
 import { api } from "@/data/api";
 import { useDashAuth } from "../../DashCotext/DashContext";
 import ToastP from "@/components/popupToast/ToastP";
+import { useToast, useLoading } from "@/customHooks";
 
 const ArticleDShow = ({ data, onUpdate, onDelete }) => {
   const { _id, title, thumbnail } = data;
   const { accessToken } = useDashAuth();
   const [updateOpen, setupdateOpen] = useState(false);
-
-  const [popInfo, setPopInfo] = useState({
-    trigger: null,
-    type: null,
-    message: null,
-  });
-
-  const handleUpdateOpen = (id) => {
-    if (id === _id) {
-      setupdateOpen(true);
-    }
-  };
-
-  const [deleteLoad, setDeleteLoad] = useState("");
+  const { popInfo, showToast } = useToast();
+  const { loading: deleteLoad, startLoading, stopLoading } = useLoading(false);
 
   const handleDeleteArticle = async (id) => {
     if (id === _id) {
-      setDeleteLoad(id);
+      startLoading();
       try {
         const res = await fetch(`${api}/article/delete/${id}`, {
           method: "DELETE",
           headers: { authorization: `Bearer ${accessToken}` },
         });
         const data = await res.json();
-        setPopInfo({
-          trigger: Date.now(),
-          type: data?.success,
-          message: data?.message,
-        });
+        showToast(data?.message, data?.success);
 
         if (data?.success) {
           setTimeout(() => {
@@ -52,7 +37,7 @@ const ArticleDShow = ({ data, onUpdate, onDelete }) => {
       } catch (err) {
         console.error("Delete failed", err);
       } finally {
-        setDeleteLoad("");
+        stopLoading();
       }
     }
   };
