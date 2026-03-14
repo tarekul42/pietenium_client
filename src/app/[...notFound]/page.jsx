@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import notFoundImg from "@/gallary/siteImgs/404NotFound.svg";
-// app/[...notFound]/page.js
 export default function CustomNotFound() {
   return (
     <section

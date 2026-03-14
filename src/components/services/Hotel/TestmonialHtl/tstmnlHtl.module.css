@@ -4,7 +4,9 @@
     padding: 20px;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .testimonials.visible {
@@ -176,7 +178,7 @@
     }
 
     .subtitle {
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-bottom: 30px;
     }
 
@@ -185,7 +187,7 @@
     }
 
     .review {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
 
     .clientName {
@@ -196,7 +198,7 @@
     .nextButton {
         width: 25px;
         height: 25px;
-        font-size: .7rem;
+        font-size: 0.7rem;
     }
 
     .prevButton {

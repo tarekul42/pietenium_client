@@ -76,7 +76,12 @@ const OurWorks = () => {
             const titleLink = slugify(title);
             return (
               <div className={styles.projTemp} key={_id}>
-                <Image src={thumbnail?.photo} alt={`${title} image`} width={300} height={200} />
+                <Image
+                  src={thumbnail?.photo}
+                  alt={`${title} image`}
+                  width={300}
+                  height={200}
+                />
                 <h4>{title}</h4>
                 <Link
                   href={`/work/${titleLink}/${_id}`}

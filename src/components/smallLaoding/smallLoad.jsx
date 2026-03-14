@@ -1,4 +1,3 @@
-
 const SmallLoad = () => {
   return (
     <>

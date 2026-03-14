@@ -5,7 +5,7 @@ export const metadata = {
     "Our Daily News & Articles. We trying to always update about technology.",
 };
 const page = () => {
-    return <Articles/>;
+  return <Articles />;
 };
 
 export default page;

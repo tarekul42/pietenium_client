@@ -77,7 +77,9 @@ const SolutionHotel = () => {
 
   return (
     <section className={styles.solutionSection}>
-      <h2 className={styles.sectionTitle}>How to Overcome Barriers to Bookings!</h2>
+      <h2 className={styles.sectionTitle}>
+        How to Overcome Barriers to Bookings!
+      </h2>
       <div className={styles.solutionsGrid}>
         {hotelSolutions.map((solution, index) => (
           <div

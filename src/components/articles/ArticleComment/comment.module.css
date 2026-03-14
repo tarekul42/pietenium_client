@@ -38,7 +38,7 @@
 }
 
 .commentArt form label span {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
 }
 
 .commentArt form label span sup {
@@ -53,7 +53,7 @@
     background: none;
     padding: 1rem;
     font-size: 1rem;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
 }
 
 .commentArt form textarea {
@@ -63,7 +63,7 @@
     background: none;
     padding: 1rem;
     font-size: 1rem;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     resize: vertical;
 }
 
@@ -72,7 +72,6 @@
         background: none;
     }
 }
-
 
 .commentCont {
     display: flex;
@@ -89,7 +88,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     box-shadow: 1px 1px 2px 2px #fff;
-    padding: .6rem;
+    padding: 0.6rem;
     text-align: left;
     border-radius: 1rem;
 }
@@ -107,7 +106,9 @@
 
 .commentCont article pre {
     color: #b6b6b6;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 0;

@@ -62,7 +62,8 @@ export default function Hero() {
       <div className={styles.heroContent}>
         <div className={styles.heroHeader}>
           <h1>
-            Digital Solutions That Drive <span className={styles.accent}>Growth</span> and Results
+            Digital Solutions That Drive{" "}
+            <span className={styles.accent}>Growth</span> and Results
           </h1>
           <h2>
             We Build —{" "}

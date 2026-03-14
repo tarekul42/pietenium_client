@@ -1,5 +1,11 @@
 .finalCTA {
-    background: radial-gradient(circle at center, #04cdf13d, #0ad2a059, #04f1a25e, #0ad26e70);
+    background: radial-gradient(
+        circle at center,
+        #04cdf13d,
+        #0ad2a059,
+        #04f1a25e,
+        #0ad26e70
+    );
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     padding: 100px 20px;
@@ -7,7 +13,9 @@
     overflow: hidden;
     opacity: 0;
     transform: translateY(30px) scale(0.95);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .finalCTA.visible {
@@ -89,7 +97,6 @@
 }
 
 @keyframes bounce {
-
     0%,
     20%,
     50%,
@@ -109,7 +116,7 @@
 
 /* Wave animation for visual appeal */
 .finalCTA::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -145,15 +152,15 @@
     }
 
     .subheadline {
-        font-size: .9rem;
+        font-size: 0.9rem;
     }
 
     .benefit {
-        font-size: .8rem;
+        font-size: 0.8rem;
     }
 
     .ctaButton {
         padding: 8px 16px;
-        font-size: .9rem;
+        font-size: 0.9rem;
     }
 }

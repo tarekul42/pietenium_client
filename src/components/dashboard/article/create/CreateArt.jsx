@@ -200,7 +200,6 @@ const CreateArticle = ({ setOpen, setData }) => {
             }}
             dangerouslySetInnerHTML={{ __html: content }}
           /> */}
-
         </div>
       </div>
       <ToastP popInfo={popInfo} />

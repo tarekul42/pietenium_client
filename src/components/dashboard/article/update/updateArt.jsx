@@ -10,13 +10,10 @@ import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
 import Image from "next/image";
 import TextEditor from "@/components/textEditor/TextEditor";
-// import RichTextEditor from "@/components/textEditor/RichTextEditor";
 
 const UpdateArticle = ({ setOpen, onUpdate, artData }) => {
   const { accessToken } = useDashAuth();
   const [loading, setLoading] = useState(false);
-
-  //   console.log(artData?._id);
 
   const [popInfo, setPopInfo] = useState({
     trigger: null,

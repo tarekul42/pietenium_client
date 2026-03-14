@@ -25,7 +25,9 @@ const ShowP = ({ data, handleProjectUpdate, handleProjectCut, idx }) => {
       setUpdateOpen(true);
 
       try {
-        const response = await fetch(`${api}/project/singleProject/${pId}`,{cache: "no-store",});
+        const response = await fetch(`${api}/project/singleProject/${pId}`, {
+          cache: "no-store",
+        });
         const response2 = await response.json();
         const data = response2?.data;
         setProjData(data);
@@ -106,7 +108,7 @@ const ShowP = ({ data, handleProjectUpdate, handleProjectCut, idx }) => {
           onUpdate={handleProjectUpdate}
         />
       )}
-      <ToastP popInfo={popInfo}/>
+      <ToastP popInfo={popInfo} />
     </>
   );
 };

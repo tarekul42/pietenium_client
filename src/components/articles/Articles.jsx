@@ -21,7 +21,7 @@ const Articles = () => {
         `${api}/article/getAll?articleType=${artType}`,
         {
           cache: "no-store",
-        }
+        },
       );
       const data = await response.json();
       setArticles(data?.articles);
@@ -41,16 +41,24 @@ const Articles = () => {
       <section className={styles.artlBannerSec}>
         <div className={styles.heroCont}>
           <h1>Insights & News</h1>
-          <p>Explore our latest thoughts on technology, design, and innovation.</p>
+          <p>
+            Explore our latest thoughts on technology, design, and innovation.
+          </p>
         </div>
       </section>
       {loading ? (
         <section className={styles.artlShowSec}>
           <div className={styles.filterBar}>
             <div className={styles.artclAct}>
-              <Skeleton style={{ width: "6rem", height: "2.5rem", borderRadius: "8px" }} />
-              <Skeleton style={{ width: "6rem", height: "2.5rem", borderRadius: "8px" }} />
-              <Skeleton style={{ width: "6rem", height: "2.5rem", borderRadius: "8px" }} />
+              <Skeleton
+                style={{ width: "6rem", height: "2.5rem", borderRadius: "8px" }}
+              />
+              <Skeleton
+                style={{ width: "6rem", height: "2.5rem", borderRadius: "8px" }}
+              />
+              <Skeleton
+                style={{ width: "6rem", height: "2.5rem", borderRadius: "8px" }}
+              />
             </div>
           </div>
           <div className={styles.articleGrid}>
@@ -93,7 +101,11 @@ const Articles = () => {
                   const { _id, title, thumbnail, hashtags, articleType } = art;
                   const titleStr = slugify(title);
                   return (
-                    <Link key={_id} href={`/pulse/${titleStr}/${_id}`} className={styles.artLink}>
+                    <Link
+                      key={_id}
+                      href={`/pulse/${titleStr}/${_id}`}
+                      className={styles.artLink}
+                    >
                       <article className={styles.artCard}>
                         <div className={styles.cardImage}>
                           <Image
@@ -102,7 +114,9 @@ const Articles = () => {
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             alt={title}
                           />
-                          <span className={styles.categoryBadge}>{articleType}</span>
+                          <span className={styles.categoryBadge}>
+                            {articleType}
+                          </span>
                         </div>
                         <div className={styles.cardContent}>
                           <h4>{title}</h4>
@@ -111,7 +125,9 @@ const Articles = () => {
                               <span key={`${h},${i}`}>#{h}</span>
                             ))}
                           </div>
-                          <span className={styles.readMore}>Read article →</span>
+                          <span className={styles.readMore}>
+                            Read article →
+                          </span>
                         </div>
                       </article>
                     </Link>

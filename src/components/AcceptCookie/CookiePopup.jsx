@@ -1,4 +1,3 @@
-// components/CookiePopup.jsx
 "use client";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
@@ -55,8 +54,8 @@ export default function CookiePopup() {
         <h4>🍪 PieTech Cookie Consent</h4>
         <p>
           We use cookies to improve your experience and analyze traffic on
-          PieTech. By clicking &quot;Accept&quot;, you consent to our cookie policy. To
-          learn more, see our full policy.
+          PieTech. By clicking &quot;Accept&quot;, you consent to our cookie
+          policy. To learn more, see our full policy.
         </p>
         <div className={styles.buttonGroup}>
           {loading ? (

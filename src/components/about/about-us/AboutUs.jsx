@@ -134,41 +134,45 @@ const AboutUs = () => {
               <h2>Building Digital Experiences That Matter</h2>
               <div className={styles.abtDesc}>
                 <p>
-                  At <strong>Pietenium</strong>, we don’t just build websites — we
-                  engineer exceptional digital experiences.
-                  We’re a creative tech agency fueled by innovation, design, and
-                  real-world problem-solving.
+                  At <strong>Pietenium</strong>, we don’t just build websites —
+                  we engineer exceptional digital experiences. We’re a creative
+                  tech agency fueled by innovation, design, and real-world
+                  problem-solving.
                 </p>
                 <p>
-                  From agile startups to growing scale-ups, we empower businesses
-                  with smart, scalable web solutions tailored to their goals. Our
-                  team blends clean code with creative thinking to craft
-                  high-performance websites and applications that stand out.
+                  From agile startups to growing scale-ups, we empower
+                  businesses with smart, scalable web solutions tailored to
+                  their goals. Our team blends clean code with creative thinking
+                  to craft high-performance websites and applications that stand
+                  out.
                 </p>
                 <p>
                   With deep expertise in both frontend finesse and backend
                   reliability, we create systems that are fast, secure, and
-                  future-ready. Every product we build is designed with the user in
-                  mind — intuitive, responsive, and accessible.
+                  future-ready. Every product we build is designed with the user
+                  in mind — intuitive, responsive, and accessible.
                 </p>
                 <p>
                   Clients trust us not just for our skills, but for our{" "}
-                  <strong>transparency</strong>, <strong>commitment</strong>, and{" "}
-                  <strong>on-time delivery</strong>. Whether it’s a sleek landing
-                  page or a complex SaaS platform, we treat every project like it’s
-                  our own.
+                  <strong>transparency</strong>, <strong>commitment</strong>,
+                  and <strong>on-time delivery</strong>. Whether it’s a sleek
+                  landing page or a complex SaaS platform, we treat every
+                  project like it’s our own.
                 </p>
                 <p>
-                  We stay ahead of emerging technologies to help your business stay
-                  ahead of the competition. At Pietenium, communication is clear,
-                  collaboration is consistent, and quality is non-negotiable.
+                  We stay ahead of emerging technologies to help your business
+                  stay ahead of the competition. At Pietenium, communication is
+                  clear, collaboration is consistent, and quality is
+                  non-negotiable.
                 </p>
                 <p>
                   We don’t just deliver — we impress, inspire, and drive digital
                   growth.
                 </p>
                 <p className={styles.finalCall}>
-                  <strong>Let’s build something extraordinary — together.</strong>
+                  <strong>
+                    Let’s build something extraordinary — together.
+                  </strong>
                 </p>
               </div>
             </div>
@@ -202,8 +206,8 @@ const AboutUs = () => {
                 <h2>Our Mission</h2>
                 <p>
                   At <strong>Pietenium</strong>, our mission is to empower
-                  businesses by delivering modern, scalable, and user-focused web
-                  solutions.
+                  businesses by delivering modern, scalable, and user-focused
+                  web solutions.
                 </p>
                 <p>
                   We aim to solve real-world problems through innovation, clean
@@ -221,10 +225,11 @@ const AboutUs = () => {
                 <span className={styles.preTitle}>Our Future</span>
                 <h2>Our Vision</h2>
                 <p>
-                  We envision a digital landscape where technology and creativity
-                  flow seamlessly to create value. Our goal is to be the leading
-                  partner for businesses seeking to redefine their digital presence
-                  through cutting-edge engineering and artistic design.
+                  We envision a digital landscape where technology and
+                  creativity flow seamlessly to create value. Our goal is to be
+                  the leading partner for businesses seeking to redefine their
+                  digital presence through cutting-edge engineering and artistic
+                  design.
                 </p>
                 <p>
                   By continuously evolving and embracing new technologies, we
@@ -233,7 +238,12 @@ const AboutUs = () => {
                 </p>
               </div>
               <div className={styles.mvImg}>
-                <Image src={visionImg} width={500} height={400} alt="Our Vision" />
+                <Image
+                  src={visionImg}
+                  width={500}
+                  height={400}
+                  alt="Our Vision"
+                />
               </div>
             </div>
           </div>
@@ -268,7 +278,10 @@ const AboutUs = () => {
           <h2 className={styles.ctaHeading}>
             🚀 Let’s build something awesome
           </h2>
-          <p>Ready to transform your ideas into reality? Our team is just a click away.</p>
+          <p>
+            Ready to transform your ideas into reality? Our team is just a click
+            away.
+          </p>
           <Link href="/contact-us" className={styles.ctaBtn}>
             Start Your Journey
           </Link>

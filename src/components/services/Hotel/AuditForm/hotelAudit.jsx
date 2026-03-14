@@ -33,7 +33,7 @@ const AuditFormHotel = () => {
           setSectionVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (element) {
@@ -136,8 +136,8 @@ const AuditFormHotel = () => {
         </p>
 
         <div className={styles.offerText}>
-          Send us your site → We&apos;ll check load speed, SEO, mobile, CTA design →
-          You get a full PDF report, free.
+          Send us your site → We&apos;ll check load speed, SEO, mobile, CTA
+          design → You get a full PDF report, free.
         </div>
 
         {submitted ? (

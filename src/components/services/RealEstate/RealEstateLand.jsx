@@ -28,7 +28,7 @@ const RealEstateLandingPage = () => {
       <hr className={styles.hr} />
       <AuditFormRl />
       <hr className={styles.hr} />
-      <TestimonialsOfRl/>
+      <TestimonialsOfRl />
       <hr className={styles.hr} />
       <FaqSection />
       <hr className={styles.hr} />
@@ -43,8 +43,10 @@ const RealEstateLandingPage = () => {
             Our real estate websites are built to convert — fast loading,
             mobile-first, SEO-powered.
           </p>
-          <Link href="/contact-us" >
-            <button className={styles.ctaBtn}>Book Your Free Website Audit</button>
+          <Link href="/contact-us">
+            <button className={styles.ctaBtn}>
+              Book Your Free Website Audit
+            </button>
           </Link>
         </div>
       </section>

@@ -82,7 +82,8 @@ const Contact = () => {
     }
   };
 
-  const VIDEO_SRC = "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";
+  const VIDEO_SRC =
+    "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";
 
   return (
     <aside className={styles.contact}>
@@ -100,15 +101,21 @@ const Contact = () => {
         <div className={styles.cntcHeadSect}>
           <h1>Start Your Digital Journey</h1>
           <p>
-            Tell us about your goals. We&apos;ll craft a solution that brings your
-            ideas to life, the smart way.
+            Tell us about your goals. We&apos;ll craft a solution that brings
+            your ideas to life, the smart way.
           </p>
         </div>
       </section>
 
       <section className={styles.contactBody}>
         <div className={styles.cntcBdyImg}>
-          <Image src={mailBox} width={300} height={300} alt="mailbox" className={styles.mailboxImg} />
+          <Image
+            src={mailBox}
+            width={300}
+            height={300}
+            alt="mailbox"
+            className={styles.mailboxImg}
+          />
           <div className={styles.address}>
             <p>
               <FontAwesomeIcon icon={faLocationPin} className={styles.icon} />
@@ -132,7 +139,9 @@ const Contact = () => {
           <form onSubmit={handleSendMessage} className={styles.formSect}>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <label>Name<sup>*</sup></label>
+                <label>
+                  Name<sup>*</sup>
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -144,7 +153,9 @@ const Contact = () => {
               </div>
 
               <div className={styles.formGroup}>
-                <label>Email<sup>*</sup></label>
+                <label>
+                  Email<sup>*</sup>
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -157,7 +168,9 @@ const Contact = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <label>Subject<sup>*</sup></label>
+              <label>
+                Subject<sup>*</sup>
+              </label>
               <input
                 type="text"
                 name="subject"
@@ -169,7 +182,9 @@ const Contact = () => {
             </div>
 
             <div className={styles.formGroup}>
-              <label>Message<sup>*</sup></label>
+              <label>
+                Message<sup>*</sup>
+              </label>
               <textarea
                 name="message"
                 id={styles.message}
@@ -188,7 +203,11 @@ const Contact = () => {
               />
             </div>
 
-            <button type="submit" disabled={loading} className={styles.submitBtn}>
+            <button
+              type="submit"
+              disabled={loading}
+              className={styles.submitBtn}
+            >
               {loading ? <SmallLoad /> : "Send Message"}
             </button>
           </form>

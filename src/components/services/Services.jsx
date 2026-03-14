@@ -119,7 +119,8 @@ const Services = () => {
     },
   ];
 
-  const VIDEO_SRC = "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";
+  const VIDEO_SRC =
+    "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";
 
   return (
     <aside className={styles.service}>
@@ -137,7 +138,8 @@ const Services = () => {
         <div className={styles.srvHeadCont}>
           <h1>Values That Drive Us</h1>
           <p>
-            We believe in transparency, quality, and consistent value for every client.
+            We believe in transparency, quality, and consistent value for every
+            client.
           </p>
         </div>
       </section>
@@ -149,7 +151,10 @@ const Services = () => {
             {servicesData.map((item, idx) => (
               <div key={idx} className={styles.cardItem}>
                 <span>
-                  <FontAwesomeIcon icon={item.icon} className={styles.srvIcon} />
+                  <FontAwesomeIcon
+                    icon={item.icon}
+                    className={styles.srvIcon}
+                  />
                 </span>
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
@@ -163,7 +168,8 @@ const Services = () => {
             From Concept to Scalable Reality
           </h2>
           <p className={styles.workflowSub}>
-            Our outcome-driven process ensures your project is delivered on time, within scope, and optimized for success.
+            Our outcome-driven process ensures your project is delivered on
+            time, within scope, and optimized for success.
           </p>
 
           <div className={styles.workflowGrid}>
@@ -188,12 +194,16 @@ const Services = () => {
           <div className={styles.wuDesc}>
             <h2>💎 Why Choose Pietenium?</h2>
             <p>
-              We&apos;re not just developers — we&apos;re your digital growth partners, committed to delivering high-quality solutions.
+              We&apos;re not just developers — we&apos;re your digital growth
+              partners, committed to delivering high-quality solutions.
             </p>
             <ul>
               {whyUs.map((item, idx) => (
                 <li key={idx}>
-                  <strong>{item.icon} {item.title} — </strong> {item.desc}
+                  <strong>
+                    {item.icon} {item.title} —{" "}
+                  </strong>{" "}
+                  {item.desc}
                 </li>
               ))}
             </ul>

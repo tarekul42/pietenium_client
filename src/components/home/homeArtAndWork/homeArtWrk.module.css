@@ -1,304 +1,301 @@
 .homeArticle {
-  padding: 2rem 0;
-  width: 100%;
+    padding: 2rem 0;
+    width: 100%;
 }
 
 .hArtHead {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .hArtHead h1 {
-  width: fit-content;
-  max-width: 13rem;
-  border-bottom: 1px solid var(--color-surface-elevated);
-  margin: 0 auto;
-  text-align: center;
-  color: var(--color-text);
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
+    width: fit-content;
+    max-width: 13rem;
+    border-bottom: 1px solid var(--color-surface-elevated);
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
 }
 
 .articleData {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  gap: 2rem;
-  padding: 1.5rem var(--section-padding-x, 2rem);
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem var(--section-padding-x, 2rem);
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 @media (min-width: 1280px) {
-  .articleData {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    .articleData {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .artLink {
-  display: block;
-  height: 100%;
-  text-decoration: none;
+    display: block;
+    height: 100%;
+    text-decoration: none;
 }
 
 .artCont {
-  width: 100%;
-  height: 100%;
-  min-height: var(--card-min-height);
-  border-radius: var(--card-border-radius);
-  background: var(--color-surface);
-  border: 1px solid var(--color-surface-elevated);
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: var(--transition-card);
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: var(--card-min-height);
+    border-radius: var(--card-border-radius);
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-elevated);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-card);
+    display: flex;
+    flex-direction: column;
 }
 
 .artCont:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .artCont img {
-  width: 100%;
-  height: var(--card-image-height);
-  object-fit: cover;
-  flex-shrink: 0;
+    width: 100%;
+    height: var(--card-image-height);
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .artCont h4 {
-  flex: 1;
-  width: 100%;
-  font-size: 1rem;
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  padding: 0.75rem 1rem;
-  font-family: var(--font-geist-sans), sans-serif;
-  color: var(--color-text);
+    flex: 1;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-normal);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-geist-sans), sans-serif;
+    color: var(--color-text);
 }
 
 .artCont p {
-  width: fit-content;
-  padding: 0.25rem 0.75rem;
-  margin: 0.5rem 1rem;
-  color: var(--color-text-secondary);
-  background-color: var(--color-surface-elevated);
-  text-align: center;
-  border-radius: 1rem;
-  font-size: 0.75rem;
+    width: fit-content;
+    padding: 0.25rem 0.75rem;
+    margin: 0.5rem 1rem;
+    color: var(--color-text-secondary);
+    background-color: var(--color-surface-elevated);
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 0.75rem;
 }
 
 .seeAllArt {
-  text-align: center;
-  width: 100%;
-  padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
 }
 
 .seeAllArt button {
-  background-color: var(--color-accent);
-  color: white;
-  transition: background-color 0.35s var(--ease-out-smooth);
+    background-color: var(--color-accent);
+    color: white;
+    transition: background-color 0.35s var(--ease-out-smooth);
 }
 
 .seeAllArt button:hover {
-  background-color: #0284c7;
+    background-color: #0284c7;
 }
 
 .emptyState {
-  color: var(--color-muted);
-  font-size: 0.9375rem;
-  text-align: center;
-  padding: 2rem;
+    color: var(--color-muted);
+    font-size: 0.9375rem;
+    text-align: center;
+    padding: 2rem;
 }
 
 .homeWork {
-  padding: 2rem 0;
-  width: 100%;
+    padding: 2rem 0;
+    width: 100%;
 }
 
 .hWrkHead {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .hWrkHead h1 {
-  width: fit-content;
-  max-width: 20rem;
-  border-bottom: 1px solid var(--color-surface-elevated);
-  margin: 0 auto;
-  text-align: center;
-  color: var(--color-text);
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
+    width: fit-content;
+    max-width: 20rem;
+    border-bottom: 1px solid var(--color-surface-elevated);
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
 }
 
 .workShow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  gap: 2rem;
-  padding: 1.5rem var(--section-padding-x, 2rem);
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem var(--section-padding-x, 2rem);
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 @media (min-width: 1280px) {
-  .workShow {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    .workShow {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .projTemp {
-  width: 100%;
-  min-height: var(--card-min-height);
-  position: relative;
-  text-align: center;
-  padding: 0 0 4rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-surface-elevated);
-  border-radius: var(--card-border-radius);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: var(--transition-card);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    min-height: var(--card-min-height);
+    position: relative;
+    text-align: center;
+    padding: 0 0 4rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-elevated);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-  }
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
 }
 
 .projTemp img {
-  width: 100%;
-  height: var(--card-image-height);
-  object-fit: cover;
-  border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
-  flex-shrink: 0;
+    width: 100%;
+    height: var(--card-image-height);
+    object-fit: cover;
+    border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
+    flex-shrink: 0;
 }
 
 .projTemp h4 {
-  flex: 1;
-  font-family: var(--font-geist-sans), sans-serif;
-  text-align: left;
-  color: var(--color-text);
-  padding: 1rem 1rem 0.5rem;
-  font-size: 1rem;
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  width: 100%;
-  box-sizing: border-box;
+    flex: 1;
+    font-family: var(--font-geist-sans), sans-serif;
+    text-align: left;
+    color: var(--color-text);
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1rem;
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-normal);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .projectLink {
-  position: absolute;
-  right: 1rem;
-  bottom: 0.5rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  z-index: 10;
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
 }
 
 .projTemp:hover .projectLink {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .projTemp button {
-  font-size: 0.8rem;
-  background: var(--color-accent);
-  border-radius: var(--card-border-radius);
-  border: none;
-  color: white;
-  padding: 0.5rem 1rem;
-  transition: background-color 0.35s var(--ease-out-smooth);
-  cursor: pointer;
+    font-size: 0.8rem;
+    background: var(--color-accent);
+    border-radius: var(--card-border-radius);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.35s var(--ease-out-smooth);
+    cursor: pointer;
 
-  &:hover {
-    background-color: #0284c7;
-  }
+    &:hover {
+        background-color: #0284c7;
+    }
 }
 
 .seeAllWork {
-  text-align: center;
-  width: 100%;
-  padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem 0;
 }
 
 .seeAllWork button {
-  background-color: var(--color-accent);
-  color: white;
-  transition: background-color 0.35s var(--ease-out-smooth);
+    background-color: var(--color-accent);
+    color: white;
+    transition: background-color 0.35s var(--ease-out-smooth);
 }
 
 .seeAllWork button:hover {
-  background-color: #0284c7;
+    background-color: #0284c7;
 }
 
 @media (max-width: 1100px) {
-
-  .articleData,
-  .workShow {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-  }
+    .articleData,
+    .workShow {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
 }
 
 /* Tablet */
 @media (max-width: 768px) {
+    .articleData,
+    .workShow {
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
 
-  .articleData,
-  .workShow {
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-  }
-
-  .hArtHead h1,
-  .hWrkHead h1 {
-    font-size: 1.3rem;
-  }
+    .hArtHead h1,
+    .hWrkHead h1 {
+        font-size: 1.3rem;
+    }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
+    .articleData,
+    .workShow {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
 
-  .articleData,
-  .workShow {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 1.5rem;
-  }
+    .projTemp,
+    .artCont {
+        width: 100%;
+        max-width: 22rem;
+        margin: 0 auto;
+    }
 
-  .projTemp,
-  .artCont {
-    width: 100%;
-    max-width: 22rem;
-    margin: 0 auto;
-  }
+    .homeArticle,
+    .homeWork {
+        padding: 1.5rem 0.5rem;
+    }
 
-  .homeArticle,
-  .homeWork {
-    padding: 1.5rem 0.5rem;
-  }
+    .seeAllWork,
+    .seeAllArt {
+        width: 10rem;
+    }
 
-  .seeAllWork,
-  .seeAllArt {
-    width: 10rem;
-  }
-
-  .seeAllWork button,
-  .seeAllArt button {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
-  }
+    .seeAllWork button,
+    .seeAllArt button {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
 }

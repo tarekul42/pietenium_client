@@ -25,8 +25,8 @@ export default function DashboardAuthWrapper({ children }) {
     };
     checkAuth();
   }, []);
-console.log(auth);
-  if (auth === null) return <SmallLoad/>;
+  console.log(auth);
+  if (auth === null) return <SmallLoad />;
 
   return (
     <DashProvider authPermission={auth}>

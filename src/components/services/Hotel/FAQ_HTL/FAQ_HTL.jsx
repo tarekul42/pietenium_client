@@ -81,7 +81,7 @@ const FAQ_Hotel = () => {
           setSectionVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (element) {

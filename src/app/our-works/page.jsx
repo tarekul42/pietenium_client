@@ -1,4 +1,4 @@
-import OurWorks from '@/components/works/OurWorks';
+import OurWorks from "@/components/works/OurWorks";
 
 export const metadata = {
   title: "Projects — Our Great Works",
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const page = () => {
-    return <OurWorks/>;
+  return <OurWorks />;
 };
 
 export default page;

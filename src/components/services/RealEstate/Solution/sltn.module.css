@@ -1,111 +1,110 @@
 /* SOLUTION SECTION */
 .solutionSection {
-  padding: 100px 20px;
-  background: linear-gradient(135deg, var(--background), #02a8d1);
-  color: var(--foreground);
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--background), #02a8d1);
+    color: var(--foreground);
 }
 
 .sectionTitle {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  margin-bottom: 60px;
-  animation: fadeInUp 1s ease-out;
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 60px;
+    animation: fadeInUp 1s ease-out;
 }
 
 .solutionsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .solutionCard {
-  background: rgba(3, 12, 19, 0.9);
-  border-radius: 15px;
-  padding: 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: scale(0.9);
-  animation: solutionZoomIn 0.6s ease-out forwards;
-  border: 2px solid transparent;
+    background: rgba(3, 12, 19, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: solutionZoomIn 0.6s ease-out forwards;
+    border: 2px solid transparent;
 }
 
 .solutionCard:hover {
-  transform: scale(1.05);
-  border-color: var(--background);
-  box-shadow: 0 15px 30px rgba(3, 12, 19, 0.3);
+    transform: scale(1.05);
+    border-color: var(--background);
+    box-shadow: 0 15px 30px rgba(3, 12, 19, 0.3);
 }
 
 .solutionIcon {
-  font-size: 3rem;
-  color: var(--background);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-  display: block;
+    font-size: 3rem;
+    color: var(--background);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    display: block;
 }
 
 .solutionCard:hover .solutionIcon {
-  transform: rotateY(360deg);
+    transform: rotateY(360deg);
 }
 
 .solutionTitle {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #f0f8ff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #f0f8ff;
 }
 
 .solutionDescription {
-  opacity: 0.9;
-  line-height: 1.6;
+    opacity: 0.9;
+    line-height: 1.6;
 }
 
 @keyframes solutionZoomIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 768px) {
-  .solutionsGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .solutionsGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 
-  .heroContent {
-    padding: 0 15px;
-  }
+    .heroContent {
+        padding: 0 15px;
+    }
 
-  .sectionTitle {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-  }
+    .sectionTitle {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
 
-  .solutionSection {
-    padding: 20px 5px;
-  }
+    .solutionSection {
+        padding: 20px 5px;
+    }
 
-  .solutionTitle {
-    font-size: 1.1rem;
-
-  }
+    .solutionTitle {
+        font-size: 1.1rem;
+    }
 }
 
 /* SCROLL ANIMATIONS */
 @media (prefers-reduced-motion: no-preference) {
-  .solutionCard {
-    animation-play-state: running;
-  }
+    .solutionCard {
+        animation-play-state: running;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .solutionCard {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
+    .solutionCard {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
 }

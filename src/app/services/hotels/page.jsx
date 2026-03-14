@@ -17,7 +17,8 @@ export const metadata = {
     "France hospitality marketing",
   ],
   openGraph: {
-    title: "Top Hotel & Restaurent Sales Problem and Solution| Hospitality SEO Experts",
+    title:
+      "Top Hotel & Restaurent Sales Problem and Solution| Hospitality SEO Experts",
     description:
       "Grow your hospitality business with proven SEO, booking optimization & lead generation services across form any where.",
     url: "https://pietenium.vercel.app/services/hotels",

@@ -1,152 +1,156 @@
 .testimonialSection {
-  background-color: var(--color-surface);
-  padding: 4rem var(--section-padding-x, 2rem);
-  text-align: center;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  border-radius: var(--card-border-radius);
+    background-color: var(--color-surface);
+    padding: 4rem var(--section-padding-x, 2rem);
+    text-align: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    border-radius: var(--card-border-radius);
 }
 
 @media (min-width: 1280px) {
-  .testimonialSection {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    .testimonialSection {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--color-text);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
 }
 
 .card {
-  background: var(--color-surface-elevated);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: var(--card-border-radius);
-  width: 85%;
-  max-width: 36rem;
-  min-height: 14rem;
-  margin: 0 auto;
-  padding: 2rem 2.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.4s var(--ease-out-smooth), transform 0.4s var(--ease-out-smooth);
+    background: var(--color-surface-elevated);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: var(--card-border-radius);
+    width: 85%;
+    max-width: 36rem;
+    min-height: 14rem;
+    margin: 0 auto;
+    padding: 2rem 2.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition:
+        box-shadow 0.4s var(--ease-out-smooth),
+        transform 0.4s var(--ease-out-smooth);
 }
 
 .review {
-  width: 90%;
-  margin: 0 auto 1.5rem;
-  font-size: 1.0625rem;
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
+    width: 90%;
+    margin: 0 auto 1.5rem;
+    font-size: 1.0625rem;
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
 }
 
 .client {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  color: var(--color-text);
-  gap: 0.4rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-text);
+    gap: 0.4rem;
 }
 
 .rating {
-  color: var(--color-accent);
-  font-size: 1rem;
+    color: var(--color-accent);
+    font-size: 1rem;
 }
 
 .testiCont {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1px solid var(--color-muted);
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  transition: background-color 0.25s var(--ease-out-smooth), border-color 0.25s var(--ease-out-smooth);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--color-muted);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition:
+        background-color 0.25s var(--ease-out-smooth),
+        border-color 0.25s var(--ease-out-smooth);
 }
 
 .dot:hover {
-  border-color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 .dotActive {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 @media (max-width: 800px) {
-  .title {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-  }
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
 
-  .card {
-    width: 95%;
-    min-height: 12rem;
-  }
+    .card {
+        width: 95%;
+        min-height: 12rem;
+    }
 
-  .review {
-    width: 98%;
-    font-size: 0.9rem;
-  }
+    .review {
+        width: 98%;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .testimonialSection {
-    padding: 2.5rem 0.5rem;
-  }
+    .testimonialSection {
+        padding: 2.5rem 0.5rem;
+    }
 
-  .title {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
+    .title {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
 
-  .card {
-    padding: 1.5rem 1rem;
-    min-height: 10rem;
-  }
+    .card {
+        padding: 1.5rem 1rem;
+        min-height: 10rem;
+    }
 
-  .review {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-  }
+    .review {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
 
-  .client h4 {
-    font-size: 0.9rem;
-  }
+    .client h4 {
+        font-size: 0.9rem;
+    }
 
-  .rating {
-    font-size: 0.85rem;
-  }
+    .rating {
+        font-size: 0.85rem;
+    }
 }
 
 @keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animateSlide {
-  animation: fadeInSlide 1s var(--ease-out-smooth) forwards;
+    animation: fadeInSlide 1s var(--ease-out-smooth) forwards;
 }

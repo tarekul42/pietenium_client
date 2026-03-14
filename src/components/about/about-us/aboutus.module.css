@@ -9,7 +9,7 @@
     width: 100%;
     height: 60vh;
     position: relative;
-    background-image: url('../../../gallary/siteImgs/busyOffice.avif');
+    background-image: url("../../../gallary/siteImgs/busyOffice.avif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -390,7 +390,6 @@
 }
 
 @media (max-width: 640px) {
-
     .achievementGrid,
     .whGrid {
         grid-template-columns: 1fr;

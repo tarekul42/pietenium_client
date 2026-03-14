@@ -82,7 +82,7 @@ const HotelTestimonials = () => {
           setSectionVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (element) {
@@ -102,7 +102,7 @@ const HotelTestimonials = () => {
     if (autoSlide && sectionVisible) {
       slideInterval = setInterval(() => {
         setCurrentSlide((prev) =>
-          prev === testimonials.length - 1 ? 0 : prev + 1
+          prev === testimonials.length - 1 ? 0 : prev + 1,
         );
       }, 3000);
     }
@@ -115,14 +115,14 @@ const HotelTestimonials = () => {
   const handlePrev = () => {
     setAutoSlide(false);
     setCurrentSlide((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1,
     );
   };
 
   const handleNext = () => {
     setAutoSlide(false);
     setCurrentSlide((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
+      prev === testimonials.length - 1 ? 0 : prev + 1,
     );
   };
 
@@ -165,7 +165,9 @@ const HotelTestimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className={styles.slide}>
                 <div className={styles.testimonialContent}>
-                  <p className={styles.review}>&quot;{testimonial.review}&quot;</p>
+                  <p className={styles.review}>
+                    &quot;{testimonial.review}&quot;
+                  </p>
                   <div className={styles.clientInfo}>
                     <h3 className={styles.clientName}>{testimonial.name}</h3>
                     <p className={styles.clientTitle}>{testimonial.jobTitle}</p>

@@ -67,7 +67,7 @@ const Navber = () => {
     <section className={styles.navber}>
       <div className={styles.navContainer}>
         <div className={styles.navLogo}>
-          <Link href={'/'}>
+          <Link href={"/"}>
             <h1>Pietenium!</h1>
           </Link>
         </div>
@@ -106,8 +106,9 @@ const Navber = () => {
                     About <span className={styles.chevron}>▾</span>
                   </button>
                   <ul
-                    className={`${styles.aboutList} ${aboutListOpen ? styles.show : ""
-                      }`}
+                    className={`${styles.aboutList} ${
+                      aboutListOpen ? styles.show : ""
+                    }`}
                   >
                     <li className={getActive("/about-us")}>
                       <Link href="/about-us">
@@ -140,8 +141,9 @@ const Navber = () => {
               </div>
 
               <ul
-                className={`${styles.mobileMenu} ${mobileListOpen ? styles.mobileListShow : ""
-                  }`}
+                className={`${styles.mobileMenu} ${
+                  mobileListOpen ? styles.mobileListShow : ""
+                }`}
               >
                 <li>
                   <Link href="/">
@@ -177,7 +179,9 @@ const Navber = () => {
                 </li>
                 <li>
                   <Link href="/contact-us">
-                    <button className={getActive("/contact-us")}>Contact</button>
+                    <button className={getActive("/contact-us")}>
+                      Contact
+                    </button>
                   </Link>
                 </li>
               </ul>

@@ -1,11 +1,12 @@
-
 .faq {
     background-color: var(--background);
     color: var(--foreground);
     padding: 80px 20px;
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 .faq.visible {
@@ -85,7 +86,10 @@
 .answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    transition:
+        max-height 0.5s ease,
+        opacity 0.5s ease,
+        padding 0.5s ease;
     opacity: 0;
 }
 
@@ -112,7 +116,7 @@
     }
 
     .subtitle {
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-bottom: 30px;
     }
 

@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const DashContext = createContext();
 
-const DashProvider = ({ children,authPermission }) => {
+const DashProvider = ({ children, authPermission }) => {
   const [accessToken, setAccessToken] = useState("");
   const [auth, setAuth] = useState(authPermission);
 
@@ -26,12 +26,11 @@ const DashProvider = ({ children,authPermission }) => {
     }
   };
 
-
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     refresh();
   }, []);
-//   console.log({accessToken,auth});
+  //   console.log({accessToken,auth});
   return (
     <DashContext.Provider value={{ accessToken, setAccessToken, auth }}>
       {children}

@@ -71,7 +71,6 @@
     border-radius: 6px;
 }
 
-
 .spinner {
     display: inline-block;
     width: 20px;
@@ -88,15 +87,14 @@
     }
 }
 
-
 @media (width<=780px) {
     .audit h2 {
         font-size: 1.5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
 
     .audit p {
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-bottom: 1.5rem;
     }
 }

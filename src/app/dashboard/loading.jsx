@@ -22,7 +22,7 @@ export default function Loading() {
             animation: "spin 1s linear infinite",
           }}
         />
-        <style jsx='true'>{`
+        <style jsx="true">{`
           @keyframes spin {
             0% {
               transform: rotate(0deg);

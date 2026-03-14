@@ -1,4 +1,3 @@
-// components/TextEditor.jsx
 "use client";
 
 import { useEditor, EditorContent } from "@tiptap/react";
@@ -269,11 +268,11 @@ const TextEditor = ({ value, onChange }) => {
     },
   });
 
- useEffect(() => {
-  if (editor && value && editor.getHTML() !== value) {
-    editor.commands.setContent(value);
-  }
-}, [editor, value]);
+  useEffect(() => {
+    if (editor && value && editor.getHTML() !== value) {
+      editor.commands.setContent(value);
+    }
+  }, [editor, value]);
 
   return (
     <div className={styles.editorWrapper}>

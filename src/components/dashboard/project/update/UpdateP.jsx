@@ -215,7 +215,12 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
                         >
                           ❌
                         </button>
-                        <Image src={img.url} alt={`uploaded-${idx}`} width={100} height={100} />
+                        <Image
+                          src={img.url}
+                          alt={`uploaded-${idx}`}
+                          width={100}
+                          height={100}
+                        />
                       </div>
                     ))}
                   </div>
@@ -233,7 +238,12 @@ const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
                         >
                           {imgCutLoad === img?.photoId ? <SmallLoad /> : "❌"}
                         </button>
-                        <Image src={img?.img} alt={`prevImg-${idx}`} width={100} height={100} />
+                        <Image
+                          src={img?.img}
+                          alt={`prevImg-${idx}`}
+                          width={100}
+                          height={100}
+                        />
                       </div>
                     ))}
                   </div>

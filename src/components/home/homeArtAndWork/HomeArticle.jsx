@@ -47,7 +47,11 @@ const HomeArticle = () => {
                 const { _id, title, thumbnail, articleType } = art;
                 const titleStr = slugify(title);
                 return (
-                  <Link key={_id} href={`/pulse/${titleStr}/${_id}`} className={styles.artLink}>
+                  <Link
+                    key={_id}
+                    href={`/pulse/${titleStr}/${_id}`}
+                    className={styles.artLink}
+                  >
                     <article className={styles.artCont}>
                       <Image
                         src={thumbnail?.photo}

@@ -39,7 +39,7 @@ const TrustedComp = () => {
               <div className={styles.logoBox} key={`${i}-${idx}`}>
                 <Image src={logo} alt="company-logo" width={150} height={70} />
               </div>
-            ))
+            )),
           )}
         </div>
       </div>

@@ -18,7 +18,7 @@ const RlHero = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
-  
+
   const scrollToContact = () => {
     document.getElementById("audit")?.scrollIntoView({ behavior: "smooth" });
   };

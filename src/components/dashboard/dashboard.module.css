@@ -2,8 +2,6 @@
     margin-top: 7rem;
 } */
 
-
-
 /* Dashboard Navber Design start */
 .dashboardNav {
     display: flex;
@@ -15,7 +13,6 @@
     width: 100%;
     top: 3.5rem;
     border-radius: 3rem;
-
 }
 
 .dashNavSec ul {
@@ -25,7 +22,7 @@
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 .dashNavSec ul li {
@@ -43,11 +40,10 @@
     border-right: 2px solid aqua;
     padding: 0;
     margin: 0;
-    &:hover{
+    &:hover {
         color: #03ff81e1;
     }
 }
-
 
 /* Dashboard AUth design ---> */
 
@@ -56,7 +52,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
     padding: 2rem;
 }
 
@@ -76,9 +72,8 @@
     background: none;
     border: 1px solid #2af18de1;
     padding: 1rem;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
 }
-
 
 .dashAuth form button {
     margin: 0;
@@ -86,10 +81,10 @@
     background: none;
     border: 1px solid #2af18de1;
     padding: 1rem;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
     font-size: 1rem;
     font-weight: 550;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
         background: #2af18de1;
@@ -105,5 +100,4 @@
             color: white;
         }
     }
-
 }

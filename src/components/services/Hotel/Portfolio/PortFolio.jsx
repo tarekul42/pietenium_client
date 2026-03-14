@@ -121,7 +121,7 @@ const HotelPortfolio = () => {
       {
         threshold: 0.3,
         rootMargin: "0px 0px -10% 0px",
-      }
+      },
     );
 
     const refs = caseStudiesRef.current;

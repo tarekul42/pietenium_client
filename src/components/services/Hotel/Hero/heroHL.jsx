@@ -19,7 +19,7 @@ const HotelHero = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
-  
+
   const scrollToContact = () => {
     document.getElementById("audit")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -43,7 +43,8 @@ const HotelHero = () => {
           Boost Your Hotel Bookings and with a Stunning Website
         </h1>
         <p className={styles.heroSubtitle}>
-          We build lightning-fast, customer friendly websites that turn your sales. Stop losing deals to competitors with outdated sites.
+          We build lightning-fast, customer friendly websites that turn your
+          sales. Stop losing deals to competitors with outdated sites.
         </p>
         <button className={styles.ctaButton} onClick={scrollToContact}>
           Get Free Website Audit

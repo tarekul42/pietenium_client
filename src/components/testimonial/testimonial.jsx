@@ -86,7 +86,7 @@ export default function TestimonialSlider() {
                 {Array.from({ length: testimonials[current].rating }).map(
                   (_, i) => (
                     <span key={i}>⭐</span>
-                  )
+                  ),
                 )}
               </p>
             </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navber from "@/components/navber/navber";
 import Footer from "@/components/Footer/foooter";
 import CookiePopup from "@/components/AcceptCookie/CookiePopup";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ScrollToTop />
         <nav>
           <Navber />
         </nav>

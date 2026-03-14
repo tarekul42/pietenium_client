@@ -11,7 +11,9 @@ const WorkDetails = ({ project }) => {
 
   return (
     <div className={styles.container}>
-        <Link href='/our-works'><button className={styles.ctaBtn}>{'<'}--Back</button></Link>
+      <Link href="/our-works">
+        <button className={styles.ctaBtn}>{"<"}--Back</button>
+      </Link>
       <h1 className={styles.title}>Title : {title}</h1>
 
       <div className={styles.sliderWrapper}>
@@ -19,7 +21,7 @@ const WorkDetails = ({ project }) => {
           <button
             onClick={() =>
               setCurrentImg((prev) =>
-                prev === 0 ? gallary.length - 1 : prev - 1
+                prev === 0 ? gallary.length - 1 : prev - 1,
               )
             }
           >
@@ -31,7 +33,7 @@ const WorkDetails = ({ project }) => {
           <button
             onClick={() =>
               setCurrentImg((prev) =>
-                prev === gallary.length - 1 ? 0 : prev + 1
+                prev === gallary.length - 1 ? 0 : prev + 1,
               )
             }
           >
@@ -85,9 +87,12 @@ const WorkDetails = ({ project }) => {
       <div className={styles.ctaBox}>
         <h2>Have a similar project in mind?</h2>
         <p>
-          Let&apos;s bring your vision to life. Contact us today and get started!
+          Let&apos;s bring your vision to life. Contact us today and get
+          started!
         </p>
-        <Link href='/contact-us'><button className={styles.ctaBtn}> Let&apos;s Start </button></Link>
+        <Link href="/contact-us">
+          <button className={styles.ctaBtn}> Let&apos;s Start </button>
+        </Link>
       </div>
     </div>
   );

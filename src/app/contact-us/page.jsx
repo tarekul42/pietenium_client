@@ -1,4 +1,4 @@
-import Contact from '@/components/contact/Contact';
+import Contact from "@/components/contact/Contact";
 
 export const metadata = {
   title: "Contact — Pietenium",
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const page = () => {
-    return <Contact/>;
+  return <Contact />;
 };
 
 export default page;

@@ -1,7 +1,6 @@
-import styles from './rlftr.module.css';
+import styles from "./rlftr.module.css";
 
 const FeatureRl = () => {
-    
   const features = [
     {
       icon: "🚀",
@@ -54,26 +53,24 @@ const FeatureRl = () => {
       description: "Dedicated support team always ready to help you succeed",
     },
   ];
-    return (
-      <section className={styles.featuresSection}>
-        <h2 className={styles.sectionTitle}>
-          How We Can Help You Succeed
-        </h2>
-        <div className={styles.featuresGrid}>
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className={styles.featureCard}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <span className={styles.featureIcon}>{feature.icon}</span>
-              <h3 className={styles.featureTitle}>{feature.title}</h3>
-              <p className={styles.featureDescription}>{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
+  return (
+    <section className={styles.featuresSection}>
+      <h2 className={styles.sectionTitle}>How We Can Help You Succeed</h2>
+      <div className={styles.featuresGrid}>
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className={styles.featureCard}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            <span className={styles.featureIcon}>{feature.icon}</span>
+            <h3 className={styles.featureTitle}>{feature.title}</h3>
+            <p className={styles.featureDescription}>{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default FeatureRl;

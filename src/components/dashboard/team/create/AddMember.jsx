@@ -1,6 +1,6 @@
 "use client";
 
-import {faCameraAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCameraAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../team.module.css";
 import { useState, useEffect } from "react";
