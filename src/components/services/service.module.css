@@ -212,6 +212,19 @@
     gap: 1rem;
 }
 
+.tesimonial {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+    .tesimonial {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 .stepCard:hover {
     transform: translateY(-8px);
     border-color: var(--color-accent);

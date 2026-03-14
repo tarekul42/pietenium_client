@@ -1,135 +1,240 @@
 .commentArt {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem;
+    width: 100%;
 }
 
-.commentArt hr {
-    width: 70%;
+.commentTitle {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.commentTitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: var(--color-accent);
+    border-radius: 2px;
 }
 
 .commentArt form {
-    width: 60vw;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-elevated);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.nameEamil {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.nameEmail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
 }
 
-.commentArt form .nameEamil label,
-#cLabel {
-    width: 100%;
+.commentArt form label {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* background-color: #05ec10; */
+    gap: 0.5rem;
 }
 
 .commentArt form label span {
-    padding: 0 0.5rem;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
 }
 
 .commentArt form label span sup {
-    font-size: 1.1rem;
-    color: #ffe600;
+    color: #ef4444;
 }
 
-.commentArt form input {
+.commentArt form input,
+.commentArt form textarea {
     width: 100%;
-    height: 3.5rem;
-    border: 1px solid #05ec10;
-    background: none;
-    padding: 1rem;
+    padding: 0.875rem 1rem;
     font-size: 1rem;
-    border-radius: 0.4rem;
+    border: 1px solid var(--color-surface-elevated);
+    background: var(--color-bg);
+    color: var(--color-text);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.commentArt form input:focus,
+.commentArt form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(4, 207, 241, 0.15);
+}
+
+.commentArt form input::placeholder,
+.commentArt form textarea::placeholder {
+    color: var(--color-muted);
 }
 
 .commentArt form textarea {
-    width: 100%;
-    height: 7rem;
-    border: 1px solid #05ec10;
-    background: none;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 0.4rem;
+    min-height: 120px;
     resize: vertical;
 }
 
 .commentArt form button {
-    &:disabled {
-        background: none;
-    }
+    align-self: flex-start;
+    padding: 0.875rem 2rem;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: var(--card-border-radius);
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+
+.commentArt form button:hover:not(:disabled) {
+    background: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(4, 207, 241, 0.3);
+}
+
+.commentArt form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid var(--color-surface-elevated);
+    margin: 2rem 0;
 }
 
 .commentCont {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
+}
+
+.commentCount {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
 }
 
 .commentCont article {
-    width: 60vw;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    box-shadow: 1px 1px 2px 2px #fff;
-    padding: 0.6rem;
-    text-align: left;
-    border-radius: 1rem;
+    gap: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-surface-elevated);
+    border-radius: var(--card-border-radius);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
 }
 
-.commentCont article h2 {
+.commentCont article:hover {
+    border-color: var(--color-accent);
+}
+
+.cProfile {
+    flex-shrink: 0;
+}
+
+.cProfile h2 {
+    width: 48px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3rem;
-    height: 3rem;
-    color: #f0f0f0;
-    background-color: #16004b;
-    border-radius: 3rem;
+    background: linear-gradient(135deg, var(--color-accent), #0284c7);
+    color: white;
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 50%;
+    margin: 0;
+    text-transform: uppercase;
 }
 
-.commentCont article pre {
-    color: #b6b6b6;
-    font-family:
-        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.commentBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.commentBody h3 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+    margin: 0;
+}
+
+.commentBody pre {
+    color: var(--color-text-secondary);
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
     white-space: pre-wrap;
     word-wrap: break-word;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
-@media (width<=780px) {
+.noComments {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--color-muted);
+    background: var(--color-surface);
+    border: 1px dashed var(--color-surface-elevated);
+    border-radius: var(--card-border-radius);
+}
+
+.noComments svg {
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
     .commentArt form {
-        width: 80vw;
+        padding: 1.5rem;
     }
 
-    .nameEamil {
-        flex-direction: column;
-    }
-
-    .commentArt hr {
-        width: 90%;
+    .nameEmail {
+        grid-template-columns: 1fr;
     }
 
     .commentCont article {
-        width: 80vw;
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cProfile h2 {
+        width: 40px;
+        height: 40px;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .commentArt form {
+        padding: 1.25rem;
+    }
+
+    .commentArt form button {
+        width: 100%;
+    }
+
+    .commentTitle {
+        font-size: 1.25rem;
     }
 }
