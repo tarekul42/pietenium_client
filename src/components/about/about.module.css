@@ -199,16 +199,22 @@
 }
 
 .ctaSection {
-  background: linear-gradient(
-    135deg,
-    var(--color-surface) 0%,
-    var(--color-surface-elevated) 100%
-  );
-  padding: 4rem 2rem;
-  border-radius: 16px;
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  padding: 5rem 2rem;
+  border-radius: 24px;
   text-align: center;
   margin-bottom: 4rem;
-  border: 1px solid var(--color-border);
+  border: var(--atm-card-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s var(--ease-out-smooth);
+}
+
+.ctaSection:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--color-accent);
 }
 
 .ctaSection h2 {
