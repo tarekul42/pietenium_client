@@ -4,11 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { api } from "@/data/api";
 import { slugify } from "@/utility/slugify";
+import styles from "./workD.module.css";
 
 const WorkDetails = ({ project }) => {
-  const { _id: currentId, title, details, gallery, pLink } = project ? project : {};
+const { _id: currentId, title, details, gallary, pLink, thumbnail } = project ? project : {};
   const [currentImg, setCurrentImg] = useState(0);
   const [otherProjects, setOtherProjects] = useState([]);
+
+  const getValidImage = (img) => img && typeof img === 'string' && img.trim() !== "" ? img : null;
+  
+  const galleryImages = gallary?.filter(item => getValidImage(item?.img)) || [];
+  const headerImageSrc = getValidImage(galleryImages[currentImg]?.img) || getValidImage(galleryImages[0]?.img) || getValidImage(thumbnail?.photo) || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23333' width='1920' height='1080'/%3E%3Ctext fill='%23666' font-size='48' x='50%25' y='50%25' text-anchor='middle'%3ENo Image%3C/text%3E%3C/svg%3E";
+  const currentImage = galleryImages[currentImg];
+  const hasValidGallery = galleryImages.length > 0;
 
   useEffect(() => {
     const fetchOtherProjects = async () => {
@@ -29,13 +37,11 @@ const WorkDetails = ({ project }) => {
     window.scrollTo(0, 0);
   }, [currentId]);
 
-  const currentImage = gallery?.[currentImg];
-
   return (
     <section className={`${styles.container} animate-fade`}>
       <header className={styles.header}>
         <Image
-          src={currentImage?.img || gallery?.[0]?.img || "/placeholder.jpg"}
+          src={headerImageSrc}
           alt={title || "Project"}
           fill
           className={styles.headerImage}
@@ -95,15 +101,16 @@ const WorkDetails = ({ project }) => {
 
             <section className={styles.gallerySection}>
               <h2 className={styles.sectionTitle}>Visual Showcase</h2>
+              {hasValidGallery ? (
               <div className={styles.sliderWrapper}>
                 <div className={styles.mainImageContainer}>
-                  <Image
-                    src={currentImage?.img}
-                    alt={`${title} - Image ${currentImg + 1}`}
-                    fill
-                    className={styles.mainImage}
-                    priority
-                  />
+                    <Image
+                      src={getValidImage(currentImage?.img) || headerImageSrc}
+                      alt={`${title} - Image ${currentImg + 1}`}
+                      fill
+                      className={styles.mainImage}
+                      priority
+                    />
                 </div>
 
                 <div className={styles.sliderControls}>
@@ -111,7 +118,7 @@ const WorkDetails = ({ project }) => {
                     className={styles.sliderBtn}
                     onClick={() =>
                       setCurrentImg((prev) =>
-                        prev === 0 ? gallery.length - 1 : prev - 1
+                        prev === 0 ? (galleryImages.length || 1) - 1 : prev - 1
                       )
                     }
                     aria-label="Previous image"
@@ -119,13 +126,13 @@ const WorkDetails = ({ project }) => {
                     ←
                   </button>
                   <span className={styles.sliderCounter}>
-                    {currentImg + 1} / {gallery.length}
+                    {currentImg + 1} / {galleryImages.length}
                   </span>
                   <button
                     className={styles.sliderBtn}
                     onClick={() =>
                       setCurrentImg((prev) =>
-                        prev === gallery.length - 1 ? 0 : prev + 1
+                        prev === (galleryImages.length || 1) - 1 ? 0 : prev + 1
                       )
                     }
                     aria-label="Next image"
@@ -135,7 +142,7 @@ const WorkDetails = ({ project }) => {
                 </div>
 
                 <div className={styles.thumbnailGrid}>
-                  {gallery?.map((item, idx) => (
+                  {galleryImages.map((item, idx) => (
                     <div
                       className={`${styles.thumbnail} ${
                         idx === currentImg ? styles.active : ""
@@ -144,7 +151,7 @@ const WorkDetails = ({ project }) => {
                       key={item?.photoId || idx}
                     >
                       <Image
-                        src={item?.img}
+                        src={item.img}
                         alt={`Thumbnail ${idx + 1}`}
                         width={80}
                         height={60}
@@ -153,6 +160,9 @@ const WorkDetails = ({ project }) => {
                   ))}
                 </div>
               </div>
+              ) : (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '200px', color: '#666' }}>No images available</div>
+              )}
             </section>
           </div>
 

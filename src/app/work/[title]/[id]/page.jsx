@@ -39,7 +39,15 @@ const page = async ({ params }) => {
 
   const project = await getProject(id);
   const projectData = project?.data;
-  //   console.log(projectData?.data);
+
+  if (!projectData) {
+    return (
+      <div style={{ padding: "50px", textAlign: "center" }}>
+        <h2>Project not found</h2>
+        <p>The project you&apos;re looking for doesn&apos;t exist or has been removed.</p>
+      </div>
+    );
+  }
   return (
     <div>
       <script
