@@ -1,107 +1,107 @@
 .faqSection {
-    background: var(--background);
-    padding: 80px 20px;
-    color: var(--foreground);
-    text-align: center;
-    animation: fadeIn 1s ease-in;
+  background: var(--background);
+  padding: 80px 20px;
+  color: var(--foreground);
+  text-align: center;
+  animation: fadeIn 1s ease-in;
 }
 
 .title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .faqList {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .faqItem {
-    margin-bottom: 20px;
-    border: 1px solid var(--foreground);
-    border-radius: 8px;
-    padding: 20px;
-    transition: all 0.4s ease;
-    overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.4s ease;
+  overflow: hidden;
 }
 
 .questionRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 .questionRow h3 {
-    margin: 0;
-    font-size: 1.1rem;
+  margin: 0;
+  font-size: 1.1rem;
 }
 
 .toggleBtn {
-    font-size: 1.2rem;
-    background: none;
-    border: none;
-    color: var(--foreground);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .faqItem.open .toggleBtn {
-    transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .answer {
-    max-height: 0;
-    overflow: hidden;
-    font-size: 1rem;
-    margin-top: 10px;
-    transition: max-height 0.5s ease;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: max-height 0.5s ease;
 }
 
 .faqItem.open .answer {
-    max-height: 300px;
-    animation: slideDown 0.5s ease;
+  max-height: 300px;
+  animation: slideDown 0.5s ease;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (width<=780px) {
-    .title {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 
-    .questionRow h3 {
-        margin: 0;
-        font-size: 0.9rem;
-    }
+  .questionRow h3 {
+    margin: 0;
+    font-size: 0.9rem;
+  }
 
-    .answer {
-        font-size: 0.8rem;
-    }
+  .answer {
+    font-size: 0.8rem;
+  }
 }

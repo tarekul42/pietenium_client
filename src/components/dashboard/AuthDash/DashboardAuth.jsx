@@ -1,12 +1,12 @@
 "use client";
-import styles from "../dashboard.module.css";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
-import { api } from "@/data/api";
-import { useDashAuth } from "../DashCotext/DashContext";
 import ToastP from "@/components/popupToast/ToastP";
-import { useForm, useToast, useLoading } from "@/customHooks";
-import { z } from "zod";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useForm, useLoading, useToast } from "@/customHooks";
 import useFormValidation from "@/customHooks/useFormValidation";
+import { api } from "@/data/api";
+import { z } from "zod";
+import styles from "../dashboard.module.css";
+import { useDashAuth } from "../DashCotext/DashContext";
 
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email"),
@@ -23,7 +23,8 @@ const DashboardAuth = () => {
   const { loading, startLoading, stopLoading } = useLoading();
   const { popInfo, showToast } = useToast();
   const { email, password } = formData;
-  const { errors, validate, handleBlur, clearError } = useFormValidation(loginSchema);
+  const { errors, validate, handleBlur, clearError } =
+    useFormValidation(loginSchema);
 
   const handleAuth = async (e) => {
     e.preventDefault();
@@ -70,22 +71,32 @@ const DashboardAuth = () => {
           type="email"
           name="email"
           placeholder="Mr. Email"
-          onChange={(e) => { handleChange(e); clearError("email"); }}
+          onChange={(e) => {
+            handleChange(e);
+            clearError("email");
+          }}
           onBlur={handleBlur}
           value={email}
           className={errors.email ? styles.inputError : ""}
         />
-        {errors.email && <span className={styles.errorText}>{errors.email}</span>}
+        {errors.email && (
+          <span className={styles.errorText}>{errors.email}</span>
+        )}
         <input
           type="password"
           name="password"
           placeholder="Ms. Password"
-          onChange={(e) => { handleChange(e); clearError("password"); }}
+          onChange={(e) => {
+            handleChange(e);
+            clearError("password");
+          }}
           onBlur={handleBlur}
           value={password}
           className={errors.password ? styles.inputError : ""}
         />
-        {errors.password && <span className={styles.errorText}>{errors.password}</span>}
+        {errors.password && (
+          <span className={styles.errorText}>{errors.password}</span>
+        )}
         <button type="submit" disabled={loading}>
           {loading ? <SmallLoad /> : "Try To Auth"}
         </button>

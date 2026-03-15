@@ -1,11 +1,11 @@
 import HomeCardSkeleton from "@/components/skeleton/HomeCardSkeleton";
+import { useLoading } from "@/customHooks";
 import { api } from "@/data/api";
 import { slugify } from "@/utility/slugify";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./homeArtWrk.module.css";
-import { useLoading } from "@/customHooks";
 
 const HomeArticle = () => {
   const [articles, setArticles] = useState([]);

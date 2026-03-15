@@ -1,15 +1,15 @@
-import Image from "next/image";
-import styles from "../article.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilSquare } from "@fortawesome/free-solid-svg-icons";
-import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
-import { useState } from "react";
-import UpdateArticle from "../update/updateArt";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
-import { api } from "@/data/api";
-import { useDashAuth } from "../../DashCotext/DashContext";
 import ToastP from "@/components/popupToast/ToastP";
-import { useToast, useLoading } from "@/customHooks";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useLoading, useToast } from "@/customHooks";
+import { api } from "@/data/api";
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
+import { faPencilSquare } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import { useState } from "react";
+import { useDashAuth } from "../../DashCotext/DashContext";
+import styles from "../article.module.css";
+import UpdateArticle from "../update/updateArt";
 
 const ArticleDShow = ({ data, onUpdate, onDelete }) => {
   const { _id, title, thumbnail } = data;

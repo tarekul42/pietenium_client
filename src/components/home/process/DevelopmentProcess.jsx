@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
-import styles from "./process.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLightbulb,
   faChess,
   faCode,
+  faLightbulb,
   faRocket,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./process.module.css";
 
 const DevelopmentProcess = () => {
   const steps = [
@@ -44,8 +43,9 @@ const DevelopmentProcess = () => {
           <span className={styles.label}>Our Methodology</span>
           <h2>A Proven Path to Digital Excellence</h2>
           <p>
-            We&apos;ve distilled our experience into a high-performance framework
-            designed to move from idea to impact with surgical precision.
+            We&apos;ve distilled our experience into a high-performance
+            framework designed to move from idea to impact with surgical
+            precision.
           </p>
         </div>
 
@@ -54,7 +54,10 @@ const DevelopmentProcess = () => {
             <div
               key={idx}
               className={`${styles.stepCard} animate-slide-up`}
-              style={{ "--accent-color": step.color, "--delay": `${idx * 0.1}s` }}
+              style={{
+                "--accent-color": step.color,
+                "--delay": `${idx * 0.1}s`,
+              }}
             >
               <div className={styles.iconWrapper}>
                 <FontAwesomeIcon icon={step.icon} />

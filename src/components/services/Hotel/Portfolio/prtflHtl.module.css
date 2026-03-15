@@ -1,225 +1,225 @@
 /* Main showcase container */
 .showcase {
-    padding: 20px;
-    min-height: 100vh;
-    max-width: 1000px;
-    margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Header section */
 .header {
-    text-align: center;
-    margin-bottom: 80px;
+  text-align: center;
+  margin-bottom: 80px;
 }
 
 .title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #97ff8d;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    position: relative;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #97ff8d;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .titleUnderline {
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5));
-    margin: 0 auto;
-    border-radius: 2px;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5));
+  margin: 0 auto;
+  border-radius: 2px;
 }
 
 /* Container for case studies */
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* Individual case study card */
 .caseStudy {
-    background: #06ec9457;
-    border-radius: 20px;
-    padding: 40px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: opacity, transform;
+  background: #06ec9457;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity, transform;
 }
 
 /* Hidden state */
 .caseStudy.hidden {
-    opacity: 0;
-    transform: translateY(80px) scale(0.9);
+  opacity: 0;
+  transform: translateY(80px) scale(0.9);
 }
 
 /* Visible state */
 .caseStudy.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 /* Hover effect */
 .caseStudy:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 /* Decorative line at top of card */
 .decorativeLine {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-    border-radius: 20px 20px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 20px 20px 0 0;
 }
 
 /* Study title */
 .studyTitle {
-    font-size: 2rem;
-    margin-bottom: 12px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
 }
 
 /* Location styling */
 .location {
-    font-size: 1.1rem;
-    margin-bottom: 24px;
-    font-style: italic;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  font-style: italic;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .locationIcon {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /* Content text */
 .content {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
 }
 
 /* Responsive design for tablets */
 @media (max-width: 1024px) {
-    .showcase {
-        max-width: 900px;
-        padding: 50px 20px;
-    }
+  .showcase {
+    max-width: 900px;
+    padding: 50px 20px;
+  }
 
-    .caseStudy {
-        max-width: 700px;
-        padding: 35px;
-    }
+  .caseStudy {
+    max-width: 700px;
+    padding: 35px;
+  }
 }
 
 /* Responsive design for mobile */
 @media (max-width: 768px) {
-    .showcase {
-        padding: 40px 15px;
-        max-width: 100%;
-    }
+  .showcase {
+    padding: 40px 15px;
+    max-width: 100%;
+  }
 
-    .title {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
 
-    .titleUnderline {
-        width: 100px;
-        height: 3px;
-    }
+  .titleUnderline {
+    width: 100px;
+    height: 3px;
+  }
 
-    .header {
-        margin-bottom: 50px;
-    }
+  .header {
+    margin-bottom: 50px;
+  }
 
-    .container {
-        gap: 30px;
-    }
+  .container {
+    gap: 30px;
+  }
 
-    .caseStudy {
-        padding: 30px 25px;
-        margin: 0 10px;
-        max-width: none;
-        border-radius: 15px;
-    }
+  .caseStudy {
+    padding: 30px 25px;
+    margin: 0 10px;
+    max-width: none;
+    border-radius: 15px;
+  }
 
-    .studyTitle {
-        font-size: 1.6rem;
-        margin-bottom: 10px;
-    }
+  .studyTitle {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
 
-    .location {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
+  .location {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
 
-    .content {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+  .content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 }
 
 /* Responsive design for small mobile */
 @media (max-width: 480px) {
-    .showcase {
-        padding: 30px 10px;
-    }
+  .showcase {
+    padding: 30px 10px;
+  }
 
-    .title {
-        font-size: 2rem;
-    }
+  .title {
+    font-size: 2rem;
+  }
 
-    .titleUnderline {
-        width: 80px;
-    }
+  .titleUnderline {
+    width: 80px;
+  }
 
-    .caseStudy {
-        padding: 25px 20px;
-        margin: 0 5px;
-    }
+  .caseStudy {
+    padding: 25px 20px;
+    margin: 0 5px;
+  }
 
-    .studyTitle {
-        font-size: 1.4rem;
-    }
+  .studyTitle {
+    font-size: 1.4rem;
+  }
 
-    .content {
-        font-size: 0.95rem;
-    }
+  .content {
+    font-size: 0.95rem;
+  }
 }
 
 /* Animation performance optimization */
 @media (prefers-reduced-motion: reduce) {
-    .caseStudy {
-        transition: opacity 0.3s ease;
-    }
+  .caseStudy {
+    transition: opacity 0.3s ease;
+  }
 
-    .caseStudy.hidden {
-        transform: none;
-    }
+  .caseStudy.hidden {
+    transform: none;
+  }
 
-    .caseStudy.visible {
-        transform: none;
-    }
+  .caseStudy.visible {
+    transform: none;
+  }
 
-    .caseStudy:hover {
-        transform: none;
-    }
+  .caseStudy:hover {
+    transform: none;
+  }
 }

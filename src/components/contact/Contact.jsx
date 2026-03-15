@@ -1,23 +1,23 @@
 "use client";
-import Image from "next/image";
-import styles from "./contact.module.css";
+import { useForm, useLoading, useToast } from "@/customHooks";
+import useFormValidation from "@/customHooks/useFormValidation";
+import { api } from "@/data/api";
 import mailBox from "@/gallery/siteImgs/mailBox.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useThemeStore } from "@/store";
 import {
   faLocationPin,
   faMessage,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { api } from "@/data/api";
+import { z } from "zod";
 import ToastP from "../popupToast/ToastP";
 import SmallLoad from "../smallLaoding/smallLoad";
-import { useForm, useToast, useLoading } from "@/customHooks";
-import { useThemeStore } from "@/store";
-import { z } from "zod";
-import useFormValidation from "@/customHooks/useFormValidation";
+import styles from "./contact.module.css";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -36,7 +36,8 @@ const Contact = () => {
   const { name, email, subject, message } = formData;
   const { popInfo, showToast } = useToast();
   const { loading, startLoading, stopLoading } = useLoading();
-  const { errors, validate, handleBlur, getFieldProps, clearError } = useFormValidation(contactSchema);
+  const { errors, validate, handleBlur, getFieldProps, clearError } =
+    useFormValidation(contactSchema);
 
   const { theme } = useThemeStore();
   const [captchaValue, setCaptchaValue] = useState(null);
@@ -151,12 +152,17 @@ const Contact = () => {
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  onChange={(e) => { handleChange(e); clearError("name"); }}
+                  onChange={(e) => {
+                    handleChange(e);
+                    clearError("name");
+                  }}
                   onBlur={handleBlur}
                   value={name}
                   className={errors.name ? styles.inputError : ""}
                 />
-                {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                {errors.name && (
+                  <span className={styles.errorText}>{errors.name}</span>
+                )}
               </div>
 
               <div className={styles.formGroup}>
@@ -167,12 +173,17 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder="Your Email"
-                  onChange={(e) => { handleChange(e); clearError("email"); }}
+                  onChange={(e) => {
+                    handleChange(e);
+                    clearError("email");
+                  }}
                   onBlur={handleBlur}
                   value={email}
                   className={errors.email ? styles.inputError : ""}
                 />
-                {errors.email && <span className={styles.errorText}>{errors.email}</span>}
+                {errors.email && (
+                  <span className={styles.errorText}>{errors.email}</span>
+                )}
               </div>
             </div>
 
@@ -184,12 +195,17 @@ const Contact = () => {
                 type="text"
                 name="subject"
                 placeholder="How can we help?"
-                onChange={(e) => { handleChange(e); clearError("subject"); }}
+                onChange={(e) => {
+                  handleChange(e);
+                  clearError("subject");
+                }}
                 onBlur={handleBlur}
                 value={subject}
                 className={errors.subject ? styles.inputError : ""}
               />
-              {errors.subject && <span className={styles.errorText}>{errors.subject}</span>}
+              {errors.subject && (
+                <span className={styles.errorText}>{errors.subject}</span>
+              )}
             </div>
 
             <div className={styles.formGroup}>
@@ -200,12 +216,17 @@ const Contact = () => {
                 name="message"
                 id={styles.message}
                 placeholder="Tell us about your project..."
-                onChange={(e) => { handleChange(e); clearError("message"); }}
+                onChange={(e) => {
+                  handleChange(e);
+                  clearError("message");
+                }}
                 onBlur={handleBlur}
                 value={message}
                 className={errors.message ? styles.inputError : ""}
               ></textarea>
-              {errors.message && <span className={styles.errorText}>{errors.message}</span>}
+              {errors.message && (
+                <span className={styles.errorText}>{errors.message}</span>
+              )}
             </div>
 
             <div className={styles.captchaRow}>
@@ -214,7 +235,6 @@ const Contact = () => {
                 onChange={(token) => setCaptchaValue(token)}
                 theme={theme}
               />
-
             </div>
 
             <button

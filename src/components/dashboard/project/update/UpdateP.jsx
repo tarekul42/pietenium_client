@@ -1,14 +1,14 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import styles from "../project.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import ToastP from "@/components/popupToast/ToastP";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useForm, useLoading, useToast } from "@/customHooks";
 import { useFilePreview } from "@/customHooks/UseFileReader";
 import { api } from "@/data/api";
-import { useDashAuth } from "../../DashCotext/DashContext";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
-import ToastP from "@/components/popupToast/ToastP";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import { useForm, useToast, useLoading } from "@/customHooks";
+import { useEffect, useState } from "react";
+import { useDashAuth } from "../../DashCotext/DashContext";
+import styles from "../project.module.css";
 
 const UpdateP = ({ setOpen, data, setData, onUpdate }) => {
   const {

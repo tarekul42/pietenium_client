@@ -1,10 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
 import CookiePopup from "@/components/AcceptCookie/CookiePopup";
+import Footer from "@/components/Footer/Footer";
+import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 import ThemeProvider from "@/components/theme/ThemeProvider";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

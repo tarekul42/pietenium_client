@@ -1,18 +1,21 @@
-import styles from "./dashboard.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartLine,
-  faProjectDiagram,
   faNewspaper,
+  faProjectDiagram,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./dashboard.module.css";
 
 const Dashboard = () => {
   return (
     <section className={`${styles.dashboard} animate-fade`}>
       <div className={styles.welcomeSection}>
         <h1>Welcome Back, Commander</h1>
-        <p>Your digital empire at a glance. Manage projects, insights, and team effortlessly.</p>
+        <p>
+          Your digital empire at a glance. Manage projects, insights, and team
+          effortlessly.
+        </p>
       </div>
 
       <div className={styles.statsGrid}>

@@ -1,110 +1,110 @@
 .solutionSection {
-    padding: 100px 20px;
-    background: radial-gradient(circle at center, var(--background), #20ff0223);
-    color: var(--foreground);
+  padding: 100px 20px;
+  background: radial-gradient(circle at center, var(--background), #20ff0223);
+  color: var(--foreground);
 }
 
 .sectionTitle {
-    text-align: center;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    margin-bottom: 60px;
-    animation: fadeInUp 1s ease-out;
-    text-shadow: 3px 3px 5px 5px #b3b6b3e6;
-    color: #b1ffb7;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 60px;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 3px 3px 5px 5px #b3b6b3e6;
+  color: #b1ffb7;
 }
 
 .solutionsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .solutionCard {
-    background: #03ad1148;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: solutionZoomIn 0.6s ease-out forwards;
-    border: 2px solid #07b412;
+  background: #03ad1148;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: solutionZoomIn 0.6s ease-out forwards;
+  border: 2px solid #07b412;
 }
 
 .solutionCard:hover {
-    transform: scale(1.1);
-    border-color: var(--background);
-    box-shadow: 0 15px 30px 10px #03ad11bd;
-    background: #03ad11bd;
+  transform: scale(1.1);
+  border-color: var(--background);
+  box-shadow: 0 15px 30px 10px #03ad11bd;
+  background: #03ad11bd;
 }
 
 .solutionIcon {
-    font-size: 3rem;
-    color: var(--background);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-    display: block;
+  font-size: 3rem;
+  color: var(--background);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  display: block;
 }
 
 .solutionCard:hover .solutionIcon {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .solutionTitle {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #f0f8ff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #f0f8ff;
 }
 
 .solutionDescription {
-    opacity: 0.9;
-    line-height: 1.6;
+  opacity: 0.9;
+  line-height: 1.6;
 }
 
 @keyframes solutionZoomIn {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {
-    .solutionsGrid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .solutionsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .solutionSection {
+    padding: 60px 15px;
+  }
+
+  @media (width<=780px) {
     .sectionTitle {
-        font-size: 2rem;
-        margin-bottom: 40px;
+      font-size: 1.3rem;
     }
-
-    .solutionSection {
-        padding: 60px 15px;
-    }
-
-    @media (width<=780px) {
-        .sectionTitle {
-            font-size: 1.3rem;
-        }
-    }
+  }
 }
 
 /* SCROLL ANIMATIONS */
 @media (prefers-reduced-motion: no-preference) {
-    .solutionCard {
-        animation-play-state: running;
-    }
+  .solutionCard {
+    animation-play-state: running;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .solutionCard {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
+  .solutionCard {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

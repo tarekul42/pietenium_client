@@ -1,114 +1,114 @@
 .landingPage {
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--foreground);
-    background: var(--background);
-    overflow-x: hidden;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--foreground);
+  background: var(--background);
+  overflow-x: hidden;
 }
 
 /* CTA--> */
 
 .cta {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle at center, var(--foreground), #000);
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, var(--foreground), #000);
+  overflow: hidden;
 }
 
 .overlay {
-    text-align: center;
-    color: var(--background);
-    padding: 0 20px;
-    animation: slideUp 1s ease-out;
+  text-align: center;
+  color: var(--background);
+  padding: 0 20px;
+  animation: slideUp 1s ease-out;
 }
 
 .headline {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .subText {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-inline: auto;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-inline: auto;
 }
 
 .ctaBtn {
-    background: var(--background);
-    color: var(--foreground);
-    border: none;
-    padding: 15px 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 50px;
-    transition:
-        background 0.3s ease,
-        transform 0.3s ease;
+  background: var(--background);
+  color: var(--foreground);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .ctaBtn:hover {
-    background: #012b20dc;
-    transform: scale(1.05);
+  background: #012b20dc;
+  transform: scale(1.05);
 }
 
 /* Background animation */
 .cta::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, #04cef1, #000, #04cef1);
-    animation: rotateBG 20s linear infinite;
-    z-index: 0;
-    opacity: 0.05;
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #04cef1, #000, #04cef1);
+  animation: rotateBG 20s linear infinite;
+  z-index: 0;
+  opacity: 0.05;
 }
 
 .overlay {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 @media (width<=780px) {
-    .cta {
-        padding: 2rem;
-    }
+  .cta {
+    padding: 2rem;
+  }
 
-    .headline {
-        font-size: 1.3rem;
-    }
+  .headline {
+    font-size: 1.3rem;
+  }
 
-    .subText {
-        font-size: 0.9rem;
-    }
+  .subText {
+    font-size: 0.9rem;
+  }
 
-    .ctaBtn {
-        padding: 5px 8px;
-        font-size: 0.7rem;
-    }
+  .ctaBtn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
 }
 
 @keyframes rotateBG {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import styles from "./article.module.css";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useLoading } from "@/customHooks";
 import { api } from "@/data/api";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useCallback, useEffect, useState } from "react";
+import styles from "./article.module.css";
 import CreateArticle from "./create/CreateArt";
 import ArticleDShow from "./view/ArticleDShow";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
-import { useLoading } from "@/customHooks";
 
 const ArticleP = () => {
   const [createOpen, setCreateOpen] = useState(false);

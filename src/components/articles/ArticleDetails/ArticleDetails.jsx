@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import styles from "../article.module.css";
 import Link from "next/link";
+import styles from "../article.module.css";
 import CommentArt from "../ArticleComment/CommentArt";
 
 const ArticleDetails = ({ data }) => {

@@ -2,14 +2,14 @@
 import Link from "next/link";
 import TestimonialSlider from "../testimonial/testimonial";
 import TrustedComp from "./company/TrustedComp";
+import EngagementModels from "./engagement/EngagementModels";
+import FAQ from "./faq/FAQ";
 import Hero from "./hero/hero";
 import styles from "./home.module.css";
 import HomeAbout from "./homeAbout/homeBAbout";
 import HomeArticle from "./homeArtAndWork/HomeArticle";
 import HomeWork from "./homeArtAndWork/HomeWork";
-import FAQ from "./faq/FAQ";
 import DevelopmentProcess from "./process/DevelopmentProcess";
-import EngagementModels from "./engagement/EngagementModels";
 
 const Home = () => {
   return (

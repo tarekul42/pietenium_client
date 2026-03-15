@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import styles from "./comment.module.css";
-import { api } from "@/data/api";
 import ToastP from "@/components/popupToast/ToastP";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
-import { useForm, useToast, useLoading } from "@/customHooks";
+import { useForm, useLoading, useToast } from "@/customHooks";
+import { api } from "@/data/api";
+import { useEffect, useState } from "react";
+import styles from "./comment.module.css";
 
 const CommentArt = ({ articleId }) => {
   const { popInfo, showToast } = useToast();

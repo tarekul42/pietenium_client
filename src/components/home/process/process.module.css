@@ -1,151 +1,155 @@
 .processSection {
-    padding: 8rem var(--section-padding-x, 2rem);
-    background: radial-gradient(circle at top, var(--color-surface) 0%, var(--color-bg) 100%);
-    overflow: hidden;
-    position: relative;
-    isolation: isolate;
+  padding: 8rem var(--section-padding-x, 2rem);
+  background: radial-gradient(
+    circle at top,
+    var(--color-surface) 0%,
+    var(--color-bg) 100%
+  );
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
 }
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 5rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 5rem;
 }
 
 .label {
-    display: inline-block;
-    color: var(--color-accent);
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
+  display: inline-block;
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
 }
 
 .header h2 {
-    font-size: 2.5rem;
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 .header p {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
 }
 
 .stepCard {
-    position: relative;
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(var(--atm-card-blur));
-    -webkit-backdrop-filter: blur(var(--atm-card-blur));
-    border: var(--atm-card-border);
-    padding: 3rem 2.5rem;
-    border-radius: 32px;
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s var(--ease-out-smooth);
-    animation-delay: var(--delay);
+  position: relative;
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  border: var(--atm-card-border);
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s var(--ease-out-smooth);
+  animation-delay: var(--delay);
 }
 
 .stepCard:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-color);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
 }
 
 .iconWrapper {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: rgba(var(--color-bg-rgb), 0.5);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: rgba(var(--color-bg-rgb), 0.5);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stepNumber {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-bold);
-    background: var(--accent-color);
-    color: white;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--color-bg);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  background: var(--accent-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-bg);
 }
 
 .stepCard h3 {
-    font-size: 1.25rem;
-    color: var(--color-text);
-    margin-bottom: 1rem;
-    font-weight: var(--font-weight-semibold);
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-semibold);
 }
 
 .stepCard p {
-    font-size: 0.9375rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 .connector {
-    position: absolute;
-    top: 50%;
-    right: -1rem;
-    width: 2rem;
-    height: 1px;
-    background: linear-gradient(to right, var(--accent-color), transparent);
-    z-index: -1;
-    opacity: 0.2;
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-color), transparent);
+  z-index: -1;
+  opacity: 0.2;
 }
 
 .grid > div:last-child .connector {
-    display: none;
+  display: none;
 }
 
 /* Responsive */
 @media (max-width: 1100px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .connector {
-        display: none;
-    }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .connector {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .header h2 {
-        font-size: 2rem;
-    }
-    
-    .processSection {
-        padding: 4rem 1rem;
-    }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .processSection {
+    padding: 4rem 1rem;
+  }
 }

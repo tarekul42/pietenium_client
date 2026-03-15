@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import styles from "./toastP.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import styles from "./toastP.module.css";
 
 const ToastP = ({ popInfo }) => {
   const { trigger, message, type } = popInfo;

@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
-import styles from "./engagement.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCheck,
   faHandshake,
   faLayerGroup,
   faUsersViewfinder,
-  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./engagement.module.css";
 
 const EngagementModels = () => {
   const models = [
@@ -16,7 +15,11 @@ const EngagementModels = () => {
       title: "Strategic Partnership",
       subtitle: "Long-term co-innovation",
       desc: "For companies looking for a dedicated digital partner to build, scale, and evolve their product ecosystem over years.",
-      features: ["Full Product Lifecycle", "Dedicated Lead Architect", "Priority 24/7 Support"],
+      features: [
+        "Full Product Lifecycle",
+        "Dedicated Lead Architect",
+        "Priority 24/7 Support",
+      ],
       level: "Elite",
     },
     {
@@ -24,7 +27,11 @@ const EngagementModels = () => {
       title: "Project Based",
       subtitle: "Defined scope, fixed impact",
       desc: "Perfect for specific product launches, MVP development, or focused feature sets with a clear beginning and end.",
-      features: ["Guaranteed Timeline", "Fixed Budget Control", "Milestone-Driven Delivery"],
+      features: [
+        "Guaranteed Timeline",
+        "Fixed Budget Control",
+        "Milestone-Driven Delivery",
+      ],
       level: "Focused",
     },
     {
@@ -32,7 +39,11 @@ const EngagementModels = () => {
       title: "Dedicated Team",
       subtitle: "Augmented intelligence",
       desc: "Scale your internal capacity with our vetted engineers, designers, and managers who integrate into your workflow.",
-      features: ["Agile Team Scaling", "Seamless Integration", "Joint Resource Management"],
+      features: [
+        "Agile Team Scaling",
+        "Seamless Integration",
+        "Joint Resource Management",
+      ],
       level: "Flexible",
     },
   ];
@@ -51,7 +62,11 @@ const EngagementModels = () => {
 
         <div className={styles.grid}>
           {models.map((model, idx) => (
-            <div key={idx} className={`${styles.card} animate-slide-up`} style={{ "--delay": `${idx * 0.15}s` }}>
+            <div
+              key={idx}
+              className={`${styles.card} animate-slide-up`}
+              style={{ "--delay": `${idx * 0.15}s` }}
+            >
               <div className={styles.cardHeader}>
                 <div className={styles.iconBox}>
                   <FontAwesomeIcon icon={model.icon} />
@@ -64,7 +79,10 @@ const EngagementModels = () => {
               <ul className={styles.featureList}>
                 {model.features.map((f, i) => (
                   <li key={i}>
-                    <FontAwesomeIcon icon={faCheck} className={styles.checkIcon} />
+                    <FontAwesomeIcon
+                      icon={faCheck}
+                      className={styles.checkIcon}
+                    />
                     <span>{f}</span>
                   </li>
                 ))}

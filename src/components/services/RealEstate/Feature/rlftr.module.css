@@ -1,106 +1,106 @@
 .featuresSection {
-    padding: 100px 20px;
+  padding: 100px 20px;
 }
 
 .sectionTitle {
-    text-align: center;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    margin-bottom: 60px;
-    animation: fadeInUp 1s ease-out;
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 60px;
+  animation: fadeInUp 1s ease-out;
 }
 
 .featuresGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .featureCard {
-    background: rgba(4, 206, 241, 0.1);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: featureSlideIn 0.6s ease-out forwards;
-    border: 1px solid rgba(4, 206, 241, 0.2);
+  background: rgba(4, 206, 241, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: featureSlideIn 0.6s ease-out forwards;
+  border: 1px solid rgba(4, 206, 241, 0.2);
 }
 
 .featureCard:nth-child(even) {
-    transform: translateX(50px);
+  transform: translateX(50px);
 }
 
 .featureCard:hover {
-    transform: translateY(-10px) scale(1.02);
-    background: rgba(4, 206, 241, 0.2);
-    box-shadow: 0 15px 30px rgba(4, 206, 241, 0.3);
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(4, 206, 241, 0.2);
+  box-shadow: 0 15px 30px rgba(4, 206, 241, 0.3);
 }
 
 .featureIcon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    display: block;
-    transition: transform 0.3s ease;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
 .featureCard:hover .featureIcon {
-    transform: scale(1.2) rotate(10deg);
+  transform: scale(1.2) rotate(10deg);
 }
 
 .featureTitle {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #cee2f3;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #cee2f3;
 }
 
 .featureDescription {
-    opacity: 0.9;
-    line-height: 1.6;
+  opacity: 0.9;
+  line-height: 1.6;
 }
 
 @keyframes featureSlideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 768px) {
-    .featuresGrid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 
-    .sectionTitle {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
+  .sectionTitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 
-    .featuresSection {
-        padding: 60px 15px;
-    }
+  .featuresSection {
+    padding: 60px 15px;
+  }
 
-    .featureTitle {
-        font-size: 1rem;
-    }
+  .featureTitle {
+    font-size: 1rem;
+  }
 }
 
 /* SCROLL ANIMATIONS */
 @media (prefers-reduced-motion: no-preference) {
-    .featureCard {
-        animation-play-state: running;
-    }
+  .featureCard {
+    animation-play-state: running;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .featureCard {
-        animation: none;
-        opacity: 1;
-        transform: none;
-    }
+  .featureCard {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

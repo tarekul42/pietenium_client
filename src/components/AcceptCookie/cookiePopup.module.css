@@ -1,76 +1,76 @@
 .popupWrapper {
-    position: fixed;
-    bottom: 30px;
-    left: 20%;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    padding: 20px 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-    max-width: 820px;
-    z-index: 9999;
-    font-family: "Segoe UI", sans-serif;
-    animation: fadeInUp 0.5s ease-out;
+  position: fixed;
+  bottom: 30px;
+  left: 20%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  max-width: 820px;
+  z-index: 9999;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .popupBox h4 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 18px;
-    color: #ffd700;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #ffd700;
 }
 
 .popupBox p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
 }
 
 .buttonGroup {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .acceptBtn,
 .declineBtn {
-    flex: 1;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s ease-in-out;
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease-in-out;
 }
 
 .acceptBtn {
-    background-color: #4caf50;
-    color: #fff;
-    border: 2px solid #fff;
+  background-color: #4caf50;
+  color: #fff;
+  border: 2px solid #fff;
 
-    &:hover {
-        background: none;
-    }
+  &:hover {
+    background: none;
+  }
 }
 
 .declineBtn {
-    background-color: #e53935;
-    color: #fff;
-    border: 2px solid #fff;
+  background-color: #e53935;
+  color: #fff;
+  border: 2px solid #fff;
 
-    &:hover {
-        background: none;
-    }
+  &:hover {
+    background: none;
+  }
 }
 
 @keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

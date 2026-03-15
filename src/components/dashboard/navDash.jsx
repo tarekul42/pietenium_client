@@ -1,19 +1,19 @@
 "use client";
-import Link from "next/link";
-import styles from "./dashboard.module.css";
+import { useLoading, useToast } from "@/customHooks";
 import { api } from "@/data/api";
-import { useDashAuth } from "./DashCotext/DashContext";
-import SmallLoad from "../smallLaoding/smallLoad";
-import ToastP from "../popupToast/ToastP";
-import { useToast, useLoading } from "@/customHooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faTableColumns,
+  faArrowRightFromBracket,
   faBriefcase,
   faFilePen,
   faPeopleGroup,
-  faArrowRightFromBracket,
+  faTableColumns,
 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import ToastP from "../popupToast/ToastP";
+import SmallLoad from "../smallLaoding/smallLoad";
+import styles from "./dashboard.module.css";
+import { useDashAuth } from "./DashCotext/DashContext";
 
 const DashboardNav = () => {
   const { accessToken, setAccessToken } = useDashAuth();
@@ -76,13 +76,17 @@ const DashboardNav = () => {
             </Link>
           </li>
         </ul>
-        <button 
-          onClick={handleLogOut} 
-          disabled={loading} 
+        <button
+          onClick={handleLogOut}
+          disabled={loading}
           className={styles.logoutBtn}
           title="Logout"
         >
-          {loading ? <SmallLoad /> : <FontAwesomeIcon icon={faArrowRightFromBracket} />}
+          {loading ? (
+            <SmallLoad />
+          ) : (
+            <FontAwesomeIcon icon={faArrowRightFromBracket} />
+          )}
         </button>
       </section>
       <ToastP popInfo={popInfo} />

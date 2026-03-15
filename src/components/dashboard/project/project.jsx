@@ -1,15 +1,15 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "./project.module.css";
-import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
-import CreateProject from "./post/createProject";
-import { useEffect, useState, useCallback } from "react";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useLoading } from "@/customHooks";
 import { api } from "@/data/api";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { faPencilAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useCallback, useEffect, useState } from "react";
+import CreateProject from "./post/createProject";
+import styles from "./project.module.css";
 import ShowP from "./showP";
-import { useLoading } from "@/customHooks";
 
 const Project = () => {
   const [createOpen, setCreateOpen] = useState(false);

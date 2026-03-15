@@ -1,13 +1,13 @@
+import ToastP from "@/components/popupToast/ToastP";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useLoading, useToast } from "@/customHooks";
+import { api } from "@/data/api";
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import styles from "../team.module.css";
 import { useState } from "react";
-import { api } from "@/data/api";
 import { useDashAuth } from "../../DashCotext/DashContext";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
-import ToastP from "@/components/popupToast/ToastP";
-import { useToast, useLoading } from "@/customHooks";
+import styles from "../team.module.css";
 
 const ShowMembers = ({ data, onDelete }) => {
   const { _id, memberName, email, role, phone, memberProfile } = data;

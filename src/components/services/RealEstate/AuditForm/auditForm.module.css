@@ -1,100 +1,100 @@
 .audit {
-    background: rgba(78, 54, 66, 0.432);
-    padding: 4rem 2rem;
-    text-align: center;
+  background: rgba(78, 54, 66, 0.432);
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
 .audit h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .audit p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .formWrapper {
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
 .formWrapper.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .form input,
 .form textarea {
-    display: block;
-    width: 100%;
-    margin: 0.6rem 0;
-    padding: 0.8rem;
-    border: 2px solid #02f016;
-    background: transparent;
-    color: #bafdff;
-    border-radius: 5px;
-    font-size: 1rem;
+  display: block;
+  width: 100%;
+  margin: 0.6rem 0;
+  padding: 0.8rem;
+  border: 2px solid #02f016;
+  background: transparent;
+  color: #bafdff;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .form textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .form button {
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--background);
-    color: var(--foreground);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--background);
+  color: var(--foreground);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
-    &:disabled {
-        background: none;
-    }
+  &:disabled {
+    background: none;
+  }
 }
 
 .form button:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 .success {
-    font-size: 1.2rem;
-    color: var(--background);
-    background: var(--foreground);
-    padding: 1rem;
-    border-radius: 6px;
+  font-size: 1.2rem;
+  color: var(--background);
+  background: var(--foreground);
+  padding: 1rem;
+  border-radius: 6px;
 }
 
 .spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s ease-in-out infinite;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (width<=780px) {
-    .audit h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
+  .audit h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-    .audit p {
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
-    }
+  .audit p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
 }

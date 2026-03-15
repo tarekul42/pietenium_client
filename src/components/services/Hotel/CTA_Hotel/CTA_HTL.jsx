@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-import styles from "./ctaHtl.module.css";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import styles from "./ctaHtl.module.css";
 
 const CTA_Hotel = () => {
   const [sectionVisible, setSectionVisible] = useState(false);

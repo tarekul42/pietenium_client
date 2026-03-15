@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./faqHtl.module.css";
 
 const FAQ_Hotel = () => {

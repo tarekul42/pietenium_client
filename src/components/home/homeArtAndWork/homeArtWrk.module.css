@@ -1,368 +1,368 @@
 .homeArticle {
-    padding: 2rem 0;
-    width: 100%;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 .hArtHead {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hArtHead h1 {
-    width: fit-content;
-    max-width: 13rem;
-    border-bottom: 1px solid var(--color-surface-elevated);
-    margin: 0 auto;
-    text-align: center;
-    color: var(--color-text);
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
+  width: fit-content;
+  max-width: 13rem;
+  border-bottom: 1px solid var(--color-surface-elevated);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
 }
 
 .articleData {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    padding: 1.5rem var(--section-padding-x, 2rem);
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  padding: 1.5rem var(--section-padding-x, 2rem);
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media (min-width: 1280px) {
-    .articleData {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .articleData {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .artLink {
-    display: block;
-    height: 100%;
-    text-decoration: none;
+  display: block;
+  height: 100%;
+  text-decoration: none;
 }
 
 .artCont {
-    width: 100%;
-    height: 100%;
-    border-radius: 24px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    overflow: hidden;
-    transition: all 0.4s var(--ease-out-smooth);
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out-smooth);
+  display: flex;
+  flex-direction: column;
 }
 
 .artCont:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent);
-    box-shadow: var(--premium-shadow);
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: var(--premium-shadow);
 }
 
 .artCont img {
-    width: 100%;
-    height: var(--card-image-height);
-    object-fit: cover;
-    flex-shrink: 0;
+  width: 100%;
+  height: var(--card-image-height);
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .artCont h4 {
-    flex: 1;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-normal);
-    padding: 0.75rem 1rem;
-    font-family: var(--font-geist-sans), sans-serif;
-    color: var(--color-text);
+  flex: 1;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-geist-sans), sans-serif;
+  color: var(--color-text);
 }
 
 .artCont p {
-    width: fit-content;
-    padding: 0.25rem 0.75rem;
-    margin: 0.5rem 1rem;
-    color: var(--color-text-secondary);
-    background-color: var(--color-surface-elevated);
-    text-align: center;
-    border-radius: 1rem;
-    font-size: 0.75rem;
+  width: fit-content;
+  padding: 0.25rem 0.75rem;
+  margin: 0.5rem 1rem;
+  color: var(--color-text-secondary);
+  background-color: var(--color-surface-elevated);
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 0.75rem;
 }
 
 .seeAllArt {
-    text-align: center;
-    width: 100%;
-    padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
 .seeAllArt button {
-    background-color: var(--color-accent);
-    color: white;
-    transition: background-color 0.35s var(--ease-out-smooth);
+  background-color: var(--color-accent);
+  color: white;
+  transition: background-color 0.35s var(--ease-out-smooth);
 }
 
 .seeAllArt button:hover {
-    background-color: #0284c7;
+  background-color: #0284c7;
 }
 
 .emptyState {
-    color: var(--color-muted);
-    font-size: 0.9375rem;
-    text-align: center;
-    padding: 2rem;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  text-align: center;
+  padding: 2rem;
 }
 
 .homeWork {
-    padding: 2rem 0;
-    width: 100%;
+  padding: 2rem 0;
+  width: 100%;
 }
 
 .hWrkHead {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .hWrkHead h1 {
-    width: fit-content;
-    max-width: 20rem;
-    border-bottom: 1px solid var(--color-surface-elevated);
-    margin: 0 auto;
-    text-align: center;
-    color: var(--color-text);
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
-    line-height: var(--line-height-tight);
+  width: fit-content;
+  max-width: 20rem;
+  border-bottom: 1px solid var(--color-surface-elevated);
+  margin: 0 auto;
+  text-align: center;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
 }
 
 .workContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem var(--section-padding-x, 2rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem var(--section-padding-x, 2rem);
 }
 
 .spotlightProject {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
-    background: var(--glass-background);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: var(--glass-border);
-    border-radius: 32px;
-    padding: 4rem;
-    margin-bottom: 5rem;
-    align-items: center;
-    box-shadow: var(--glass-shadow);
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  background: var(--glass-background);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: 32px;
+  padding: 4rem;
+  margin-bottom: 5rem;
+  align-items: center;
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
 }
 
 .spotlightContent {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .spotlightLabel {
-    color: var(--color-accent);
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.875rem;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
 }
 
 .spotlightContent h2 {
-    font-size: 3rem;
-    color: var(--color-text);
-    line-height: 1.1;
-    letter-spacing: -0.04em;
+  font-size: 3rem;
+  color: var(--color-text);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 .spotlightContent p {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 .spotlightLink {
-    width: fit-content;
-    padding: 1rem 2rem;
-    background: var(--color-accent);
-    color: white;
-    border-radius: 12px;
-    font-weight: var(--font-weight-semibold);
-    transition: all 0.3s ease;
+  width: fit-content;
+  padding: 1rem 2rem;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 12px;
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
 }
 
 .spotlightLink:hover {
-    background: #0284c7;
-    transform: translateX(5px);
-    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+  background: #0284c7;
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
 }
 
 .spotlightImage {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .spotlightImage img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.6s ease;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
 }
 
 .spotlightProject:hover .spotlightImage img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .workShow {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
 }
 
 @media (min-width: 1280px) {
-    .workShow {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .workShow {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .projTemp {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 24px;
-    overflow: hidden;
-    transition: all 0.4s var(--ease-out-smooth);
-    display: flex;
-    flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out-smooth);
+  display: flex;
+  flex-direction: column;
 }
 
 .projTemp:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent);
-    box-shadow: var(--premium-shadow);
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: var(--premium-shadow);
 }
 
 .imgWrapper {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
 }
 
 .imgWrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .projTemp:hover .imgWrapper img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .projInfo {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .projTemp h4 {
-    font-size: 1.125rem;
-    color: var(--color-text);
-    margin: 0;
-    font-weight: var(--font-weight-semibold);
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
 }
 
 .projectLink {
-    font-size: 0.875rem;
-    color: var(--color-accent);
-    font-weight: var(--font-weight-medium);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .projectLink::after {
-    content: "→";
-    transition: transform 0.3s ease;
+  content: "→";
+  transition: transform 0.3s ease;
 }
 
 .projectLink:hover::after {
-    transform: translateX(4px);
+  transform: translateX(4px);
 }
 
 .seeAllWork {
-    text-align: center;
-    width: 100%;
-    padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 
 .seeAllWork button {
-    background-color: var(--color-accent);
-    color: white;
-    transition: background-color 0.35s var(--ease-out-smooth);
+  background-color: var(--color-accent);
+  color: white;
+  transition: background-color 0.35s var(--ease-out-smooth);
 }
 
 .seeAllWork button:hover {
-    background-color: #0284c7;
+  background-color: #0284c7;
 }
 
 @media (max-width: 1100px) {
-    .articleData,
-    .workShow {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 1.5rem 1rem;
-        gap: 1.5rem;
-    }
+  .articleData,
+  .workShow {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
 }
 
 /* Tablet */
 @media (max-width: 768px) {
-    .articleData,
-    .workShow {
-        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-        padding: 1.5rem 1rem;
-        gap: 1.5rem;
-    }
+  .articleData,
+  .workShow {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
 
-    .hArtHead h1,
-    .hWrkHead h1 {
-        font-size: 1.3rem;
-    }
+  .hArtHead h1,
+  .hWrkHead h1 {
+    font-size: 1.3rem;
+  }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-    .articleData,
-    .workShow {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-        gap: 1.5rem;
-    }
+  .articleData,
+  .workShow {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
 
-    .projTemp,
-    .artCont {
-        width: 100%;
-        max-width: 22rem;
-        margin: 0 auto;
-    }
+  .projTemp,
+  .artCont {
+    width: 100%;
+    max-width: 22rem;
+    margin: 0 auto;
+  }
 
-    .homeArticle,
-    .homeWork {
-        padding: 1.5rem 0.5rem;
-    }
+  .homeArticle,
+  .homeWork {
+    padding: 1.5rem 0.5rem;
+  }
 
-    .seeAllWork,
-    .seeAllArt {
-        width: 10rem;
-    }
+  .seeAllWork,
+  .seeAllArt {
+    width: 10rem;
+  }
 
-    .seeAllWork button,
-    .seeAllArt button {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
-    }
+  .seeAllWork button,
+  .seeAllArt button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
 }

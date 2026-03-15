@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import notFoundImg from "@/gallery/siteImgs/404NotFound.svg";
 import styles from "./notFound.module.css";
 
 export default function NotFound() {
@@ -12,7 +10,8 @@ export default function NotFound() {
         </div>
         <h2 className={styles.title}>You&apos;ve drifted into the void.</h2>
         <p className={styles.message}>
-          The page you are looking for has been moved, deleted, or never existed in this dimension.
+          The page you are looking for has been moved, deleted, or never existed
+          in this dimension.
         </p>
         <Link href="/" className={styles.homeBtn}>
           Back to Reality

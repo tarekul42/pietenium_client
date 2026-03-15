@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-import styles from "./service.module.css";
 import {
   faChartLine,
   faCode,
@@ -15,8 +13,9 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import TestimonialSlider from "../testimonial/testimonial";
 import Link from "next/link";
+import TestimonialSlider from "../testimonial/testimonial";
+import styles from "./service.module.css";
 
 const Services = () => {
   const servicesData = [

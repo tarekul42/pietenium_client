@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
-import Cookies from "js-cookie";
-import styles from "./cookiePopup.module.css";
-import { api } from "@/data/api";
-import SmallLoad from "../smallLaoding/smallLoad";
 import { useLoading } from "@/customHooks";
+import { api } from "@/data/api";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+import SmallLoad from "../smallLaoding/smallLoad";
+import styles from "./cookiePopup.module.css";
 
 export default function CookiePopup() {
   const [showPopup, setShowPopup] = useState(false);

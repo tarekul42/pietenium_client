@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import styles from "../home.module.css";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { ReactTyped } from "react-typed";
+import styles from "../home.module.css";
 
 const VIDEO_SRC =
   "https://res.cloudinary.com/dpjrmamby/video/upload/v1746989800/PieTechBanner_ptcgew.mp4";

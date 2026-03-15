@@ -1,166 +1,166 @@
 .finalCTA {
-    background: radial-gradient(
-        circle at center,
-        #04cdf13d,
-        #0ad2a059,
-        #04f1a25e,
-        #0ad26e70
-    );
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    padding: 100px 20px;
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+  background: radial-gradient(
+    circle at center,
+    #04cdf13d,
+    #0ad2a059,
+    #04f1a25e,
+    #0ad26e70
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .finalCTA.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 @keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .content {
-    background-color: #00395a96;
-    padding: 50px 40px;
-    border-radius: 15px;
-    border: 3px solid var(--foreground);
-    box-shadow: 0 10px 30px rgba(3, 12, 19, 0.2);
+  background-color: #00395a96;
+  padding: 50px 40px;
+  border-radius: 15px;
+  border: 3px solid var(--foreground);
+  box-shadow: 0 10px 30px rgba(3, 12, 19, 0.2);
 }
 
 .headline {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: var(--foreground);
-    font-weight: 700;
-    line-height: 1.2;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: var(--foreground);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .subheadline {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-    color: var(--foreground);
-    font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  color: var(--foreground);
+  font-weight: 500;
 }
 
 .benefit {
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-    color: var(--foreground);
-    font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  color: var(--foreground);
+  font-weight: 600;
 }
 
 .ctaButton {
-    background-color: var(--foreground);
-    color: var(--background);
-    border: none;
-    padding: 18px 40px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .ctaButton:hover {
-    background-color: #024e5f;
-    transform: translateY(-3px);
-    animation: bounce 0.6s ease;
-    box-shadow: 0 8px 20px rgba(3, 12, 19, 0.3);
+  background-color: #024e5f;
+  transform: translateY(-3px);
+  animation: bounce 0.6s ease;
+  box-shadow: 0 8px 20px rgba(3, 12, 19, 0.3);
 }
 
 @keyframes bounce {
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(-3px);
-    }
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(-3px);
+  }
 
-    40% {
-        transform: translateY(-10px);
-    }
+  40% {
+    transform: translateY(-10px);
+  }
 
-    60% {
-        transform: translateY(-5px);
-    }
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Wave animation for visual appeal */
 .finalCTA::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(255,255,255,0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-    background-size: cover;
-    animation: wave 10s linear infinite;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(255,255,255,0.3)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  animation: wave 10s linear infinite;
 }
 
 @keyframes wave {
-    0% {
-        background-position-x: 0;
-    }
+  0% {
+    background-position-x: 0;
+  }
 
-    100% {
-        background-position-x: 1440px;
-    }
+  100% {
+    background-position-x: 1440px;
+  }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .finalCTA {
-        padding: 70px 15px;
-    }
+  .finalCTA {
+    padding: 70px 15px;
+  }
 
-    .content {
-        padding: 40px 25px;
-    }
+  .content {
+    padding: 40px 25px;
+  }
 
-    .headline {
-        font-size: 1.4rem;
-    }
+  .headline {
+    font-size: 1.4rem;
+  }
 
-    .subheadline {
-        font-size: 0.9rem;
-    }
+  .subheadline {
+    font-size: 0.9rem;
+  }
 
-    .benefit {
-        font-size: 0.8rem;
-    }
+  .benefit {
+    font-size: 0.8rem;
+  }
 
-    .ctaButton {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
+  .ctaButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }

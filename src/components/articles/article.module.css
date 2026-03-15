@@ -1,639 +1,639 @@
 .articles {
-    display: flex;
-    flex-direction: column;
-    background: var(--color-bg);
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  min-height: 100vh;
 }
 
 .artlBannerSec {
-    width: 100%;
-    height: 45vh;
-    position: relative;
-    overflow: hidden;
-    background-image: url("../../gallery/siteImgs/articlePageHero.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 45vh;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../gallery/siteImgs/articlePageHero.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .heroCont {
-    width: 100%;
-    height: 100%;
-    background: var(--banner-overlay);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 var(--section-padding-x, 2rem);
-    gap: 1rem;
+  width: 100%;
+  height: 100%;
+  background: var(--banner-overlay);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 var(--section-padding-x, 2rem);
+  gap: 1rem;
 }
 
 .heroLabel {
-    color: var(--color-accent);
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.8125rem;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8125rem;
 }
 
 .heroCont h1 {
-    font-size: 3.5rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--banner-text);
-    margin: 0;
-    letter-spacing: -0.04em;
-    line-height: 1.1;
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--banner-text);
+  margin: 0;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .heroCont p {
-    font-size: 1.25rem;
-    color: var(--banner-text-secondary);
-    max-width: 50ch;
-    line-height: var(--line-height-relaxed);
+  font-size: 1.25rem;
+  color: var(--banner-text-secondary);
+  max-width: 50ch;
+  line-height: var(--line-height-relaxed);
 }
 
 .artlShowSec {
-    width: 100%;
-    background: var(--atm-bg);
-    padding: 8rem 0;
-    position: relative;
-    isolation: isolate;
+  width: 100%;
+  background: var(--atm-bg);
+  padding: 8rem 0;
+  position: relative;
+  isolation: isolate;
 }
 
 .filterBar {
-    max-width: 1280px;
-    margin: 0 auto 3rem;
-    padding: 0 var(--section-padding-x, 2rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto 3rem;
+  padding: 0 var(--section-padding-x, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .searchWrapper {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
 }
 
 .searchIcon {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--color-muted);
-    font-size: 1rem;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-muted);
+  font-size: 1rem;
 }
 
 .searchInput {
-    width: 100%;
-    padding: 0.75rem 1rem 0.75rem 2.75rem;
-    border: 1px solid var(--color-surface-elevated);
-    border-radius: 12px;
-    background: var(--color-surface);
-    color: var(--color-text);
-    font-size: 0.9375rem;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1px solid var(--color-surface-elevated);
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
 }
 
 .searchInput:focus {
-    outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 
 .searchInput::placeholder {
-    color: var(--color-muted);
+  color: var(--color-muted);
 }
 
 .artclAct {
-    display: flex;
-    gap: 1rem;
-    background: var(--color-surface);
-    padding: 0.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-surface-elevated);
+  display: flex;
+  gap: 1rem;
+  background: var(--color-surface);
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-surface-elevated);
 }
 
 .artclAct button {
-    background: transparent;
-    color: var(--color-muted);
-    padding: 0.6rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: var(--font-weight-semibold);
-    transition: all 0.3s var(--ease-out-smooth);
+  background: transparent;
+  color: var(--color-muted);
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s var(--ease-out-smooth);
 }
 
 .artclAct button:hover {
-    color: var(--color-text);
-    background: var(--color-surface-elevated);
+  color: var(--color-text);
+  background: var(--color-surface-elevated);
 }
 
 .artclAct button.active {
-    background: var(--color-accent);
-    color: white;
-    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+  background: var(--color-accent);
+  color: white;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
 }
 
 .articleGrid {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--section-padding-x, 2rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x, 2rem);
 }
 
 @media (min-width: 1280px) {
-    .filterBar,
-    .articleGrid {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .filterBar,
+  .articleGrid {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
 
 .artLink {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .artCard {
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(var(--atm-card-blur));
-    -webkit-backdrop-filter: blur(var(--atm-card-blur));
-    border: var(--atm-card-border);
-    border-radius: 32px;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.4s var(--ease-out-smooth);
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  border: var(--atm-card-border);
+  border-radius: 32px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s var(--ease-out-smooth);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
 }
 
 .artCard:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent);
-    box-shadow: var(--premium-shadow);
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: var(--premium-shadow);
 }
 
 .cardImage {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%;
-    /* 16:9 Aspect Ratio */
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio */
+  overflow: hidden;
 }
 
 .cardImage img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s var(--ease-out-smooth);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-smooth);
 }
 
 .artCard:hover .cardImage img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .categoryBadge {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(4px);
-    color: var(--color-accent);
-    padding: 0.4rem 1rem;
-    border-radius: 30px;
-    font-size: 0.75rem;
-    font-weight: var(--font-weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border: 1px solid rgba(14, 165, 233, 0.3);
-    z-index: 2;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  color: var(--color-accent);
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  z-index: 2;
 }
 
 .cardContent {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    flex-grow: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex-grow: 1;
 }
 
 .cardContent h4 {
-    font-size: 1.25rem;
-    font-weight: var(--font-weight-medium);
-    color: var(--color-text);
-    line-height: 1.4;
-    margin: 0;
-    transition: color 0.3s ease;
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 .artCard:hover h4 {
-    color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .hashtags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
 }
 
 .hashtags span {
-    font-size: 0.8125rem;
-    color: var(--color-muted);
-    font-weight: var(--font-weight-medium);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  font-weight: var(--font-weight-medium);
 }
 
 .readMore {
-    margin-top: auto;
-    color: var(--color-accent);
-    font-weight: var(--font-weight-semibold);
-    font-size: 0.875rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: gap 0.3s ease;
+  margin-top: auto;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
 }
 
 .artCard:hover .readMore {
-    gap: 0.75rem;
+  gap: 0.75rem;
 }
 
 .emptyState {
-    text-align: center;
-    padding: 6rem 2rem;
-    color: var(--color-muted);
-    background: var(--color-surface);
-    border-radius: 16px;
-    border: 1px dashed var(--color-surface-elevated);
+  text-align: center;
+  padding: 6rem 2rem;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  border-radius: 16px;
+  border: 1px dashed var(--color-surface-elevated);
 }
 
 /* Article Details Page */
 .articleD {
-    min-height: 100vh;
-    background-color: var(--color-bg);
-    font-family: var(--font-geist-sans), system-ui, sans-serif;
-    color: var(--color-text);
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  color: var(--color-text);
 }
 
 .articleHeader {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    overflow: hidden;
-    isolation: isolate;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .headerImage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .headerOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--banner-overlay);
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--banner-overlay);
+  z-index: 1;
 }
 
 .headerContent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 2;
-    padding: 0 var(--section-padding-x, 2rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  padding: 0 var(--section-padding-x, 2rem);
 }
 
 .backLink {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--color-text);
-    text-decoration: none;
-    font-weight: var(--font-weight-medium);
-    padding: 0.5rem 1rem;
-    border-radius: var(--card-border-radius);
-    background: var(--color-surface);
-    border: 1px solid var(--color-surface-elevated);
-    transition: all 0.3s ease;
-    z-index: 3;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  padding: 0.5rem 1rem;
+  border-radius: var(--card-border-radius);
+  background: var(--color-surface);
+  border: 1px solid var(--color-surface-elevated);
+  transition: all 0.3s ease;
+  z-index: 3;
 }
 
 .backLink:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .articleTitle {
-    font-size: 2rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--banner-text);
-    line-height: var(--line-height-tight);
-    margin-bottom: 1rem;
-    max-width: 20ch;
+  font-size: 2rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--banner-text);
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
+  max-width: 20ch;
 }
 
 .articleMeta {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .articleType {
-    display: inline-block;
-    background: var(--color-accent);
-    color: white;
-    padding: 0.5rem 1.25rem;
-    border-radius: 30px;
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .hashtags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
 .hashtags span {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    font-weight: var(--font-weight-medium);
-    background: var(--color-surface);
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    border: 1px solid var(--color-surface-elevated);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
+  background: var(--color-surface);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--color-surface-elevated);
 }
 
 .artDetailUp {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 4rem var(--section-padding-x, 2rem);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem var(--section-padding-x, 2rem);
 }
 
 .artContent {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-    max-width: 100%;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 100%;
 }
 
 .artContent p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .artContent img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--card-border-radius);
-    margin: 2rem 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--card-border-radius);
+  margin: 2rem 0;
 }
 
 .artContent h2,
 .artContent h3,
 .artContent h4 {
-    color: var(--color-text);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+  color: var(--color-text);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .artContent a {
-    color: var(--color-accent);
-    text-decoration: underline;
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 
 .artContent ul,
 .artContent ol {
-    margin-bottom: 1.5rem;
-    padding-left: 2rem;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
 }
 
 .artContent li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .artContent blockquote {
-    border-left: 4px solid var(--color-accent);
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-    font-style: italic;
-    color: var(--color-text);
-    background: var(--color-surface);
-    padding: 1.5rem;
-    border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
+  border-left: 4px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-text);
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
 }
 
 .artDetailDown {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 var(--section-padding-x, 2rem) 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x, 2rem) 4rem;
 }
 
 .hr {
-    border: none;
-    border-top: 1px solid var(--color-surface-elevated);
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 0 var(--section-padding-x, 2rem);
+  border: none;
+  border-top: 1px solid var(--color-surface-elevated);
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 var(--section-padding-x, 2rem);
 }
 
 .ctaBox {
-    background: var(--glass-background);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: var(--glass-border);
-    border-radius: 24px;
-    padding: 4rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    margin-top: 5rem;
-    transition: all 0.3s ease;
-    box-shadow: var(--glass-shadow);
+  background: var(--glass-background);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: 24px;
+  padding: 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 5rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
 }
 
 .ctaBox:hover {
-    border-color: var(--color-accent);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .ctaBox::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2304cef1' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.5;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2304cef1' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
 }
 
 .ctaContent {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .ctaBox h3 {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
 .ctaBox p {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    margin-bottom: 2rem;
-    max-width: 50ch;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: var(--line-height-relaxed);
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  max-width: 50ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
 }
 
 .ctaBtn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background: var(--color-accent);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--card-border-radius);
-    font-weight: var(--font-weight-semibold);
-    font-size: 1.125rem;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--card-border-radius);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .ctaBtn:hover {
-    background: #0284c7;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(4, 207, 241, 0.3);
+  background: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(4, 207, 241, 0.3);
 }
 
 @media (max-width: 768px) {
-    .articleHeader {
-        height: 40vh;
-    }
+  .articleHeader {
+    height: 40vh;
+  }
 
-    .articleTitle {
-        font-size: 1.75rem;
-    }
+  .articleTitle {
+    font-size: 1.75rem;
+  }
 
-    .backLink {
-        top: 1rem;
-        left: 1rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
+  .backLink {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
 
-    .artDetailUp {
-        padding: 2rem 1rem;
-    }
+  .artDetailUp {
+    padding: 2rem 1rem;
+  }
 
-    .artContent {
-        font-size: 1rem;
-    }
+  .artContent {
+    font-size: 1rem;
+  }
 
-    .ctaBox {
-        padding: 3rem 1.5rem;
-        margin: 3rem 1rem;
-    }
+  .ctaBox {
+    padding: 3rem 1.5rem;
+    margin: 3rem 1rem;
+  }
 
-    .ctaBox h3 {
-        font-size: 1.25rem;
-    }
+  .ctaBox h3 {
+    font-size: 1.25rem;
+  }
 }
 
 @media (max-width: 576px) {
-    .articleTitle {
-        font-size: 1.5rem;
-    }
+  .articleTitle {
+    font-size: 1.5rem;
+  }
 
-    .headerContent {
-        padding: 0 1rem;
-    }
+  .headerContent {
+    padding: 0 1rem;
+  }
 
-    .articleMeta {
-        gap: 0.75rem;
-    }
+  .articleMeta {
+    gap: 0.75rem;
+  }
 
-    .artDetailDown {
-        padding: 0 1rem 3rem;
-    }
+  .artDetailDown {
+    padding: 0 1rem 3rem;
+  }
 }
 
 /* Tablet Layout */
 @media (max-width: 1024px) {
-    .gridContainer {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 
-    .heroCont h1 {
-        font-size: 2rem;
-    }
+  .heroCont h1 {
+    font-size: 2rem;
+  }
 }
 
 /* Mobile Layout */
 @media (max-width: 640px) {
-    .gridContainer {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-    .heroCont h1 {
-        font-size: 1.75rem;
-    }
+  .heroCont h1 {
+    font-size: 1.75rem;
+  }
 
-    .artclAct {
-        width: 100%;
-        overflow-x: auto;
-        padding: 0.25rem;
-    }
+  .artclAct {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.25rem;
+  }
 
-    .artclAct button {
-        flex: 1;
-        white-space: nowrap;
-        padding: 0.6rem 1rem;
-    }
+  .artclAct button {
+    flex: 1;
+    white-space: nowrap;
+    padding: 0.6rem 1rem;
+  }
 
-    .artlShowSec {
-        padding: 3rem 0;
-    }
+  .artlShowSec {
+    padding: 3rem 0;
+  }
 }

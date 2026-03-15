@@ -1,11 +1,9 @@
 "use client";
 
+import { useLoading } from "@/customHooks";
+import { api } from "@/data/api";
 import { useState } from "react";
 import styles from "./newsletter.module.css";
-import { api } from "@/data/api";
-import { useLoading } from "@/customHooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");

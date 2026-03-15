@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import styles from "./rlHero.module.css";
-import { useState, useEffect } from "react";
 
 const RlHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

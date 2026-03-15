@@ -1,255 +1,255 @@
 .dashboard {
-    padding: 8rem var(--section-padding-x, 2rem) 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  padding: 8rem var(--section-padding-x, 2rem) 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .welcomeSection h1 {
-    font-size: 2.5rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.02em;
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .welcomeSection p {
-    color: var(--color-muted);
-    font-size: 1.125rem;
+  color: var(--color-muted);
+  font-size: 1.125rem;
 }
 
 .statsGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .statCard {
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(var(--atm-card-blur));
-    -webkit-backdrop-filter: blur(var(--atm-card-blur));
-    border: var(--atm-card-border);
-    padding: 1.5rem;
-    border-radius: 24px;
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    transition: all 0.4s var(--ease-out-smooth);
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  border: var(--atm-card-border);
+  padding: 1.5rem;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.4s var(--ease-out-smooth);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
 }
 
 .statCard:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-accent);
-    box-shadow: var(--premium-shadow);
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+  box-shadow: var(--premium-shadow);
 }
 
 .statIcon {
-    width: 48px;
-    height: 48px;
-    background: rgba(14, 165, 233, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-accent);
-    font-size: 1.25rem;
+  width: 48px;
+  height: 48px;
+  background: rgba(14, 165, 233, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 1.25rem;
 }
 
 .statInfo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .statLabel {
-    font-size: 0.8125rem;
-    color: var(--color-muted);
-    font-weight: var(--font-weight-medium);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  font-weight: var(--font-weight-medium);
 }
 
 .statValue {
-    font-size: 1.5rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
 }
 
 .quickActions h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-text);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
 }
 
 .actionButtons {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .actionBtn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
-    background: var(--color-surface);
-    color: var(--color-text);
-    font-weight: var(--font-weight-semibold);
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .actionBtn:hover {
-    background: var(--color-accent);
-    color: white;
-    border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
 }
 
 /* Dashboard Navigation Modernization */
 .dashboardNav {
-    position: fixed;
-    top: 5.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: var(--atm-card-border);
-    border-radius: 100px;
-    padding: 0.6rem 1.25rem;
-    z-index: 1000;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: var(--atm-card-border);
+  border-radius: 100px;
+  padding: 0.6rem 1.25rem;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .dashNavSec {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .navBrand {
-    font-weight: var(--font-weight-bold);
-    color: var(--color-accent);
-    padding: 0 1rem;
-    border-right: 1px solid var(--color-border);
-    font-size: 0.8125rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  padding: 0 1rem;
+  border-right: 1px solid var(--color-border);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .navList {
-    display: flex;
-    list-style: none;
-    gap: 0.5rem;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 .navLink {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 1.25rem;
-    border-radius: 100px;
-    color: var(--color-muted);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-semibold);
-    transition: all 0.3s var(--ease-out-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 100px;
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s var(--ease-out-smooth);
 }
 
 .navLink:hover {
-    color: var(--color-text);
-    background: var(--color-surface-elevated);
+  color: var(--color-text);
+  background: var(--color-surface-elevated);
 }
 
 .navLink:global(.active) {
-    background: var(--color-accent);
-    color: white;
+  background: var(--color-accent);
+  color: white;
 }
 
 .logoutBtn {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .logoutBtn:hover {
-    background: #ef4444;
-    color: white;
+  background: #ef4444;
+  color: white;
 }
 
 /* Dashboard AUth design ---> */
 
 .dashAuth {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
 }
 
 .dashAuth form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem;
 }
 
 .dashAuth form input {
-    margin: 0;
-    width: 25rem;
-    height: 4rem;
-    background: none;
-    border: 1px solid #2af18de1;
-    padding: 1rem;
-    border-radius: 0.7rem;
+  margin: 0;
+  width: 25rem;
+  height: 4rem;
+  background: none;
+  border: 1px solid #2af18de1;
+  padding: 1rem;
+  border-radius: 0.7rem;
 }
 
 .dashAuth form button {
-    margin: 0;
-    width: 15rem;
-    background: none;
-    border: 1px solid #2af18de1;
-    padding: 1rem;
-    border-radius: 0.7rem;
-    font-size: 1rem;
-    font-weight: 550;
-    transition: all 0.3s ease-in-out;
+  margin: 0;
+  width: 15rem;
+  background: none;
+  border: 1px solid #2af18de1;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  font-weight: 550;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #2af18de1;
+    color: #002412e1;
+  }
+
+  &:disabled {
+    background: #4f5753e1;
+    color: white;
 
     &:hover {
-        background: #2af18de1;
-        color: #002412e1;
+      background: none;
+      color: white;
     }
-
-    &:disabled {
-        background: #4f5753e1;
-        color: white;
-
-        &:hover {
-            background: none;
-            color: white;
-        }
-    }
+  }
 }
 
 .inputError {
-    border-color: #ef4444 !important;
+  border-color: #ef4444 !important;
 }
 
 .errorText {
-    color: #ef4444;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    display: block;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
 }

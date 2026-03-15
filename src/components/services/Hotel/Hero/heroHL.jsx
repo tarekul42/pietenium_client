@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import styles from "./heroHl.module.css";
-import { useState, useEffect } from "react";
 
 const HotelHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

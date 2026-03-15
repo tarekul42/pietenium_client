@@ -1,43 +1,48 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
-import styles from "./article.module.css";
+import { useLoading } from "@/customHooks";
+import usePagination from "@/customHooks/usePagination";
 import { api } from "@/data/api";
+import { slugify } from "@/utility/slugify";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { slugify } from "@/utility/slugify";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import Pagination from "../pagination/Pagination";
 import ArticleCardSkeleton from "../skeleton/ArticleCardSkeleton";
 import Skeleton from "../skeleton/Skeleton";
-import { useLoading } from "@/customHooks";
-import Pagination from "../pagination/Pagination";
-import usePagination from "@/customHooks/usePagination";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import styles from "./article.module.css";
 
 const Articles = () => {
   const [articleType, setArticleType] = useState("");
   const [articles, setArticles] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { loading, startLoading, stopLoading } = useLoading();
-  const { currentPage, paginate, totalPages } = usePagination({ initialLimit: 6 });
+  const { currentPage, paginate, totalPages } = usePagination({
+    initialLimit: 6,
+  });
 
-  const fetchArticles = useCallback(async (artType) => {
-    startLoading();
-    try {
-      const response = await fetch(
-        `${api}/article/getAll?articleType=${artType}`,
-        {
-          cache: "no-store",
-        },
-      );
-      const data = await response.json();
-      setArticles(data?.articles || []);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      stopLoading();
-    }
-  }, [startLoading, stopLoading]);
+  const fetchArticles = useCallback(
+    async (artType) => {
+      startLoading();
+      try {
+        const response = await fetch(
+          `${api}/article/getAll?articleType=${artType}`,
+          {
+            cache: "no-store",
+          },
+        );
+        const data = await response.json();
+        setArticles(data?.articles || []);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        stopLoading();
+      }
+    },
+    [startLoading, stopLoading],
+  );
 
   useEffect(() => {
     fetchArticles(articleType);
@@ -55,7 +60,7 @@ const Articles = () => {
       (art) =>
         art.title?.toLowerCase().includes(query) ||
         art.hashtags?.some((h) => h.toLowerCase().includes(query)) ||
-        art.articleType?.toLowerCase().includes(query)
+        art.articleType?.toLowerCase().includes(query),
     );
   }, [articles, searchQuery]);
 
@@ -74,7 +79,8 @@ const Articles = () => {
           <span className={styles.heroLabel}>Our Voice</span>
           <h1>Insights & News</h1>
           <p>
-            Exploring the intersection of technology, design, and business strategy to empower your digital journey.
+            Exploring the intersection of technology, design, and business
+            strategy to empower your digital journey.
           </p>
         </div>
       </section>

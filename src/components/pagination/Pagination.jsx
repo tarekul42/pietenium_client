@@ -1,13 +1,16 @@
 "use client";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const Pagination = ({ 
-  currentPage, 
-  totalPages, 
-  onPageChange, 
-  onPrev, 
-  onNext 
+const Pagination = ({
+  currentPage,
+  totalPages,
+  onPageChange,
+  onPrev,
+  onNext,
 }) => {
   if (totalPages <= 1) return null;
 
@@ -19,29 +22,49 @@ const Pagination = ({
       if (currentPage <= 3) {
         pages.push(1, 2, 3, 4, "...", totalPages);
       } else if (currentPage >= totalPages - 2) {
-        pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+        pages.push(
+          1,
+          "...",
+          totalPages - 3,
+          totalPages - 2,
+          totalPages - 1,
+          totalPages,
+        );
       } else {
-        pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages);
+        pages.push(
+          1,
+          "...",
+          currentPage - 1,
+          currentPage,
+          currentPage + 1,
+          "...",
+          totalPages,
+        );
       }
     }
     return pages;
   };
 
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "8px",
-      marginTop: "2rem",
-      flexWrap: "wrap",
-    }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "8px",
+        marginTop: "2rem",
+        flexWrap: "wrap",
+      }}
+    >
       <button
         onClick={onPrev}
         disabled={currentPage === 1}
         style={{
           padding: "8px 12px",
-          background: currentPage === 1 ? "var(--color-surface-elevated)" : "var(--color-surface)",
+          background:
+            currentPage === 1
+              ? "var(--color-surface-elevated)"
+              : "var(--color-surface)",
           color: currentPage === 1 ? "var(--color-muted)" : "var(--color-text)",
           border: "1px solid var(--color-border)",
           borderRadius: "6px",
@@ -61,8 +84,16 @@ const Pagination = ({
           disabled={page === "..."}
           style={{
             padding: "8px 14px",
-            background: currentPage === page ? "var(--color-accent)" : "var(--color-surface)",
-            color: currentPage === page ? "white" : page === "..." ? "var(--color-muted)" : "var(--color-text)",
+            background:
+              currentPage === page
+                ? "var(--color-accent)"
+                : "var(--color-surface)",
+            color:
+              currentPage === page
+                ? "white"
+                : page === "..."
+                  ? "var(--color-muted)"
+                  : "var(--color-text)",
             border: "1px solid var(--color-border)",
             borderRadius: "6px",
             cursor: page === "..." ? "default" : "pointer",
@@ -79,8 +110,14 @@ const Pagination = ({
         disabled={currentPage === totalPages}
         style={{
           padding: "8px 12px",
-          background: currentPage === totalPages ? "var(--color-surface-elevated)" : "var(--color-surface)",
-          color: currentPage === totalPages ? "var(--color-muted)" : "var(--color-text)",
+          background:
+            currentPage === totalPages
+              ? "var(--color-surface-elevated)"
+              : "var(--color-surface)",
+          color:
+            currentPage === totalPages
+              ? "var(--color-muted)"
+              : "var(--color-text)",
           border: "1px solid var(--color-border)",
           borderRadius: "6px",
           cursor: currentPage === totalPages ? "not-allowed" : "pointer",

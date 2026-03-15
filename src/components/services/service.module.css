@@ -1,399 +1,399 @@
 .service {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0;
-    background: var(--color-bg);
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  background: var(--color-bg);
+  min-height: 100vh;
 }
 
 .service hr {
-    width: 20rem;
+  width: 20rem;
 }
 
 .srvHead {
-    width: 100%;
-    height: 40vh;
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    background: var(--color-bg);
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-bg);
 }
 
 .backgroundVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .srvHeadCont {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--banner-overlay);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 2;
-    padding: 0 var(--section-padding-x, 2rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--banner-overlay);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  padding: 0 var(--section-padding-x, 2rem);
 }
 
 @media (min-width: 1280px) {
-    .srvHeadCont {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .srvHeadCont {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .srvHeadCont h1 {
-    font-size: 3rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--banner-text);
-    line-height: var(--line-height-tight);
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--banner-text);
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
 }
 
 .srvHeadCont p {
-    font-size: 1.25rem;
-    color: var(--banner-text-secondary);
-    max-width: 60ch;
-    line-height: var(--line-height-relaxed);
+  font-size: 1.25rem;
+  color: var(--banner-text-secondary);
+  max-width: 60ch;
+  line-height: var(--line-height-relaxed);
 }
 
 .srvBody {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 4rem;
-    background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 4rem;
+  background-color: var(--color-bg);
 }
 
 .srvCont {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 6rem var(--section-padding-x, 2rem);
-    text-align: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem var(--section-padding-x, 2rem);
+  text-align: center;
 }
 
 @media (min-width: 1280px) {
-    .srvCont {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .srvCont {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .srvCont h2 {
-    font-size: 2.25rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-    margin-bottom: 3rem;
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: 3rem;
 }
 
 .srvItems {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
 }
 
 .cardItem {
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(var(--atm-card-blur));
-    -webkit-backdrop-filter: blur(var(--atm-card-blur));
-    border: var(--atm-card-border);
-    padding: 3rem 2.5rem;
-    border-radius: 32px;
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s var(--ease-out-smooth);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  border: var(--atm-card-border);
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s var(--ease-out-smooth);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .cardItem:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        0 20px 25px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-color: var(--color-accent);
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--color-accent);
 }
 
 .cardItem span {
-    display: block;
-    text-align: center;
-    padding: 0.5rem;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 .cardItem span svg {
-    font-size: 2.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .cardItem h4 {
-    font-size: 1.25rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-    margin: 0;
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
 }
 
 .cardItem p {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-    margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
 }
 
 /* Workflow design start---> */
 .workflowSec {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 6rem var(--section-padding-x, 2rem);
-    text-align: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem var(--section-padding-x, 2rem);
+  text-align: center;
 }
 
 @media (min-width: 1280px) {
-    .workflowSec {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .workflowSec {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .workflowHeading {
-    font-size: 2.25rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
 }
 
 .workflowSub {
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    max-width: 800px;
-    margin: 0 auto 4rem;
-    line-height: var(--line-height-relaxed);
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  line-height: var(--line-height-relaxed);
 }
 
 .workflowGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
 }
 
 .stepCard {
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(var(--atm-card-blur));
-    -webkit-backdrop-filter: blur(var(--atm-card-blur));
-    border: var(--atm-card-border);
-    padding: 3rem 2.5rem;
-    border-radius: 32px;
-    transition: all 0.4s var(--ease-out-smooth);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  border: var(--atm-card-border);
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
+  transition: all 0.4s var(--ease-out-smooth);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
 }
 
 .tesimonial {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 @media (min-width: 1280px) {
-    .tesimonial {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .tesimonial {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .stepCard:hover {
-    transform: translateY(-8px);
-    border-color: var(--color-accent);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .stepIcon {
-    color: var(--color-accent);
-    font-size: 2.5rem;
+  color: var(--color-accent);
+  font-size: 2.5rem;
 }
 
 .stepNumber {
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-accent);
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .stepCard h3 {
-    font-size: 1.25rem;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-text);
-    margin: 0;
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin: 0;
 }
 
 .stepCard p {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    line-height: var(--line-height-relaxed);
-    margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
 }
 
 /* WhyUS design start --> */
 .whyUs {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .wuDesc {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .wuDesc p {
-    max-width: 800px;
-    padding: 1.5rem 0;
-    font-size: 1.125rem;
-    color: var(--color-text-secondary);
-    text-align: center;
+  max-width: 800px;
+  padding: 1.5rem 0;
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  text-align: center;
 }
 
 .wuDesc ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .wuDesc ul li {
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-    margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .wuDesc ul strong {
-    color: var(--color-accent);
-    font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Call to action btn ---> */
 .ctaSection {
-    background-color: var(--color-surface);
-    padding: 6rem var(--section-padding-x, 2rem);
-    color: var(--color-text);
-    text-align: center;
-    width: 100%;
+  background-color: var(--color-surface);
+  padding: 6rem var(--section-padding-x, 2rem);
+  color: var(--color-text);
+  text-align: center;
+  width: 100%;
 }
 
 @media (min-width: 1280px) {
-    .ctaSection {
-        padding-left: 0;
-        padding-right: 0;
-    }
+  .ctaSection {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .heading {
-    font-size: 2.5rem;
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: 2.5rem;
-    line-height: var(--line-height-tight);
-    color: var(--color-text);
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 2.5rem;
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
 }
 
 .btn {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--color-accent);
-    color: white;
-    font-size: 1.125rem;
-    font-weight: var(--font-weight-semibold);
-    border-radius: var(--card-border-radius);
-    text-decoration: none;
-    transition: background-color 0.4s var(--ease-out-smooth);
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--card-border-radius);
+  text-decoration: none;
+  transition: background-color 0.4s var(--ease-out-smooth);
 }
 
 .btn:hover {
-    background-color: #0284c7;
+  background-color: #0284c7;
 }
 
 /* Tablet */
 @media (max-width: 768px) {
-    .srvHeadCont h1 {
-        font-size: 1.7rem;
-    }
+  .srvHeadCont h1 {
+    font-size: 1.7rem;
+  }
 
-    .srvHeadCont p {
-        font-size: 1rem;
-    }
+  .srvHeadCont p {
+    font-size: 1rem;
+  }
 
-    .srvCont {
-        padding: 2rem 1rem;
-    }
+  .srvCont {
+    padding: 2rem 1rem;
+  }
 
-    .srvItems {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
+  .srvItems {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 
-    .workflowGrid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
+  .workflowGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-    .srvHeadCont {
-        padding: 2rem 1rem;
-    }
+  .srvHeadCont {
+    padding: 2rem 1rem;
+  }
 
-    .srvHeadCont h1 {
-        font-size: 1.3rem;
-    }
+  .srvHeadCont h1 {
+    font-size: 1.3rem;
+  }
 
-    .srvHeadCont p {
-        font-size: 0.85rem;
-    }
+  .srvHeadCont p {
+    font-size: 0.85rem;
+  }
 
-    .srvCont {
-        padding: 2rem 0.5rem;
-    }
+  .srvCont {
+    padding: 2rem 0.5rem;
+  }
 
-    .srvItems {
-        grid-template-columns: 1fr;
-    }
+  .srvItems {
+    grid-template-columns: 1fr;
+  }
 
-    .workflowGrid {
-        grid-template-columns: 1fr;
-    }
+  .workflowGrid {
+    grid-template-columns: 1fr;
+  }
 
-    .workflowSec {
-        padding: 2rem 1rem;
-    }
+  .workflowSec {
+    padding: 2rem 1rem;
+  }
 
-    .whyUs {
-        padding: 0.5rem;
-    }
+  .whyUs {
+    padding: 0.5rem;
+  }
 
-    .service hr {
-        width: 10rem;
-    }
+  .service hr {
+    width: 10rem;
+  }
 }

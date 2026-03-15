@@ -1,270 +1,270 @@
 .team {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 /* create article start ---> */
 .createMem {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(1, 24, 1, 0.322);
-    z-index: 3000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(1, 24, 1, 0.322);
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .closeBtn {
-    position: relative;
+  position: relative;
 }
 
 .closeBtn button {
-    position: absolute;
-    top: -2.5rem;
-    right: 0;
-    background: #f87171;
-    border: none;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s ease;
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: #f87171;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
 
-    &:hover {
-        background: #000;
-    }
+  &:hover {
+    background: #000;
+  }
 }
 
 .createForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #000;
-    padding: 1rem 0;
-    border-radius: 16px;
-    max-width: 90vw;
-    width: 90%;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-    animation: popup 0.3s ease-in-out;
-    height: auto;
-    max-height: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  padding: 1rem 0;
+  border-radius: 16px;
+  max-width: 90vw;
+  width: 90%;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  animation: popup 0.3s ease-in-out;
+  height: auto;
+  max-height: none;
 }
 
 @keyframes popup {
-    0% {
-        transform: scale(0.4);
-        opacity: 0;
-    }
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .scrollWrap {
-    width: 100%;
-    height: 100%;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 1rem;
-    box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: #02ff02 transparent;
+  width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #02ff02 transparent;
 }
 
 .scrollWrap::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .scrollWrap::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 .scrollWrap::-webkit-scrollbar-thumb {
-    background-color: #012701;
-    border-radius: 8px;
+  background-color: #012701;
+  border-radius: 8px;
 }
 
 .createForm form {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .createForm form label {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1px;
 }
 
 .createForm form input {
-    width: 20rem;
-    height: 3.5rem;
-    border-radius: 0.2rem;
-    border: #00ffff 1px solid;
-    padding: 1rem;
-    background: none;
-    margin: 0;
+  width: 20rem;
+  height: 3.5rem;
+  border-radius: 0.2rem;
+  border: #00ffff 1px solid;
+  padding: 1rem;
+  background: none;
+  margin: 0;
 }
 
 .profileLevel {
-    display: flex;
-    justify-content: center;
-    align-items: center !important;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    text-align: center;
-    margin: 0;
-    cursor: pointer;
-    position: relative;
-    color: #00ffff;
-    font-weight: bold;
-    background-color: #4b505085;
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  color: #00ffff;
+  font-weight: bold;
+  background-color: #4b505085;
 }
 
 .profileLevel input {
-    display: none;
+  display: none;
 }
 
 .profileLevel span {
-    font-size: 1.3rem;
-    color: #00101a;
-    background-color: #c8f4ffb7;
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.8rem;
-    z-index: 300;
+  font-size: 1.3rem;
+  color: #00101a;
+  background-color: #c8f4ffb7;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  z-index: 300;
 }
 
 .profileLevel img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 200;
-    border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 200;
+  border-radius: 50%;
 }
 .createForm form sup {
-    font-size: 1rem;
-    color: #f87171;
+  font-size: 1rem;
+  color: #f87171;
 }
 
 /* Read article design start---> */
 .teamShow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .members {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .memberData {
-    width: 20rem;
-    text-align: center;
-    background: var(--atm-card-bg);
-    backdrop-filter: blur(var(--atm-card-blur));
-    -webkit-backdrop-filter: blur(var(--atm-card-blur));
-    border: var(--atm-card-border);
-    padding: 2rem;
-    border-radius: 24px;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s var(--ease-out-smooth);
+  width: 20rem;
+  text-align: center;
+  background: var(--atm-card-bg);
+  backdrop-filter: blur(var(--atm-card-blur));
+  -webkit-backdrop-filter: blur(var(--atm-card-blur));
+  border: var(--atm-card-border);
+  padding: 2rem;
+  border-radius: 24px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s var(--ease-out-smooth);
 }
 
 .memberData:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-5px);
+  border-color: var(--color-accent);
+  transform: translateY(-5px);
 }
 
 .memberData img {
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #b2ffff48;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #b2ffff48;
 }
 
 .deleteBtn {
-    position: absolute;
-    top: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .deletePop {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #01180152;
-    z-index: 3000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #01180152;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .deleteCont {
-    background-color: #000000;
-    color: #fbffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    border-radius: 1rem;
+  background-color: #000000;
+  color: #fbffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .deleteCont form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
 }
 .deleteCont form input {
-    width: 20rem;
-    height: 3.5rem;
-    background: none;
-    border: 1px solid #02ff02;
-    border-radius: 0.4rem;
-    padding: 1rem;
-    font-size: 1rem;
-    color: #00ffff;
+  width: 20rem;
+  height: 3.5rem;
+  background: none;
+  border: 1px solid #02ff02;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #00ffff;
 }
 
 #cencle {
-    background-color: #00ff6a;
-    color: #000;
-    border-radius: 1rem;
+  background-color: #00ff6a;
+  color: #000;
+  border-radius: 1rem;
 }
 #delete {
-    background-color: #000000;
-    color: #00ff6a;
-    border-radius: 1rem;
+  background-color: #000000;
+  color: #00ff6a;
+  border-radius: 1rem;
 }

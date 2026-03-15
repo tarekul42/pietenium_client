@@ -1,13 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import UpdateP from "./update/UpdateP";
-import Image from "next/image";
-import { api } from "@/data/api";
-import { useDashAuth } from "../DashCotext/DashContext";
-import SmallLoad from "@/components/smallLaoding/smallLoad";
 import ToastP from "@/components/popupToast/ToastP";
-import { useToast, useLoading } from "@/customHooks";
+import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { useLoading, useToast } from "@/customHooks";
+import { api } from "@/data/api";
+import { faPencilAlt, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import { useState } from "react";
+import { useDashAuth } from "../DashCotext/DashContext";
+import UpdateP from "./update/UpdateP";
 
 const ShowP = ({ data, handleProjectUpdate, handleProjectCut, idx }) => {
   const { _id, title, thumbnail } = data;

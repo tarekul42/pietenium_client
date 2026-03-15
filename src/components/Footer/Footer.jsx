@@ -1,7 +1,4 @@
 "use client";
-import Link from "next/link";
-import styles from "./footer.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faInstagramSquare,
@@ -9,7 +6,10 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUp, faEarthAmericas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import Newsletter from "../newsletter/Newsletter";
+import styles from "./footer.module.css";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -31,7 +31,10 @@ const Footer = () => {
 
             <div className={styles.contactDetails}>
               <div className={styles.contactItem}>
-                <FontAwesomeIcon icon={faEarthAmericas} className={styles.icon} />
+                <FontAwesomeIcon
+                  icon={faEarthAmericas}
+                  className={styles.icon}
+                />
                 <p>Agarogoan, Dhaka, Bangladesh</p>
               </div>
               <div className={styles.contactItem}>
@@ -40,18 +43,32 @@ const Footer = () => {
               </div>
               <div className={styles.contactItem}>
                 <strong>Email:</strong>
-                <Link href="mailto:pietenium0@gmail.com">pietenium0@gmail.com</Link>
+                <Link href="mailto:pietenium0@gmail.com">
+                  pietenium0@gmail.com
+                </Link>
               </div>
             </div>
 
             <div className={styles.socialIcons}>
-              <Link href={"https://www.facebook.com/pietenium"} target="_blank" aria-label="Facebook">
+              <Link
+                href={"https://www.facebook.com/pietenium"}
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <FontAwesomeIcon icon={faFacebook} />
               </Link>
-              <Link href={"https://www.linkedin.com/in/heyabdullahbro"} target="_blank" aria-label="LinkedIn">
+              <Link
+                href={"https://www.linkedin.com/in/heyabdullahbro"}
+                target="_blank"
+                aria-label="LinkedIn"
+              >
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </Link>
-              <Link href={"https://www.instagram.com/pietenium/"} target="_blank" aria-label="Instagram">
+              <Link
+                href={"https://www.instagram.com/pietenium/"}
+                target="_blank"
+                aria-label="Instagram"
+              >
                 <FontAwesomeIcon icon={faInstagramSquare} />
               </Link>
               <Link href={"#"} aria-label="Twitter">
@@ -64,7 +81,10 @@ const Footer = () => {
           <div className={`${styles.card} ${styles.newsletterCard}`}>
             <div className={styles.newsletterHeader}>
               <h4 className={styles.cardTitle}>Stay Connected</h4>
-              <p>Subscribe to our newsletter for the latest updates on technology and innovation.</p>
+              <p>
+                Subscribe to our newsletter for the latest updates on technology
+                and innovation.
+              </p>
             </div>
             <div className={styles.newsletterWrapper}>
               <Newsletter />
@@ -76,7 +96,11 @@ const Footer = () => {
           <p className={styles.copyright}>
             &copy; {new Date().getFullYear()} Pietenium. All rights reserved.
           </p>
-          <button onClick={scrollToTop} className={styles.backToTop} aria-label="Back to top">
+          <button
+            onClick={scrollToTop}
+            className={styles.backToTop}
+            aria-label="Back to top"
+          >
             <FontAwesomeIcon icon={faArrowUp} />
             <span>Top</span>
           </button>

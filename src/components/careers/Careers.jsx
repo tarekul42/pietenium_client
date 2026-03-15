@@ -1,9 +1,13 @@
 "use client";
-import React from "react";
-import styles from "./careers.module.css";
-import Link from "next/link";
+import {
+  faArrowRight,
+  faHeart,
+  faRocket,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRocket, faUsers, faHeart, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import styles from "./careers.module.css";
 
 const Careers = () => {
   const jobs = [
@@ -12,22 +16,22 @@ const Careers = () => {
       title: "Senior Full Stack Engineer",
       type: "Full-Time",
       location: "Remote / Hybrid",
-      category: "Engineering"
+      category: "Engineering",
     },
     {
       id: 2,
       title: "UI/UX Product Designer",
       type: "Contract",
       location: "Global Remote",
-      category: "Design"
+      category: "Design",
     },
     {
       id: 3,
       title: "Digital Strategist",
       type: "Full-Time",
       location: "New York / Remote",
-      category: "Business"
-    }
+      category: "Business",
+    },
   ];
 
   return (
@@ -36,7 +40,10 @@ const Careers = () => {
         <div className={styles.heroContent}>
           <span className={styles.badge}>Join the Mission</span>
           <h1>Build the Future of Digital Experience</h1>
-          <p>We are a high-performance team looking for the next generation of digital architects and strategic thinkers.</p>
+          <p>
+            We are a high-performance team looking for the next generation of
+            digital architects and strategic thinkers.
+          </p>
         </div>
       </header>
 
@@ -45,17 +52,25 @@ const Careers = () => {
           <div className={styles.valueCard}>
             <FontAwesomeIcon icon={faRocket} className={styles.icon} />
             <h3>Hyper Growth</h3>
-            <p>Accelerate your career with high-ticket projects and cutting-edge tech.</p>
+            <p>
+              Accelerate your career with high-ticket projects and cutting-edge
+              tech.
+            </p>
           </div>
           <div className={styles.valueCard}>
             <FontAwesomeIcon icon={faUsers} className={styles.icon} />
             <h3>Elite Talent</h3>
-            <p>Work alongside the best engineers and designers in the industry.</p>
+            <p>
+              Work alongside the best engineers and designers in the industry.
+            </p>
           </div>
           <div className={styles.valueCard}>
             <FontAwesomeIcon icon={faHeart} className={styles.icon} />
             <h3>Human Centric</h3>
-            <p>Competitive rewards, flexible remote culture, and absolute ownership.</p>
+            <p>
+              Competitive rewards, flexible remote culture, and absolute
+              ownership.
+            </p>
           </div>
         </section>
 
@@ -88,7 +103,10 @@ const Careers = () => {
         <section className={styles.cta}>
           <div className={styles.ctaContent}>
             <h2>Don&apos;t see a perfect fit?</h2>
-            <p>We&apos;re always looking for exceptional talent. Send us your portfolio and let&apos;s talk.</p>
+            <p>
+              We&apos;re always looking for exceptional talent. Send us your
+              portfolio and let&apos;s talk.
+            </p>
             <Link href="/contact-us" className={styles.generalBtn}>
               General Application
             </Link>

@@ -1,13 +1,8 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import CountUp from "react-countup";
-import styles from "./about.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import { api } from "@/data/api";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
 import { useLoading } from "@/customHooks";
+import { api } from "@/data/api";
 import {
   faBuilding,
   faGraduationCap,
@@ -17,6 +12,11 @@ import {
   faUserTie,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import CountUp from "react-countup";
+import styles from "./about.module.css";
 
 const About = () => {
   const [Members, setMembers] = useState([]);
@@ -117,13 +117,13 @@ const About = () => {
         <div className={styles.aboutIntro}>
           <h2>Who We Are</h2>
           <p>
-            At Pietenium, we don&apos;t just build websites — we engineer exceptional
-            digital experiences. We&apos;re a creative tech agency fueled by innovation,
-            design, and real-world problem-solving. From agile startups to growing
-            scale-ups, we empower businesses with smart, scalable web solutions
-            tailored to their goals. Our team blends clean code with creative
-            thinking to craft high-performance websites and applications that stand
-            out.
+            At Pietenium, we don&apos;t just build websites — we engineer
+            exceptional digital experiences. We&apos;re a creative tech agency
+            fueled by innovation, design, and real-world problem-solving. From
+            agile startups to growing scale-ups, we empower businesses with
+            smart, scalable web solutions tailored to their goals. Our team
+            blends clean code with creative thinking to craft high-performance
+            websites and applications that stand out.
           </p>
         </div>
 
@@ -133,8 +133,7 @@ const About = () => {
             <div key={index} className={styles.achievementCard}>
               <span className={styles.achievementIcon}>{achievement.icon}</span>
               <h3>
-                <CountUp end={achievement.count} duration={2} />
-                +
+                <CountUp end={achievement.count} duration={2} />+
               </h3>
               <h4>{achievement.title}</h4>
               <p>{achievement.description}</p>
@@ -162,8 +161,8 @@ const About = () => {
         <div className={styles.ctaSection}>
           <h2>Want to join our vision?</h2>
           <p>
-            We&apos;re always looking for talented minds to help us build the future.
-            Let&apos;s create something extraordinary together.
+            We&apos;re always looking for talented minds to help us build the
+            future. Let&apos;s create something extraordinary together.
           </p>
           <Link href="/contact-us" className={styles.ctaBtn}>
             Let&apos;s Collaborate

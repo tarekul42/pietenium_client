@@ -1,11 +1,11 @@
 import HomeCardSkeleton from "@/components/skeleton/HomeCardSkeleton";
+import { useLoading } from "@/customHooks";
 import { api } from "@/data/api";
 import { slugify } from "@/utility/slugify";
-import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
-import styles from "./homeArtWrk.module.css";
 import Image from "next/image";
-import { useLoading } from "@/customHooks";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import styles from "./homeArtWrk.module.css";
 
 const HomeWork = () => {
   const [projects, setProjects] = useState([]);
@@ -48,7 +48,10 @@ const HomeWork = () => {
               <div className={styles.spotlightContent}>
                 <span className={styles.spotlightLabel}>Featured Project</span>
                 <h2>{projects[0].title}</h2>
-                <p>A deep dive into how we solved complex challenges and delivered measurable results for this client.</p>
+                <p>
+                  A deep dive into how we solved complex challenges and
+                  delivered measurable results for this client.
+                </p>
                 <Link
                   href={`/work/${slugify(projects[0].title)}/${projects[0]._id}`}
                   className={styles.spotlightLink}
@@ -72,7 +75,10 @@ const HomeWork = () => {
               const { _id, title, thumbnail } = data;
               const titleLink = slugify(title);
               return (
-                <div className={`${styles.projTemp} animate-slide-up`} key={_id}>
+                <div
+                  className={`${styles.projTemp} animate-slide-up`}
+                  key={_id}
+                >
                   <div className={styles.imgWrapper}>
                     <Image
                       src={thumbnail?.photo}

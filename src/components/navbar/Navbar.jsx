@@ -1,10 +1,10 @@
 "use client";
 
+import ThemeToggle from "@/components/theme/ThemeToggle";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ThemeToggle from "@/components/theme/ThemeToggle";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -19,7 +19,8 @@ const Navbar = () => {
     const normalizedRoute = route.replace(/\/$/, "") || "/";
 
     return normalizedPath === normalizedRoute ||
-      (normalizedRoute !== "/" && normalizedPath.startsWith(normalizedRoute + "/"))
+      (normalizedRoute !== "/" &&
+        normalizedPath.startsWith(normalizedRoute + "/"))
       ? styles.activeNav
       : "";
   };
@@ -133,7 +134,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link href="/our-works">
-                    <button className={getActive("/our-works")}>Portfolio</button>
+                    <button className={getActive("/our-works")}>
+                      Portfolio
+                    </button>
                   </Link>
                 </li>
                 <li>
@@ -148,7 +151,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link href="/contact-us">
-                    <button className={`${getActive("/contact-us")} ${styles.mobileCta}`}>
+                    <button
+                      className={`${getActive("/contact-us")} ${styles.mobileCta}`}
+                    >
                       Get Started
                     </button>
                   </Link>

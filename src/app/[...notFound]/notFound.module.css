@@ -1,103 +1,104 @@
 .container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-bg);
-    position: relative;
-    overflow: hidden;
-    color: var(--color-text);
-    text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text);
+  text-align: center;
 }
 
 .content {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 2rem;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
 .errorCode {
-    font-size: 8rem;
-    font-weight: 800;
-    margin: 0;
-    background: linear-gradient(135deg, var(--color-accent), #6366f1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.05em;
-    line-height: 1;
+  font-size: 8rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-accent), #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.05em;
+  line-height: 1;
 }
 
 .title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 .message {
-    font-size: 1.125rem;
-    color: var(--color-muted);
-    max-width: 40ch;
-    line-height: 1.6;
+  font-size: 1.125rem;
+  color: var(--color-muted);
+  max-width: 40ch;
+  line-height: 1.6;
 }
 
 .homeBtn {
-    margin-top: 1rem;
-    padding: 1rem 2.5rem;
-    background: var(--color-accent);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .homeBtn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
-    background: #0284c7;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+  background: #0284c7;
 }
 
 .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-.circle1, .circle2 {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.15;
+.circle1,
+.circle2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
 }
 
 .circle1 {
-    width: 400px;
-    height: 400px;
-    background: var(--color-accent);
-    top: -100px;
-    right: -100px;
+  width: 400px;
+  height: 400px;
+  background: var(--color-accent);
+  top: -100px;
+  right: -100px;
 }
 
 .circle2 {
-    width: 300px;
-    height: 300px;
-    background: #6366f1;
-    bottom: -50px;
-    left: -50px;
+  width: 300px;
+  height: 300px;
+  background: #6366f1;
+  bottom: -50px;
+  left: -50px;
 }
 
 @media (max-width: 768px) {
-    .errorCode {
-        font-size: 6rem;
-    }
-    .title {
-        font-size: 1.5rem;
-    }
+  .errorCode {
+    font-size: 6rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
 }

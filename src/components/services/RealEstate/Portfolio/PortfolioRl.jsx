@@ -1,5 +1,5 @@
-import styles from "./prtflRl.module.css";
 import { useEffect } from "react";
+import styles from "./prtflRl.module.css";
 
 export default function Portfolio() {
   useEffect(() => {

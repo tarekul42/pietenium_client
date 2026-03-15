@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import DashboardAuth from "@/components/dashboard/AuthDash/DashboardAuth";
-import DashboardNav from "@/components/dashboard/navDash";
 import DashProvider from "@/components/dashboard/DashCotext/DashContext";
-import { api } from "@/data/api";
+import DashboardNav from "@/components/dashboard/navDash";
 import SmallLoad from "@/components/smallLaoding/smallLoad";
+import { api } from "@/data/api";
+import { useEffect, useState } from "react";
 
 export default function DashboardAuthWrapper({ children }) {
   const [auth, setAuth] = useState(null); // null = loading

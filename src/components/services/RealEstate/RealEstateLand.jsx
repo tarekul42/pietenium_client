@@ -1,15 +1,15 @@
 "use client";
 
-import styles from "./rland.module.css";
-import RlHero from "./hero/RlHero";
-import ProblemRl from "./Problem/rlprblm";
-import SolutionRl from "./Solution/SolutionRl";
-import FeatureRl from "./Feature/FeatureRl";
-import Portfolio from "./Portfolio/PortfolioRl";
+import Link from "next/link";
 import AuditFormRl from "./AuditForm/AuditForm";
 import FaqSection from "./FAQ/FAQ_RL";
+import FeatureRl from "./Feature/FeatureRl";
+import RlHero from "./hero/RlHero";
+import Portfolio from "./Portfolio/PortfolioRl";
+import ProblemRl from "./Problem/rlprblm";
+import styles from "./rland.module.css";
+import SolutionRl from "./Solution/SolutionRl";
 import TestimonialsOfRl from "./Testimonial/TestRl";
-import Link from "next/link";
 
 const RealEstateLandingPage = () => {
   return (
